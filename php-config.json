@@ -3,5 +3,6 @@
   "packageName": "php-client",
   "srcBasePath": "src",
   "apiPackage": "Api",
-  "modelPackage": "Model"
+  "modelPackage": "Model",
+  "composerPackageName": "slsmf/php-client"
 }
