@@ -166,12 +166,12 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
 );
 $code = 'abas'; // string | Station code used in query
 $accept = 'application/json'; // string | hidden_accept_parameter_data
-$timestart = '2025-06-23T11:43'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$timestop = '2025-06-30T11:43'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestart = '2025-06-23T12:46'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestop = '2025-06-30T12:46'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $includesensors = array('includesensors_example'); // string[] | sensors to include
 $nofilter = false; // bool | Will show all values, otherwise only values > -999 and values < 999 are used; note: -999 is used for missing values
 $allsensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
-$skip_gaps_until = '2025-06-30T11:43'; // string | Date in format 'YYYY-MM-DDTHH:MM'.  if there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
+$skip_gaps_until = '2025-06-30T12:46'; // string | Date in format 'YYYY-MM-DDTHH:MM'.  if there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
@@ -188,12 +188,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
 | **accept** | **string**| hidden_accept_parameter_data | [optional] [default to &#39;application/json&#39;] |
-| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-23T11:43&#39;] |
-| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-30T11:43&#39;] |
+| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-23T12:46&#39;] |
+| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-30T12:46&#39;] |
 | **includesensors** | [**string[]**](../Model/string.md)| sensors to include | [optional] |
 | **nofilter** | **bool**| Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values | [optional] [default to false] |
 | **allsensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |
-| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2025-06-30T11:43&#39;] |
+| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2025-06-30T12:46&#39;] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 
 ### Return type

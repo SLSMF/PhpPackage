@@ -4,101 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8695d634-2479-444a-a048-d3955fa6a2ba" name="Changes" comment="fix composer.json">
-      <change afterPath="$PROJECT_DIR$/php-config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8695d634-2479-444a-a048-d3955fa6a2ba" name="Changes" comment="change packagesrc to src not lib">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Api/CatalogApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Api/CatalogApi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Api/OperatorApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Api/OperatorApi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Api/ResearchApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Api/ResearchApi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Api/SensorApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Api/SensorApi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Api/StationApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Api/StationApi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/CatalogXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/CatalogXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapGmlXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapGmlXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapGmlXmlGmlFeatureMemberInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapGmlXmlGmlFeatureMemberInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapKmlXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapKmlXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocument.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentPlacemarkInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentPlacemarkInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentStyleInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentStyleInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentStyleInnerIconStyle.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MapKmlXmlDocumentStyleInnerIconStyle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/OperatorXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/OperatorXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/OperatorsXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/OperatorsXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/SensorsXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/SensorsXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationDataXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationDataXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationJsonInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationJsonInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationMessageXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationMessageXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationPerformanceXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationPerformanceXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationResearchDataDetidedJsonInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationResearchDataDetidedJsonInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationResearchDataJsonInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationResearchDataJsonInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationResearchDataPredictedJsonInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationResearchDataPredictedJsonInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationsShortlistXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationsShortlistXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/StationsXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/StationsXml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/TideModelJsonInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/TideModelJsonInner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_push.sh" beforeDir="false" afterPath="$PROJECT_DIR$/git_push.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Api/CatalogApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Api/OperatorApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Api/ResearchApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Api/SensorApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Api/StationApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ApiException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Configuration.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/HeaderSelector.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/CatalogJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/CatalogXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/CatalogXmlStationInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapGmlXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapGmlXmlGmlFeatureMemberInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapGmlXmlGmlFeatureMemberInnerGmlPoint.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocument.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocumentPlacemarkInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocumentPlacemarkInnerPoint.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocumentStyleInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocumentStyleInnerIconStyle.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/MapKmlXmlDocumentStyleInnerIconStyleIcon.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/ModelInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorXmlOperatorInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorsJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorsXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/OperatorsXmlOperatorInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/SensorsJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/SensorsXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/SensorsXmlSensorInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationDataJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationDataXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationDataXmlSample.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationJsonInnerSensorInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationMessageJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationMessageXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationMessageXmlResponseInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationPerformanceJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationPerformanceXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationPerformanceXmlStationInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataDetidedJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataDetidedJsonInnerDataInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataJsonInnerDataInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataJsonInnerPagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataPredictedJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationResearchDataPredictedJsonInnerDataInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationXmlSensorInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsShortlistJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsShortlistXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsShortlistXmlStationInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/StationsXmlStationInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/TideModelJsonInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Model/TideModelJsonInnerDataInner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ObjectSerializer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1751276024259</updated>
       <workItem from="1751276025911" duration="635000" />
-      <workItem from="1751283331184" duration="646000" />
+      <workItem from="1751283331184" duration="2657000" />
     </task>
     <task id="LOCAL-00001" summary="fix composer.json">
       <created>1751282973396</created>
@@ -152,7 +59,21 @@
       <option name="project" value="LOCAL" />
       <updated>1751282973396</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change packagesrc to src not lib">
+      <created>1751284024704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751284024704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change packagesrc to src not lib">
+      <created>1751284328356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751284328356</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +81,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix composer.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix composer.json" />
+    <MESSAGE value="change packagesrc to src not lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="change packagesrc to src not lib" />
   </component>
 </project>

@@ -403,11 +403,6 @@ class CatalogApi
 
 
 
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/xml', ],
-            $contentType,
-            $multipart
-        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -725,11 +720,6 @@ class CatalogApi
         }
 
 
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/xml', ],
-            $contentType,
-            $multipart
-        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1067,11 +1057,6 @@ class CatalogApi
         }
 
 
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/xml', ],
-            $contentType,
-            $multipart
-        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

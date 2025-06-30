@@ -599,11 +599,6 @@ class ResearchApi
         }
 
 
-        $headers = $this->headerSelector->selectHeaders(
-            ['text/csv', 'application/json', ],
-            $contentType,
-            $multipart
-        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

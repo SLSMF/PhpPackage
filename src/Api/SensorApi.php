@@ -397,11 +397,6 @@ class SensorApi
 
 
 
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/xml', ],
-            $contentType,
-            $multipart
-        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
