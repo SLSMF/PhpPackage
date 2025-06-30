@@ -1,0 +1,7 @@
+{
+  "invokerPackage": "SLSMF\\Client",
+  "packageName": "php-client",
+  "srcBasePath": "src",
+  "apiPackage": "Api",
+  "modelPackage": "Model"
+}

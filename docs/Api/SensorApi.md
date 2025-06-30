@@ -1,4 +1,4 @@
-# SLSMF\\Client\SensorApi
+# SLSMF\Client\SensorApi
 
 All URIs are relative to http://api.sealevelmonitoring.local, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getSensors()`
 
 ```php
-getSensors($accept, $showall, $limit): \SLSMF\\Client\Model\SensorsJsonInner[]
+getSensors($accept, $showall, $limit): \SLSMF\Client\Model\SensorsJsonInner[]
 ```
 
 Retrieve list of sensors.
@@ -23,12 +23,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\SensorApi(
+$apiInstance = new SLSMF\Client\Api\SensorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -56,7 +56,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\SensorsJsonInner[]**](../Model/SensorsJsonInner.md)
+[**\SLSMF\Client\Model\SensorsJsonInner[]**](../Model/SensorsJsonInner.md)
 
 ### Authorization
 

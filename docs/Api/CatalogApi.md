@@ -1,4 +1,4 @@
-# SLSMF\\Client\CatalogApi
+# SLSMF\Client\CatalogApi
 
 All URIs are relative to http://api.sealevelmonitoring.local, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getCatalogEntries()`
 
 ```php
-getCatalogEntries($accept, $country, $limit): \SLSMF\\Client\Model\CatalogJsonInner[]
+getCatalogEntries($accept, $country, $limit): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve list of all catalog entries.
@@ -25,12 +25,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -58,7 +58,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ try {
 ## `getCatalogEntryByCode()`
 
 ```php
-getCatalogEntryByCode($code, $accept): \SLSMF\\Client\Model\CatalogJsonInner[]
+getCatalogEntryByCode($code, $accept): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve specific catalog entry by it's catalog identifier.
@@ -89,12 +89,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `getCatalogEntryByOrganisationAndCode()`
 
 ```php
-getCatalogEntryByOrganisationAndCode($organisation, $code, $accept): \SLSMF\\Client\Model\CatalogJsonInner[]
+getCatalogEntryByOrganisationAndCode($organisation, $code, $accept): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve a specific catalog entry by it's external identifier.
@@ -151,12 +151,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -184,7 +184,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 
