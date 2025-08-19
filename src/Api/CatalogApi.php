@@ -134,7 +134,6 @@ class CatalogApi
      *
      * Retrieve list of all catalog entries.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $country country iso2 (optional)
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
@@ -143,9 +142,9 @@ class CatalogApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
-    public function getCatalogEntries($accept = 'application/json', $country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
+    public function getCatalogEntries($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
-        list($response) = $this->getCatalogEntriesWithHttpInfo($accept, $country, $limit, $contentType);
+        list($response) = $this->getCatalogEntriesWithHttpInfo($country, $limit, $contentType);
         return $response;
     }
 
@@ -154,7 +153,6 @@ class CatalogApi
      *
      * Retrieve list of all catalog entries.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $country country iso2 (optional)
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
@@ -163,9 +161,9 @@ class CatalogApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCatalogEntriesWithHttpInfo($accept = 'application/json', $country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
+    public function getCatalogEntriesWithHttpInfo($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
-        $request = $this->getCatalogEntriesRequest($accept, $country, $limit, $contentType);
+        $request = $this->getCatalogEntriesRequest($country, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -280,7 +278,6 @@ class CatalogApi
      *
      * Retrieve list of all catalog entries.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $country country iso2 (optional)
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
@@ -288,9 +285,9 @@ class CatalogApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntriesAsync($accept = 'application/json', $country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
+    public function getCatalogEntriesAsync($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
-        return $this->getCatalogEntriesAsyncWithHttpInfo($accept, $country, $limit, $contentType)
+        return $this->getCatalogEntriesAsyncWithHttpInfo($country, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -303,7 +300,6 @@ class CatalogApi
      *
      * Retrieve list of all catalog entries.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $country country iso2 (optional)
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
@@ -311,10 +307,10 @@ class CatalogApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntriesAsyncWithHttpInfo($accept = 'application/json', $country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
+    public function getCatalogEntriesAsyncWithHttpInfo($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
         $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
-        $request = $this->getCatalogEntriesRequest($accept, $country, $limit, $contentType);
+        $request = $this->getCatalogEntriesRequest($country, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -355,7 +351,6 @@ class CatalogApi
     /**
      * Create request for operation 'getCatalogEntries'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $country country iso2 (optional)
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
@@ -363,9 +358,8 @@ class CatalogApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCatalogEntriesRequest($accept = 'application/json', $country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
+    public function getCatalogEntriesRequest($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
-
 
 
 
@@ -396,13 +390,14 @@ class CatalogApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -462,16 +457,15 @@ class CatalogApi
      * Retrieve specific catalog entry by it&#39;s catalog identifier.
      *
      * @param  string $code SSC-code (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
-    public function getCatalogEntryByCode($code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
+    public function getCatalogEntryByCode($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
-        list($response) = $this->getCatalogEntryByCodeWithHttpInfo($code, $accept, $contentType);
+        list($response) = $this->getCatalogEntryByCodeWithHttpInfo($code, $contentType);
         return $response;
     }
 
@@ -481,16 +475,15 @@ class CatalogApi
      * Retrieve specific catalog entry by it&#39;s catalog identifier.
      *
      * @param  string $code SSC-code (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCatalogEntryByCodeWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
+    public function getCatalogEntryByCodeWithHttpInfo($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
-        $request = $this->getCatalogEntryByCodeRequest($code, $accept, $contentType);
+        $request = $this->getCatalogEntryByCodeRequest($code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -606,15 +599,14 @@ class CatalogApi
      * Retrieve specific catalog entry by it&#39;s catalog identifier.
      *
      * @param  string $code SSC-code (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntryByCodeAsync($code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
+    public function getCatalogEntryByCodeAsync($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
-        return $this->getCatalogEntryByCodeAsyncWithHttpInfo($code, $accept, $contentType)
+        return $this->getCatalogEntryByCodeAsyncWithHttpInfo($code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -628,16 +620,15 @@ class CatalogApi
      * Retrieve specific catalog entry by it&#39;s catalog identifier.
      *
      * @param  string $code SSC-code (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntryByCodeAsyncWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
+    public function getCatalogEntryByCodeAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
         $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
-        $request = $this->getCatalogEntryByCodeRequest($code, $accept, $contentType);
+        $request = $this->getCatalogEntryByCodeRequest($code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -679,13 +670,12 @@ class CatalogApi
      * Create request for operation 'getCatalogEntryByCode'
      *
      * @param  string $code SSC-code (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCatalogEntryByCodeRequest($code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
+    public function getCatalogEntryByCodeRequest($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -696,7 +686,6 @@ class CatalogApi
         }
 
 
-
         $resourcePath = '/v2/catalog/{code}';
         $formParams = [];
         $queryParams = [];
@@ -705,10 +694,6 @@ class CatalogApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($code !== null) {
@@ -720,6 +705,11 @@ class CatalogApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -780,16 +770,15 @@ class CatalogApi
      *
      * @param  string $organisation The source organisation for the provided code. (required)
      * @param  string $code Search the catalog by an external code. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
-    public function getCatalogEntryByOrganisationAndCode($organisation, $code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
+    public function getCatalogEntryByOrganisationAndCode($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
-        list($response) = $this->getCatalogEntryByOrganisationAndCodeWithHttpInfo($organisation, $code, $accept, $contentType);
+        list($response) = $this->getCatalogEntryByOrganisationAndCodeWithHttpInfo($organisation, $code, $contentType);
         return $response;
     }
 
@@ -800,16 +789,15 @@ class CatalogApi
      *
      * @param  string $organisation The source organisation for the provided code. (required)
      * @param  string $code Search the catalog by an external code. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCatalogEntryByOrganisationAndCodeWithHttpInfo($organisation, $code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
+    public function getCatalogEntryByOrganisationAndCodeWithHttpInfo($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
-        $request = $this->getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $accept, $contentType);
+        $request = $this->getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -926,15 +914,14 @@ class CatalogApi
      *
      * @param  string $organisation The source organisation for the provided code. (required)
      * @param  string $code Search the catalog by an external code. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntryByOrganisationAndCodeAsync($organisation, $code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
+    public function getCatalogEntryByOrganisationAndCodeAsync($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
-        return $this->getCatalogEntryByOrganisationAndCodeAsyncWithHttpInfo($organisation, $code, $accept, $contentType)
+        return $this->getCatalogEntryByOrganisationAndCodeAsyncWithHttpInfo($organisation, $code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -949,16 +936,15 @@ class CatalogApi
      *
      * @param  string $organisation The source organisation for the provided code. (required)
      * @param  string $code Search the catalog by an external code. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCatalogEntryByOrganisationAndCodeAsyncWithHttpInfo($organisation, $code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
+    public function getCatalogEntryByOrganisationAndCodeAsyncWithHttpInfo($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
         $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
-        $request = $this->getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $accept, $contentType);
+        $request = $this->getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1001,13 +987,12 @@ class CatalogApi
      *
      * @param  string $organisation The source organisation for the provided code. (required)
      * @param  string $code Search the catalog by an external code. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $accept = 'application/json', string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
+    public function getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
 
         // verify the required parameter 'organisation' is set
@@ -1025,7 +1010,6 @@ class CatalogApi
         }
 
 
-
         $resourcePath = '/v2/catalog/{organisation}/{code}';
         $formParams = [];
         $queryParams = [];
@@ -1034,10 +1018,6 @@ class CatalogApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($organisation !== null) {
@@ -1057,6 +1037,11 @@ class CatalogApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

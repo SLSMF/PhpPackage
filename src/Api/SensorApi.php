@@ -128,7 +128,6 @@ class SensorApi
      *
      * Retrieve list of sensors.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
@@ -137,9 +136,9 @@ class SensorApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\SensorsJsonInner[]
      */
-    public function getSensors($accept = 'application/json', $showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
+    public function getSensors($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-        list($response) = $this->getSensorsWithHttpInfo($accept, $showall, $limit, $contentType);
+        list($response) = $this->getSensorsWithHttpInfo($showall, $limit, $contentType);
         return $response;
     }
 
@@ -148,7 +147,6 @@ class SensorApi
      *
      * Retrieve list of sensors.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
@@ -157,9 +155,9 @@ class SensorApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\SensorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSensorsWithHttpInfo($accept = 'application/json', $showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
+    public function getSensorsWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-        $request = $this->getSensorsRequest($accept, $showall, $limit, $contentType);
+        $request = $this->getSensorsRequest($showall, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -274,7 +272,6 @@ class SensorApi
      *
      * Retrieve list of sensors.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
@@ -282,9 +279,9 @@ class SensorApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSensorsAsync($accept = 'application/json', $showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
+    public function getSensorsAsync($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-        return $this->getSensorsAsyncWithHttpInfo($accept, $showall, $limit, $contentType)
+        return $this->getSensorsAsyncWithHttpInfo($showall, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -297,7 +294,6 @@ class SensorApi
      *
      * Retrieve list of sensors.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
@@ -305,10 +301,10 @@ class SensorApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSensorsAsyncWithHttpInfo($accept = 'application/json', $showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
+    public function getSensorsAsyncWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
         $returnType = '\SLSMF\Client\Model\SensorsJsonInner[]';
-        $request = $this->getSensorsRequest($accept, $showall, $limit, $contentType);
+        $request = $this->getSensorsRequest($showall, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -349,7 +345,6 @@ class SensorApi
     /**
      * Create request for operation 'getSensors'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
@@ -357,9 +352,8 @@ class SensorApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSensorsRequest($accept = 'application/json', $showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
+    public function getSensorsRequest($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-
 
 
 
@@ -390,13 +384,14 @@ class SensorApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

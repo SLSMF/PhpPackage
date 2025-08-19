@@ -16,7 +16,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getLatestStationMessage()`
 
 ```php
-getLatestStationMessage($code, $accept): \SLSMF\Client\Model\StationMessageJsonInner[]
+getLatestStationMessage($code): \SLSMF\Client\Model\StationMessageJsonInner[]
 ```
 
 Retrieve latest message for a station.
@@ -41,10 +41,9 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     $config
 );
 $code = 'abas'; // string | Station code used in query
-$accept = 'application/json'; // string | hidden-parameter
 
 try {
-    $result = $apiInstance->getLatestStationMessage($code, $accept);
+    $result = $apiInstance->getLatestStationMessage($code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getLatestStationMessage: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +55,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 
 ### Return type
 
@@ -78,7 +76,7 @@ try {
 ## `getStationByCode()`
 
 ```php
-getStationByCode($code, $accept): \SLSMF\Client\Model\StationJsonInner[]
+getStationByCode($code): \SLSMF\Client\Model\StationJsonInner[]
 ```
 
 Retrieve metadata for a station.
@@ -103,10 +101,9 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     $config
 );
 $code = 'abas'; // string | Station code used in query
-$accept = 'application/json'; // string | hidden-parameter
 
 try {
-    $result = $apiInstance->getStationByCode($code, $accept);
+    $result = $apiInstance->getStationByCode($code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStationByCode: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +115,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 
 ### Return type
 
@@ -140,7 +136,7 @@ try {
 ## `getStationData()`
 
 ```php
-getStationData($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit): \SLSMF\Client\Model\StationDataJsonInner[]
+getStationData($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit): \SLSMF\Client\Model\StationDataJsonInner[]
 ```
 
 Retrieve data for a station with max 30 day limit or 150 000 records.
@@ -165,17 +161,16 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     $config
 );
 $code = 'abas'; // string | Station code used in query
-$accept = 'application/json'; // string | hidden_accept_parameter_data
-$timestart = '2025-06-23T14:08'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$timestop = '2025-06-30T14:08'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestart = '2025-08-12T11:34'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestop = '2025-08-19T11:34'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $includesensors = array('includesensors_example'); // string[] | sensors to include
 $nofilter = false; // bool | Will show all values, otherwise only values > -999 and values < 999 are used; note: -999 is used for missing values
 $allsensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
-$skip_gaps_until = '2025-06-30T14:08'; // string | Date in format 'YYYY-MM-DDTHH:MM'.  if there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
+$skip_gaps_until = '2025-08-19T11:34'; // string | Date in format 'YYYY-MM-DDTHH:MM'.  if there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getStationData($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit);
+    $result = $apiInstance->getStationData($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStationData: ', $e->getMessage(), PHP_EOL;
@@ -187,13 +182,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
-| **accept** | **string**| hidden_accept_parameter_data | [optional] [default to &#39;application/json&#39;] |
-| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-23T14:08&#39;] |
-| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-06-30T14:08&#39;] |
+| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-08-12T11:34&#39;] |
+| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2025-08-19T11:34&#39;] |
 | **includesensors** | [**string[]**](../Model/string.md)| sensors to include | [optional] |
 | **nofilter** | **bool**| Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values | [optional] [default to false] |
 | **allsensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |
-| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2025-06-30T14:08&#39;] |
+| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2025-08-19T11:34&#39;] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 
 ### Return type
@@ -216,7 +210,7 @@ try {
 ## `getStationPerformance()`
 
 ```php
-getStationPerformance($accept, $showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationPerformanceJsonInner[]
+getStationPerformance($showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationPerformanceJsonInner[]
 ```
 
 Retrieve performance info for stations.
@@ -240,7 +234,6 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $showall = 'all'; // string | datastreams
 $operator = 56; // int | Limit selection to operator.
 $order = 'code'; // string | order by
@@ -248,7 +241,7 @@ $dir = 'asc'; // string | direction
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getStationPerformance($accept, $showall, $operator, $order, $dir, $limit);
+    $result = $apiInstance->getStationPerformance($showall, $operator, $order, $dir, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStationPerformance: ', $e->getMessage(), PHP_EOL;
@@ -259,7 +252,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **showall** | **string**| datastreams | [optional] [default to &#39;all&#39;] |
 | **operator** | **int**| Limit selection to operator. | [optional] |
 | **order** | **string**| order by | [optional] [default to &#39;code&#39;] |
@@ -286,7 +278,7 @@ try {
 ## `getStations()`
 
 ```php
-getStations($accept, $showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationsJsonInner[]
+getStations($showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationsJsonInner[]
 ```
 
 Retrieve all stations.
@@ -310,7 +302,6 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $showall = 'all'; // string | datastreams
 $operator = 56; // int | Limit selection to operator.
 $order = 'code'; // string | order by
@@ -318,7 +309,7 @@ $dir = 'asc'; // string | direction
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getStations($accept, $showall, $operator, $order, $dir, $limit);
+    $result = $apiInstance->getStations($showall, $operator, $order, $dir, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStations: ', $e->getMessage(), PHP_EOL;
@@ -329,7 +320,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **showall** | **string**| datastreams | [optional] [default to &#39;all&#39;] |
 | **operator** | **int**| Limit selection to operator. | [optional] |
 | **order** | **string**| order by | [optional] [default to &#39;code&#39;] |
@@ -356,7 +346,7 @@ try {
 ## `getStationsMap()`
 
 ```php
-getStationsMap($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar): \SLSMF\Client\Model\MapKmlXml
+getStationsMap($show, $wrap, $code, $bbox, $showgauges, $showpar): \SLSMF\Client\Model\MapKmlXml
 ```
 
 Retrieve stations map.
@@ -380,7 +370,6 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/vnd.google-earth.kml+xml'; // string | hidden-parameter
 $show = 'ALL'; // string | datastreams
 $wrap = 56; // int | 
 $code = 'code_example'; // string | Highlight a station
@@ -389,7 +378,7 @@ $showgauges = true; // bool | Obsolete
 $showpar = 'status'; // string | Parameter to show on map
 
 try {
-    $result = $apiInstance->getStationsMap($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar);
+    $result = $apiInstance->getStationsMap($show, $wrap, $code, $bbox, $showgauges, $showpar);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStationsMap: ', $e->getMessage(), PHP_EOL;
@@ -400,7 +389,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/vnd.google-earth.kml+xml&#39;] |
 | **show** | **string**| datastreams | [optional] [default to &#39;ALL&#39;] |
 | **wrap** | **int**|  | [optional] |
 | **code** | **string**| Highlight a station | [optional] |
@@ -428,7 +416,7 @@ try {
 ## `getStationsShortlist()`
 
 ```php
-getStationsShortlist($accept, $limit): \SLSMF\Client\Model\StationsShortlistJsonInner[]
+getStationsShortlist($limit): \SLSMF\Client\Model\StationsShortlistJsonInner[]
 ```
 
 Retrieve stations with limited info.
@@ -452,11 +440,10 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getStationsShortlist($accept, $limit);
+    $result = $apiInstance->getStationsShortlist($limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StationApi->getStationsShortlist: ', $e->getMessage(), PHP_EOL;
@@ -467,7 +454,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 
 ### Return type

@@ -11,7 +11,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getOperatorById()`
 
 ```php
-getOperatorById($operator_id, $accept): \SLSMF\Client\Model\OperatorJsonInner[]
+getOperatorById($operator_id): \SLSMF\Client\Model\OperatorJsonInner[]
 ```
 
 Get fullname of operator by ID.
@@ -36,10 +36,9 @@ $apiInstance = new SLSMF\Client\Api\OperatorApi(
     $config
 );
 $operator_id = 1; // int | Limit selection to operator.
-$accept = 'application/json'; // string | hidden-parameter
 
 try {
-    $result = $apiInstance->getOperatorById($operator_id, $accept);
+    $result = $apiInstance->getOperatorById($operator_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperatorApi->getOperatorById: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +50,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **operator_id** | **int**| Limit selection to operator. | [default to 1] |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 
 ### Return type
 
@@ -73,7 +71,7 @@ try {
 ## `getOperators()`
 
 ```php
-getOperators($accept, $limit): \SLSMF\Client\Model\OperatorsJsonInner[]
+getOperators($limit): \SLSMF\Client\Model\OperatorsJsonInner[]
 ```
 
 List of operators
@@ -97,11 +95,10 @@ $apiInstance = new SLSMF\Client\Api\OperatorApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getOperators($accept, $limit);
+    $result = $apiInstance->getOperators($limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperatorApi->getOperators: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +109,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 
 ### Return type

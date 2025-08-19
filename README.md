@@ -61,12 +61,11 @@ $apiInstance = new SLSMF\Client\Api\CatalogApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $country = 'country_example'; // string | country iso2
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getCatalogEntries($accept, $country, $limit);
+    $result = $apiInstance->getCatalogEntries($country, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntries: ', $e->getMessage(), PHP_EOL;

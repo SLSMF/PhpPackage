@@ -10,7 +10,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getSensors()`
 
 ```php
-getSensors($accept, $showall, $limit): \SLSMF\Client\Model\SensorsJsonInner[]
+getSensors($showall, $limit): \SLSMF\Client\Model\SensorsJsonInner[]
 ```
 
 Retrieve list of sensors.
@@ -34,12 +34,11 @@ $apiInstance = new SLSMF\Client\Api\SensorApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $showall = 'all'; // string | datastreams
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getSensors($accept, $showall, $limit);
+    $result = $apiInstance->getSensors($showall, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorApi->getSensors: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +49,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **showall** | **string**| datastreams | [optional] [default to &#39;all&#39;] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 

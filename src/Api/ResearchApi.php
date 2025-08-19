@@ -130,11 +130,10 @@ class ResearchApi
      *
      * @param  string $code Station code used in query (required)
      * @param  string $sensor &lt;b&gt;One sensor&lt;/b&gt;: This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period, filtered by the included sensors parameter.                                 &lt;b&gt;Alternate sensor&lt;/b&gt;: This option returns data from multiple sensors. The preferred sensor for each individual day will be returned, filtered by the included sensors parameter. If no preferred sensor is available on a given day, no data will be returned for that day. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $days_per_page Maximum number of days spanning a page, max 3650days (optional, default to 3650)
      * @param  int $page page (optional, default to 1)
-     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-22')
-     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30')
+     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-11')
+     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $level_data Level data relative to the mean sea level of 30 days. (optional, default to true)
      * @param  bool $original_stime Return the stime not corrected by sensor rate. (optional, default to false)
@@ -149,9 +148,9 @@ class ResearchApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function getStationResearchData($code, $sensor, $accept = 'application/json', $days_per_page = 3650, $page = 1, $timestart = '2025-06-22', $timestop = '2025-06-30', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
+    public function getStationResearchData($code, $sensor, $days_per_page = 3650, $page = 1, $timestart = '2025-08-11', $timestop = '2025-08-19', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
     {
-        list($response) = $this->getStationResearchDataWithHttpInfo($code, $sensor, $accept, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
+        list($response) = $this->getStationResearchDataWithHttpInfo($code, $sensor, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
         return $response;
     }
 
@@ -162,11 +161,10 @@ class ResearchApi
      *
      * @param  string $code Station code used in query (required)
      * @param  string $sensor &lt;b&gt;One sensor&lt;/b&gt;: This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period, filtered by the included sensors parameter.                                 &lt;b&gt;Alternate sensor&lt;/b&gt;: This option returns data from multiple sensors. The preferred sensor for each individual day will be returned, filtered by the included sensors parameter. If no preferred sensor is available on a given day, no data will be returned for that day. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $days_per_page Maximum number of days spanning a page, max 3650days (optional, default to 3650)
      * @param  int $page page (optional, default to 1)
-     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-22')
-     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30')
+     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-11')
+     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $level_data Level data relative to the mean sea level of 30 days. (optional, default to true)
      * @param  bool $original_stime Return the stime not corrected by sensor rate. (optional, default to false)
@@ -181,9 +179,9 @@ class ResearchApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationResearchDataWithHttpInfo($code, $sensor, $accept = 'application/json', $days_per_page = 3650, $page = 1, $timestart = '2025-06-22', $timestop = '2025-06-30', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
+    public function getStationResearchDataWithHttpInfo($code, $sensor, $days_per_page = 3650, $page = 1, $timestart = '2025-08-11', $timestop = '2025-08-19', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
     {
-        $request = $this->getStationResearchDataRequest($code, $sensor, $accept, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
+        $request = $this->getStationResearchDataRequest($code, $sensor, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -300,11 +298,10 @@ class ResearchApi
      *
      * @param  string $code Station code used in query (required)
      * @param  string $sensor &lt;b&gt;One sensor&lt;/b&gt;: This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period, filtered by the included sensors parameter.                                 &lt;b&gt;Alternate sensor&lt;/b&gt;: This option returns data from multiple sensors. The preferred sensor for each individual day will be returned, filtered by the included sensors parameter. If no preferred sensor is available on a given day, no data will be returned for that day. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $days_per_page Maximum number of days spanning a page, max 3650days (optional, default to 3650)
      * @param  int $page page (optional, default to 1)
-     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-22')
-     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30')
+     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-11')
+     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $level_data Level data relative to the mean sea level of 30 days. (optional, default to true)
      * @param  bool $original_stime Return the stime not corrected by sensor rate. (optional, default to false)
@@ -318,9 +315,9 @@ class ResearchApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationResearchDataAsync($code, $sensor, $accept = 'application/json', $days_per_page = 3650, $page = 1, $timestart = '2025-06-22', $timestop = '2025-06-30', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
+    public function getStationResearchDataAsync($code, $sensor, $days_per_page = 3650, $page = 1, $timestart = '2025-08-11', $timestop = '2025-08-19', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
     {
-        return $this->getStationResearchDataAsyncWithHttpInfo($code, $sensor, $accept, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType)
+        return $this->getStationResearchDataAsyncWithHttpInfo($code, $sensor, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -335,11 +332,10 @@ class ResearchApi
      *
      * @param  string $code Station code used in query (required)
      * @param  string $sensor &lt;b&gt;One sensor&lt;/b&gt;: This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period, filtered by the included sensors parameter.                                 &lt;b&gt;Alternate sensor&lt;/b&gt;: This option returns data from multiple sensors. The preferred sensor for each individual day will be returned, filtered by the included sensors parameter. If no preferred sensor is available on a given day, no data will be returned for that day. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $days_per_page Maximum number of days spanning a page, max 3650days (optional, default to 3650)
      * @param  int $page page (optional, default to 1)
-     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-22')
-     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30')
+     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-11')
+     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $level_data Level data relative to the mean sea level of 30 days. (optional, default to true)
      * @param  bool $original_stime Return the stime not corrected by sensor rate. (optional, default to false)
@@ -353,10 +349,10 @@ class ResearchApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationResearchDataAsyncWithHttpInfo($code, $sensor, $accept = 'application/json', $days_per_page = 3650, $page = 1, $timestart = '2025-06-22', $timestop = '2025-06-30', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
+    public function getStationResearchDataAsyncWithHttpInfo($code, $sensor, $days_per_page = 3650, $page = 1, $timestart = '2025-08-11', $timestop = '2025-08-19', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
     {
         $returnType = 'string';
-        $request = $this->getStationResearchDataRequest($code, $sensor, $accept, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
+        $request = $this->getStationResearchDataRequest($code, $sensor, $days_per_page, $page, $timestart, $timestop, $includesensors, $level_data, $original_stime, $flag_qc, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -399,11 +395,10 @@ class ResearchApi
      *
      * @param  string $code Station code used in query (required)
      * @param  string $sensor &lt;b&gt;One sensor&lt;/b&gt;: This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period, filtered by the included sensors parameter.                                 &lt;b&gt;Alternate sensor&lt;/b&gt;: This option returns data from multiple sensors. The preferred sensor for each individual day will be returned, filtered by the included sensors parameter. If no preferred sensor is available on a given day, no data will be returned for that day. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $days_per_page Maximum number of days spanning a page, max 3650days (optional, default to 3650)
      * @param  int $page page (optional, default to 1)
-     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-22')
-     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30')
+     * @param  string $timestart from date, included in result &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-11')
+     * @param  string $timestop until date, not included in result. &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $level_data Level data relative to the mean sea level of 30 days. (optional, default to true)
      * @param  bool $original_stime Return the stime not corrected by sensor rate. (optional, default to false)
@@ -417,7 +412,7 @@ class ResearchApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationResearchDataRequest($code, $sensor, $accept = 'application/json', $days_per_page = 3650, $page = 1, $timestart = '2025-06-22', $timestop = '2025-06-30', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
+    public function getStationResearchDataRequest($code, $sensor, $days_per_page = 3650, $page = 1, $timestart = '2025-08-11', $timestop = '2025-08-19', $includesensors = null, $level_data = true, $original_stime = false, $flag_qc = false, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationResearchData'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -439,7 +434,6 @@ class ResearchApi
                 'Missing the required parameter $sensor when calling getStationResearchData'
             );
         }
-
 
 
 
@@ -576,10 +570,6 @@ class ResearchApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($code !== null) {
@@ -599,6 +589,11 @@ class ResearchApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/csv', 'application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

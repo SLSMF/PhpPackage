@@ -132,16 +132,15 @@ class OperatorApi
      * Get fullname of operator by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\OperatorJsonInner[]
      */
-    public function getOperatorById($operator_id, $accept = 'application/json', string $contentType = self::contentTypes['getOperatorById'][0])
+    public function getOperatorById($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        list($response) = $this->getOperatorByIdWithHttpInfo($operator_id, $accept, $contentType);
+        list($response) = $this->getOperatorByIdWithHttpInfo($operator_id, $contentType);
         return $response;
     }
 
@@ -151,16 +150,15 @@ class OperatorApi
      * Get fullname of operator by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\OperatorJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOperatorByIdWithHttpInfo($operator_id, $accept = 'application/json', string $contentType = self::contentTypes['getOperatorById'][0])
+    public function getOperatorByIdWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        $request = $this->getOperatorByIdRequest($operator_id, $accept, $contentType);
+        $request = $this->getOperatorByIdRequest($operator_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -276,15 +274,14 @@ class OperatorApi
      * Get fullname of operator by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOperatorByIdAsync($operator_id, $accept = 'application/json', string $contentType = self::contentTypes['getOperatorById'][0])
+    public function getOperatorByIdAsync($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        return $this->getOperatorByIdAsyncWithHttpInfo($operator_id, $accept, $contentType)
+        return $this->getOperatorByIdAsyncWithHttpInfo($operator_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -298,16 +295,15 @@ class OperatorApi
      * Get fullname of operator by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOperatorByIdAsyncWithHttpInfo($operator_id, $accept = 'application/json', string $contentType = self::contentTypes['getOperatorById'][0])
+    public function getOperatorByIdAsyncWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
         $returnType = '\SLSMF\Client\Model\OperatorJsonInner[]';
-        $request = $this->getOperatorByIdRequest($operator_id, $accept, $contentType);
+        $request = $this->getOperatorByIdRequest($operator_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -349,13 +345,12 @@ class OperatorApi
      * Create request for operation 'getOperatorById'
      *
      * @param  int $operator_id Limit selection to operator. (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOperatorByIdRequest($operator_id, $accept = 'application/json', string $contentType = self::contentTypes['getOperatorById'][0])
+    public function getOperatorByIdRequest($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
 
         // verify the required parameter 'operator_id' is set
@@ -366,7 +361,6 @@ class OperatorApi
         }
 
 
-
         $resourcePath = '/v2/operators/{operator_id}';
         $formParams = [];
         $queryParams = [];
@@ -375,10 +369,6 @@ class OperatorApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($operator_id !== null) {
@@ -390,6 +380,11 @@ class OperatorApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -448,7 +443,6 @@ class OperatorApi
      *
      * List of operators
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
@@ -456,9 +450,9 @@ class OperatorApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\OperatorsJsonInner[]
      */
-    public function getOperators($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getOperators'][0])
+    public function getOperators($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
-        list($response) = $this->getOperatorsWithHttpInfo($accept, $limit, $contentType);
+        list($response) = $this->getOperatorsWithHttpInfo($limit, $contentType);
         return $response;
     }
 
@@ -467,7 +461,6 @@ class OperatorApi
      *
      * List of operators
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
@@ -475,9 +468,9 @@ class OperatorApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\OperatorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOperatorsWithHttpInfo($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getOperators'][0])
+    public function getOperatorsWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
-        $request = $this->getOperatorsRequest($accept, $limit, $contentType);
+        $request = $this->getOperatorsRequest($limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -592,16 +585,15 @@ class OperatorApi
      *
      * List of operators
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOperatorsAsync($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getOperators'][0])
+    public function getOperatorsAsync($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
-        return $this->getOperatorsAsyncWithHttpInfo($accept, $limit, $contentType)
+        return $this->getOperatorsAsyncWithHttpInfo($limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -614,17 +606,16 @@ class OperatorApi
      *
      * List of operators
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOperatorsAsyncWithHttpInfo($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getOperators'][0])
+    public function getOperatorsAsyncWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
         $returnType = '\SLSMF\Client\Model\OperatorsJsonInner[]';
-        $request = $this->getOperatorsRequest($accept, $limit, $contentType);
+        $request = $this->getOperatorsRequest($limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -665,16 +656,14 @@ class OperatorApi
     /**
      * Create request for operation 'getOperators'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOperatorsRequest($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getOperators'][0])
+    public function getOperatorsRequest($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
-
 
 
 
@@ -695,13 +684,14 @@ class OperatorApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {

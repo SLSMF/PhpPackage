@@ -12,7 +12,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getCatalogEntries()`
 
 ```php
-getCatalogEntries($accept, $country, $limit): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntries($country, $limit): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve list of all catalog entries.
@@ -36,12 +36,11 @@ $apiInstance = new SLSMF\Client\Api\CatalogApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accept = 'application/json'; // string | hidden-parameter
 $country = 'country_example'; // string | country iso2
 $limit = 10; // int | A hard limit on the amount of returned values.
 
 try {
-    $result = $apiInstance->getCatalogEntries($accept, $country, $limit);
+    $result = $apiInstance->getCatalogEntries($country, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntries: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +51,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 | **country** | **string**| country iso2 | [optional] |
 | **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
 
@@ -76,7 +74,7 @@ try {
 ## `getCatalogEntryByCode()`
 
 ```php
-getCatalogEntryByCode($code, $accept): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByCode($code): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve specific catalog entry by it's catalog identifier.
@@ -101,10 +99,9 @@ $apiInstance = new SLSMF\Client\Api\CatalogApi(
     $config
 );
 $code = 'SSC-abas'; // string | SSC-code
-$accept = 'application/json'; // string | hidden-parameter
 
 try {
-    $result = $apiInstance->getCatalogEntryByCode($code, $accept);
+    $result = $apiInstance->getCatalogEntryByCode($code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntryByCode: ', $e->getMessage(), PHP_EOL;
@@ -116,7 +113,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| SSC-code | [default to &#39;SSC-abas&#39;] |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 
 ### Return type
 
@@ -138,7 +134,7 @@ try {
 ## `getCatalogEntryByOrganisationAndCode()`
 
 ```php
-getCatalogEntryByOrganisationAndCode($organisation, $code, $accept): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByOrganisationAndCode($organisation, $code): \SLSMF\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve a specific catalog entry by it's external identifier.
@@ -164,10 +160,9 @@ $apiInstance = new SLSMF\Client\Api\CatalogApi(
 );
 $organisation = 'ioc'; // string | The source organisation for the provided code.
 $code = 'abas'; // string | Search the catalog by an external code.
-$accept = 'application/json'; // string | hidden-parameter
 
 try {
-    $result = $apiInstance->getCatalogEntryByOrganisationAndCode($organisation, $code, $accept);
+    $result = $apiInstance->getCatalogEntryByOrganisationAndCode($organisation, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntryByOrganisationAndCode: ', $e->getMessage(), PHP_EOL;
@@ -180,7 +175,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The source organisation for the provided code. | [default to &#39;ioc&#39;] |
 | **code** | **string**| Search the catalog by an external code. | [default to &#39;abas&#39;] |
-| **accept** | **string**| hidden-parameter | [optional] [default to &#39;application/json&#39;] |
 
 ### Return type
 

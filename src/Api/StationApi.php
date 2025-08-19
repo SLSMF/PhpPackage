@@ -147,16 +147,15 @@ class StationApi
      * Retrieve latest message for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationMessageJsonInner[]
      */
-    public function getLatestStationMessage($code, $accept = 'application/json', string $contentType = self::contentTypes['getLatestStationMessage'][0])
+    public function getLatestStationMessage($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
-        list($response) = $this->getLatestStationMessageWithHttpInfo($code, $accept, $contentType);
+        list($response) = $this->getLatestStationMessageWithHttpInfo($code, $contentType);
         return $response;
     }
 
@@ -166,16 +165,15 @@ class StationApi
      * Retrieve latest message for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationMessageJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLatestStationMessageWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getLatestStationMessage'][0])
+    public function getLatestStationMessageWithHttpInfo($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
-        $request = $this->getLatestStationMessageRequest($code, $accept, $contentType);
+        $request = $this->getLatestStationMessageRequest($code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -291,15 +289,14 @@ class StationApi
      * Retrieve latest message for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLatestStationMessageAsync($code, $accept = 'application/json', string $contentType = self::contentTypes['getLatestStationMessage'][0])
+    public function getLatestStationMessageAsync($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
-        return $this->getLatestStationMessageAsyncWithHttpInfo($code, $accept, $contentType)
+        return $this->getLatestStationMessageAsyncWithHttpInfo($code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -313,16 +310,15 @@ class StationApi
      * Retrieve latest message for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLatestStationMessageAsyncWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getLatestStationMessage'][0])
+    public function getLatestStationMessageAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationMessageJsonInner[]';
-        $request = $this->getLatestStationMessageRequest($code, $accept, $contentType);
+        $request = $this->getLatestStationMessageRequest($code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -364,13 +360,12 @@ class StationApi
      * Create request for operation 'getLatestStationMessage'
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLatestStationMessageRequest($code, $accept = 'application/json', string $contentType = self::contentTypes['getLatestStationMessage'][0])
+    public function getLatestStationMessageRequest($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -387,7 +382,6 @@ class StationApi
         }
         
 
-
         $resourcePath = '/v2/stations/{code}/message';
         $formParams = [];
         $queryParams = [];
@@ -396,10 +390,6 @@ class StationApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($code !== null) {
@@ -411,6 +401,11 @@ class StationApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -470,16 +465,15 @@ class StationApi
      * Retrieve metadata for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationJsonInner[]
      */
-    public function getStationByCode($code, $accept = 'application/json', string $contentType = self::contentTypes['getStationByCode'][0])
+    public function getStationByCode($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
-        list($response) = $this->getStationByCodeWithHttpInfo($code, $accept, $contentType);
+        list($response) = $this->getStationByCodeWithHttpInfo($code, $contentType);
         return $response;
     }
 
@@ -489,16 +483,15 @@ class StationApi
      * Retrieve metadata for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationByCodeWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getStationByCode'][0])
+    public function getStationByCodeWithHttpInfo($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
-        $request = $this->getStationByCodeRequest($code, $accept, $contentType);
+        $request = $this->getStationByCodeRequest($code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -614,15 +607,14 @@ class StationApi
      * Retrieve metadata for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationByCodeAsync($code, $accept = 'application/json', string $contentType = self::contentTypes['getStationByCode'][0])
+    public function getStationByCodeAsync($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
-        return $this->getStationByCodeAsyncWithHttpInfo($code, $accept, $contentType)
+        return $this->getStationByCodeAsyncWithHttpInfo($code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -636,16 +628,15 @@ class StationApi
      * Retrieve metadata for a station.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationByCodeAsyncWithHttpInfo($code, $accept = 'application/json', string $contentType = self::contentTypes['getStationByCode'][0])
+    public function getStationByCodeAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationJsonInner[]';
-        $request = $this->getStationByCodeRequest($code, $accept, $contentType);
+        $request = $this->getStationByCodeRequest($code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -687,13 +678,12 @@ class StationApi
      * Create request for operation 'getStationByCode'
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationByCodeRequest($code, $accept = 'application/json', string $contentType = self::contentTypes['getStationByCode'][0])
+    public function getStationByCodeRequest($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -710,7 +700,6 @@ class StationApi
         }
         
 
-
         $resourcePath = '/v2/stations/{code}';
         $formParams = [];
         $queryParams = [];
@@ -719,10 +708,6 @@ class StationApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($code !== null) {
@@ -734,6 +719,11 @@ class StationApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -793,13 +783,12 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden_accept_parameter_data (optional, default to 'application/json')
-     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-23T14:08')
-     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30T14:08')
+     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-12T11:34')
+     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19T11:34')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $nofilter Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values (optional, default to false)
      * @param  bool $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-06-30T14:08')
+     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-08-19T11:34')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
@@ -807,9 +796,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationDataJsonInner[]
      */
-    public function getStationData($code, $accept = 'application/json', $timestart = '2025-06-23T14:08', $timestop = '2025-06-30T14:08', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-06-30T14:08', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationData($code, $timestart = '2025-08-12T11:34', $timestop = '2025-08-19T11:34', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-08-19T11:34', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
-        list($response) = $this->getStationDataWithHttpInfo($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
+        list($response) = $this->getStationDataWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
         return $response;
     }
 
@@ -819,13 +808,12 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden_accept_parameter_data (optional, default to 'application/json')
-     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-23T14:08')
-     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30T14:08')
+     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-12T11:34')
+     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19T11:34')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $nofilter Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values (optional, default to false)
      * @param  bool $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-06-30T14:08')
+     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-08-19T11:34')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
@@ -833,9 +821,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationDataJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationDataWithHttpInfo($code, $accept = 'application/json', $timestart = '2025-06-23T14:08', $timestop = '2025-06-30T14:08', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-06-30T14:08', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataWithHttpInfo($code, $timestart = '2025-08-12T11:34', $timestop = '2025-08-19T11:34', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-08-19T11:34', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
-        $request = $this->getStationDataRequest($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
+        $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -951,22 +939,21 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden_accept_parameter_data (optional, default to 'application/json')
-     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-23T14:08')
-     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30T14:08')
+     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-12T11:34')
+     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19T11:34')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $nofilter Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values (optional, default to false)
      * @param  bool $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-06-30T14:08')
+     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-08-19T11:34')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsync($code, $accept = 'application/json', $timestart = '2025-06-23T14:08', $timestop = '2025-06-30T14:08', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-06-30T14:08', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsync($code, $timestart = '2025-08-12T11:34', $timestop = '2025-08-19T11:34', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-08-19T11:34', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
-        return $this->getStationDataAsyncWithHttpInfo($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType)
+        return $this->getStationDataAsyncWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -980,23 +967,22 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden_accept_parameter_data (optional, default to 'application/json')
-     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-23T14:08')
-     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30T14:08')
+     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-12T11:34')
+     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19T11:34')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $nofilter Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values (optional, default to false)
      * @param  bool $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-06-30T14:08')
+     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-08-19T11:34')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsyncWithHttpInfo($code, $accept = 'application/json', $timestart = '2025-06-23T14:08', $timestop = '2025-06-30T14:08', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-06-30T14:08', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsyncWithHttpInfo($code, $timestart = '2025-08-12T11:34', $timestop = '2025-08-19T11:34', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-08-19T11:34', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationDataJsonInner[]';
-        $request = $this->getStationDataRequest($code, $accept, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
+        $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,20 +1024,19 @@ class StationApi
      * Create request for operation 'getStationData'
      *
      * @param  string $code Station code used in query (required)
-     * @param  string $accept hidden_accept_parameter_data (optional, default to 'application/json')
-     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-23T14:08')
-     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-06-30T14:08')
+     * @param  string $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-12T11:34')
+     * @param  string $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2025-08-19T11:34')
      * @param  string[] $includesensors sensors to include (optional)
      * @param  bool $nofilter Will show all values, otherwise only values &gt; -999 and values &lt; 999 are used; note: -999 is used for missing values (optional, default to false)
      * @param  bool $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-06-30T14:08')
+     * @param  string $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;.  if there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2025-08-19T11:34')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationDataRequest($code, $accept = 'application/json', $timestart = '2025-06-23T14:08', $timestop = '2025-06-30T14:08', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-06-30T14:08', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataRequest($code, $timestart = '2025-08-12T11:34', $timestop = '2025-08-19T11:34', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2025-08-19T11:34', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1067,7 +1052,6 @@ class StationApi
             throw new \InvalidArgumentException('invalid length for "$code" when calling StationApi.getStationData, must be bigger than or equal to 4.');
         }
         
-
         if ($timestart !== null && !preg_match("/^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}| \\d{2}:\\d{2}:\\d{2}|T\\d{2}:\\d{2}:\\d{2}|T\\d{2}:\\d{2}:\\d{2}Z)?$/", $timestart)) {
             throw new \InvalidArgumentException("invalid value for \"timestart\" when calling StationApi.getStationData, must conform to the pattern /^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}| \\d{2}:\\d{2}:\\d{2}|T\\d{2}:\\d{2}:\\d{2}|T\\d{2}:\\d{2}:\\d{2}Z)?$/.");
         }
@@ -1153,10 +1137,6 @@ class StationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($code !== null) {
@@ -1168,6 +1148,11 @@ class StationApi
         }
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', 'text/html', 'text/plain; format=asc', 'text/plain; format=xtab', 'text/plain; format=ascii', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1226,7 +1211,6 @@ class StationApi
      *
      * Retrieve performance info for stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1238,9 +1222,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationPerformanceJsonInner[]
      */
-    public function getStationPerformance($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
+    public function getStationPerformance($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
-        list($response) = $this->getStationPerformanceWithHttpInfo($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        list($response) = $this->getStationPerformanceWithHttpInfo($showall, $operator, $order, $dir, $limit, $contentType);
         return $response;
     }
 
@@ -1249,7 +1233,6 @@ class StationApi
      *
      * Retrieve performance info for stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1261,9 +1244,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationPerformanceJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationPerformanceWithHttpInfo($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
+    public function getStationPerformanceWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
-        $request = $this->getStationPerformanceRequest($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        $request = $this->getStationPerformanceRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1378,7 +1361,6 @@ class StationApi
      *
      * Retrieve performance info for stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1389,9 +1371,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationPerformanceAsync($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
+    public function getStationPerformanceAsync($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
-        return $this->getStationPerformanceAsyncWithHttpInfo($accept, $showall, $operator, $order, $dir, $limit, $contentType)
+        return $this->getStationPerformanceAsyncWithHttpInfo($showall, $operator, $order, $dir, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1404,7 +1386,6 @@ class StationApi
      *
      * Retrieve performance info for stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1415,10 +1396,10 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationPerformanceAsyncWithHttpInfo($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
+    public function getStationPerformanceAsyncWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationPerformanceJsonInner[]';
-        $request = $this->getStationPerformanceRequest($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        $request = $this->getStationPerformanceRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1459,7 +1440,6 @@ class StationApi
     /**
      * Create request for operation 'getStationPerformance'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1470,9 +1450,8 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationPerformanceRequest($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
+    public function getStationPerformanceRequest($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
-
 
 
 
@@ -1533,13 +1512,14 @@ class StationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1598,7 +1578,6 @@ class StationApi
      *
      * Retrieve all stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1610,9 +1589,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationsJsonInner[]
      */
-    public function getStations($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
+    public function getStations($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
-        list($response) = $this->getStationsWithHttpInfo($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        list($response) = $this->getStationsWithHttpInfo($showall, $operator, $order, $dir, $limit, $contentType);
         return $response;
     }
 
@@ -1621,7 +1600,6 @@ class StationApi
      *
      * Retrieve all stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1633,9 +1611,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationsWithHttpInfo($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
+    public function getStationsWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
-        $request = $this->getStationsRequest($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        $request = $this->getStationsRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1750,7 +1728,6 @@ class StationApi
      *
      * Retrieve all stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1761,9 +1738,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsAsync($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
+    public function getStationsAsync($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
-        return $this->getStationsAsyncWithHttpInfo($accept, $showall, $operator, $order, $dir, $limit, $contentType)
+        return $this->getStationsAsyncWithHttpInfo($showall, $operator, $order, $dir, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1776,7 +1753,6 @@ class StationApi
      *
      * Retrieve all stations.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1787,10 +1763,10 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsAsyncWithHttpInfo($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
+    public function getStationsAsyncWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationsJsonInner[]';
-        $request = $this->getStationsRequest($accept, $showall, $operator, $order, $dir, $limit, $contentType);
+        $request = $this->getStationsRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1831,7 +1807,6 @@ class StationApi
     /**
      * Create request for operation 'getStations'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  string $showall datastreams (optional, default to 'all')
      * @param  int $operator Limit selection to operator. (optional)
      * @param  string $order order by (optional, default to 'code')
@@ -1842,9 +1817,8 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationsRequest($accept = 'application/json', $showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
+    public function getStationsRequest($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
-
 
 
 
@@ -1905,13 +1879,14 @@ class StationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1970,7 +1945,6 @@ class StationApi
      *
      * Retrieve stations map.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/vnd.google-earth.kml+xml')
      * @param  string $show datastreams (optional, default to 'ALL')
      * @param  int $wrap  (optional)
      * @param  string $code Highlight a station (optional)
@@ -1983,9 +1957,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\MapKmlXml
      */
-    public function getStationsMap($accept = 'application/vnd.google-earth.kml+xml', $show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
+    public function getStationsMap($show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
     {
-        list($response) = $this->getStationsMapWithHttpInfo($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
+        list($response) = $this->getStationsMapWithHttpInfo($show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
         return $response;
     }
 
@@ -1994,7 +1968,6 @@ class StationApi
      *
      * Retrieve stations map.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/vnd.google-earth.kml+xml')
      * @param  string $show datastreams (optional, default to 'ALL')
      * @param  int $wrap  (optional)
      * @param  string $code Highlight a station (optional)
@@ -2007,9 +1980,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\MapKmlXml, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationsMapWithHttpInfo($accept = 'application/vnd.google-earth.kml+xml', $show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
+    public function getStationsMapWithHttpInfo($show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
     {
-        $request = $this->getStationsMapRequest($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
+        $request = $this->getStationsMapRequest($show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2124,7 +2097,6 @@ class StationApi
      *
      * Retrieve stations map.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/vnd.google-earth.kml+xml')
      * @param  string $show datastreams (optional, default to 'ALL')
      * @param  int $wrap  (optional)
      * @param  string $code Highlight a station (optional)
@@ -2136,9 +2108,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsMapAsync($accept = 'application/vnd.google-earth.kml+xml', $show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
+    public function getStationsMapAsync($show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
     {
-        return $this->getStationsMapAsyncWithHttpInfo($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType)
+        return $this->getStationsMapAsyncWithHttpInfo($show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2151,7 +2123,6 @@ class StationApi
      *
      * Retrieve stations map.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/vnd.google-earth.kml+xml')
      * @param  string $show datastreams (optional, default to 'ALL')
      * @param  int $wrap  (optional)
      * @param  string $code Highlight a station (optional)
@@ -2163,10 +2134,10 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsMapAsyncWithHttpInfo($accept = 'application/vnd.google-earth.kml+xml', $show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
+    public function getStationsMapAsyncWithHttpInfo($show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
     {
         $returnType = '\SLSMF\Client\Model\MapKmlXml';
-        $request = $this->getStationsMapRequest($accept, $show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
+        $request = $this->getStationsMapRequest($show, $wrap, $code, $bbox, $showgauges, $showpar, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2207,7 +2178,6 @@ class StationApi
     /**
      * Create request for operation 'getStationsMap'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/vnd.google-earth.kml+xml')
      * @param  string $show datastreams (optional, default to 'ALL')
      * @param  int $wrap  (optional)
      * @param  string $code Highlight a station (optional)
@@ -2219,9 +2189,8 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationsMapRequest($accept = 'application/vnd.google-earth.kml+xml', $show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
+    public function getStationsMapRequest($show = 'ALL', $wrap = null, $code = null, $bbox = null, $showgauges = true, $showpar = 'status', string $contentType = self::contentTypes['getStationsMap'][0])
     {
-
 
 
         if ($wrap !== null && $wrap > 360) {
@@ -2304,13 +2273,14 @@ class StationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/vnd.google-earth.kml+xml', 'application/gml+xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2369,7 +2339,6 @@ class StationApi
      *
      * Retrieve stations with limited info.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
@@ -2377,9 +2346,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationsShortlistJsonInner[]
      */
-    public function getStationsShortlist($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
+    public function getStationsShortlist($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
-        list($response) = $this->getStationsShortlistWithHttpInfo($accept, $limit, $contentType);
+        list($response) = $this->getStationsShortlistWithHttpInfo($limit, $contentType);
         return $response;
     }
 
@@ -2388,7 +2357,6 @@ class StationApi
      *
      * Retrieve stations with limited info.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
@@ -2396,9 +2364,9 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationsShortlistJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationsShortlistWithHttpInfo($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
+    public function getStationsShortlistWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
-        $request = $this->getStationsShortlistRequest($accept, $limit, $contentType);
+        $request = $this->getStationsShortlistRequest($limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2513,16 +2481,15 @@ class StationApi
      *
      * Retrieve stations with limited info.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsShortlistAsync($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
+    public function getStationsShortlistAsync($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
-        return $this->getStationsShortlistAsyncWithHttpInfo($accept, $limit, $contentType)
+        return $this->getStationsShortlistAsyncWithHttpInfo($limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2535,17 +2502,16 @@ class StationApi
      *
      * Retrieve stations with limited info.
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationsShortlistAsyncWithHttpInfo($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
+    public function getStationsShortlistAsyncWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationsShortlistJsonInner[]';
-        $request = $this->getStationsShortlistRequest($accept, $limit, $contentType);
+        $request = $this->getStationsShortlistRequest($limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2586,16 +2552,14 @@ class StationApi
     /**
      * Create request for operation 'getStationsShortlist'
      *
-     * @param  string $accept hidden-parameter (optional, default to 'application/json')
      * @param  int $limit A hard limit on the amount of returned values. (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationsShortlistRequest($accept = 'application/json', $limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
+    public function getStationsShortlistRequest($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
-
 
 
 
@@ -2616,13 +2580,14 @@ class StationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/xml', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
