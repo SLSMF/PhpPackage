@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **timeorder** | **string** | Time order flag | [optional]
 **received** | **int** | Number of received messages | [optional]
 **expected** | **int** | Number of expected messages | [optional]
+**code** | **string** | Station code identifier | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

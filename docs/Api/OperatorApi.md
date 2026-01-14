@@ -1,6 +1,6 @@
-# SLSMF\Client\OperatorApi
+# OpenAPI\Client\OperatorApi
 
-All URIs are relative to http://api.sealevelmonitoring.local, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getOperatorById()`
 
 ```php
-getOperatorById($operator_id): \SLSMF\Client\Model\OperatorJsonInner[]
+getOperatorById($operator_id): \OpenAPI\Client\Model\OperatorJsonInner[]
 ```
 
 Get fullname of operator by ID.
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\OperatorApi(
+$apiInstance = new OpenAPI\Client\Api\OperatorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\OperatorJsonInner[]**](../Model/OperatorJsonInner.md)
+[**\OpenAPI\Client\Model\OperatorJsonInner[]**](../Model/OperatorJsonInner.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `getOperators()`
 
 ```php
-getOperators($limit): \SLSMF\Client\Model\OperatorsJsonInner[]
+getOperators($limit): \OpenAPI\Client\Model\OperatorsJsonInner[]
 ```
 
 List of operators
@@ -84,18 +84,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\OperatorApi(
+$apiInstance = new OpenAPI\Client\Api\OperatorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 10; // int | A hard limit on the amount of returned values.
+$limit = 10; // int | Maximum number of records returned per request
 
 try {
     $result = $apiInstance->getOperators($limit);
@@ -109,11 +109,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
+| **limit** | **int**| Maximum number of records returned per request | [optional] [default to 10] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\OperatorsJsonInner[]**](../Model/OperatorsJsonInner.md)
+[**\OpenAPI\Client\Model\OperatorsJsonInner[]**](../Model/OperatorsJsonInner.md)
 
 ### Authorization
 

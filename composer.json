@@ -1,5 +1,4 @@
 {
-    "name": "slsmf/php-client",
     "description": "API of the IOC sealevelmonitoring facility",
     "keywords": [
         "openapitools",
@@ -31,9 +30,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "SLSMF\\Client\\" : "src/" }
+        "psr-4": { "OpenAPI\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "SLSMF\\Client\\Test\\" : "test/" }
+        "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
     }
 }

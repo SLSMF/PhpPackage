@@ -1,6 +1,6 @@
-# SLSMF\Client\CatalogApi
+# OpenAPI\Client\CatalogApi
 
-All URIs are relative to http://api.sealevelmonitoring.local, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -12,7 +12,7 @@ All URIs are relative to http://api.sealevelmonitoring.local, except if the oper
 ## `getCatalogEntries()`
 
 ```php
-getCatalogEntries($country, $limit): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntries($country, $limit): \OpenAPI\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve list of all catalog entries.
@@ -25,19 +25,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new OpenAPI\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $country = 'country_example'; // string | country iso2
-$limit = 10; // int | A hard limit on the amount of returned values.
+$limit = 10; // int | Maximum number of records returned per request
 
 try {
     $result = $apiInstance->getCatalogEntries($country, $limit);
@@ -52,11 +52,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **country** | **string**| country iso2 | [optional] |
-| **limit** | **int**| A hard limit on the amount of returned values. | [optional] [default to 10] |
+| **limit** | **int**| Maximum number of records returned per request | [optional] [default to 10] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\OpenAPI\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `getCatalogEntryByCode()`
 
 ```php
-getCatalogEntryByCode($code): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByCode($code): \OpenAPI\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve specific catalog entry by it's catalog identifier.
@@ -87,12 +87,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new OpenAPI\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -116,7 +116,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\OpenAPI\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ try {
 ## `getCatalogEntryByOrganisationAndCode()`
 
 ```php
-getCatalogEntryByOrganisationAndCode($organisation, $code): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByOrganisationAndCode($organisation, $code): \OpenAPI\Client\Model\CatalogJsonInner[]
 ```
 
 Retrieve a specific catalog entry by it's external identifier.
@@ -147,12 +147,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new OpenAPI\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -178,7 +178,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\OpenAPI\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
 
 ### Authorization
 

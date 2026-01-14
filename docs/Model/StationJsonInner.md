@@ -33,9 +33,9 @@ Name | Type | Description | Notes
 **timestampupdate** | **string** | Timestamp update |
 **transmittype** | **string** | Type of transmission |
 **countryname** | **string** | Country name |
-**example** | **string** | Example data, can be null |
+**example_message** | **string** | Example data, can be null | [optional]
 **totmess** | **int** | Total messages |
 **expectedmess** | **int** | Expected messages |
-**sensor** | [**\SLSMF\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station |
+**sensor** | [**\OpenAPI\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

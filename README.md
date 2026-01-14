@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/SLSMF/PhpPackage.git"
+      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
     }
   ],
   "require": {
-    "SLSMF/PhpPackage": "*@dev"
+    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
   }
 }
 ```
@@ -50,19 +50,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new OpenAPI\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $country = 'country_example'; // string | country iso2
-$limit = 10; // int | A hard limit on the amount of returned values.
+$limit = 10; // int | Maximum number of records returned per request
 
 try {
     $result = $apiInstance->getCatalogEntries($country, $limit);
@@ -75,7 +75,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://api.sealevelmonitoring.local*
+All URIs are relative to *http://devapi.ioc-sealevelmonitoring.org*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

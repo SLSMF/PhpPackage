@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **vlizstatus** | **string** | Current status of the station | [optional]
 **vliztransmitrate** | **string** | Transmission rate of the station | [optional]
 **vlizzindex** | **int** | Z-index for ordering | [optional]
-**vlizgraphic_name** | **string** | Graphic name or type of icon used for the point | [optional]
+**vlizgraphic_name** | **string** | Graphic name or type of icon used for the point placemark | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
