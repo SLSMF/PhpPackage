@@ -1,4 +1,5 @@
 {
+    "name": "slsmf/php-package",
     "description": "API of the IOC sealevelmonitoring facility",
     "keywords": [
         "openapitools",
