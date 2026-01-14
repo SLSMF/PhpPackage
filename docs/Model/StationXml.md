@@ -35,6 +35,6 @@ Name | Type | Description | Notes
 **countryname** | **string** | Country name |
 **totmess** | **int** | Total messages |
 **expectedmess** | **int** | Expected messages |
-**sensor** | [**\SLSMF\\Client\Model\StationXmlSensorInner[]**](StationXmlSensorInner.md) | Sensor information for the station |
+**sensor** | [**\SLSMF\Client\Model\StationXmlSensorInner[]**](StationXmlSensorInner.md) | Sensor information for the station |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

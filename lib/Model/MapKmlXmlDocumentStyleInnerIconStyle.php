@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * MapKmlXmlDocumentStyleInnerIconStyle Class Doc Comment
  *
  * @category Class
  * @description Defines the icon style for placemarks
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class MapKmlXmlDocumentStyleInnerIconStyle implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'icon' => '\SLSMF\\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon',
+        'icon' => '\SLSMF\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon',
         'scale' => 'float'
     ];
 
@@ -301,7 +301,7 @@ class MapKmlXmlDocumentStyleInnerIconStyle implements ModelInterface, ArrayAcces
     /**
      * Gets icon
      *
-     * @return \SLSMF\\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon|null
+     * @return \SLSMF\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon|null
      */
     public function getIcon()
     {
@@ -311,7 +311,7 @@ class MapKmlXmlDocumentStyleInnerIconStyle implements ModelInterface, ArrayAcces
     /**
      * Sets icon
      *
-     * @param \SLSMF\\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon|null $icon icon
+     * @param \SLSMF\Client\Model\MapKmlXmlDocumentStyleInnerIconStyleIcon|null $icon icon
      *
      * @return self
      */

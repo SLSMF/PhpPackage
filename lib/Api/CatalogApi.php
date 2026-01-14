@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use SLSMF\\Client\ApiException;
-use SLSMF\\Client\Configuration;
-use SLSMF\\Client\HeaderSelector;
-use SLSMF\\Client\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * CatalogApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -138,9 +138,9 @@ class CatalogApi
      * @param  int $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\CatalogJsonInner[]
+     * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
     public function getCatalogEntries($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
@@ -157,9 +157,9 @@ class CatalogApi
      * @param  int $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntries'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCatalogEntriesWithHttpInfo($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
@@ -202,11 +202,11 @@ class CatalogApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\CatalogJsonInner[]' !== 'string') {
+                        if ('\SLSMF\Client\Model\CatalogJsonInner[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -224,13 +224,13 @@ class CatalogApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\CatalogJsonInner[]', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\CatalogJsonInner[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+            $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -263,7 +263,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\CatalogJsonInner[]',
+                        '\SLSMF\Client\Model\CatalogJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -309,7 +309,7 @@ class CatalogApi
      */
     public function getCatalogEntriesAsyncWithHttpInfo($country = null, $limit = 10, string $contentType = self::contentTypes['getCatalogEntries'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
         $request = $this->getCatalogEntriesRequest($country, $limit, $contentType);
 
         return $this->client
@@ -459,9 +459,9 @@ class CatalogApi
      * @param  string $code SSC-code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\CatalogJsonInner[]
+     * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
     public function getCatalogEntryByCode($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
@@ -477,9 +477,9 @@ class CatalogApi
      * @param  string $code SSC-code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByCode'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCatalogEntryByCodeWithHttpInfo($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
@@ -522,11 +522,11 @@ class CatalogApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\CatalogJsonInner[]' !== 'string') {
+                        if ('\SLSMF\Client\Model\CatalogJsonInner[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -544,13 +544,13 @@ class CatalogApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\CatalogJsonInner[]', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\CatalogJsonInner[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+            $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -583,7 +583,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\CatalogJsonInner[]',
+                        '\SLSMF\Client\Model\CatalogJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -627,7 +627,7 @@ class CatalogApi
      */
     public function getCatalogEntryByCodeAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getCatalogEntryByCode'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
         $request = $this->getCatalogEntryByCodeRequest($code, $contentType);
 
         return $this->client
@@ -772,9 +772,9 @@ class CatalogApi
      * @param  string $code Search the catalog by an external code. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\CatalogJsonInner[]
+     * @return \SLSMF\Client\Model\CatalogJsonInner[]
      */
     public function getCatalogEntryByOrganisationAndCode($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
@@ -791,9 +791,9 @@ class CatalogApi
      * @param  string $code Search the catalog by an external code. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCatalogEntryByOrganisationAndCode'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\CatalogJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCatalogEntryByOrganisationAndCodeWithHttpInfo($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
@@ -836,11 +836,11 @@ class CatalogApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\CatalogJsonInner[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\CatalogJsonInner[]' !== 'string') {
+                        if ('\SLSMF\Client\Model\CatalogJsonInner[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -858,13 +858,13 @@ class CatalogApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\CatalogJsonInner[]', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\CatalogJsonInner[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+            $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -897,7 +897,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\CatalogJsonInner[]',
+                        '\SLSMF\Client\Model\CatalogJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -943,7 +943,7 @@ class CatalogApi
      */
     public function getCatalogEntryByOrganisationAndCodeAsyncWithHttpInfo($organisation, $code, string $contentType = self::contentTypes['getCatalogEntryByOrganisationAndCode'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\CatalogJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\CatalogJsonInner[]';
         $request = $this->getCatalogEntryByOrganisationAndCodeRequest($organisation, $code, $contentType);
 
         return $this->client

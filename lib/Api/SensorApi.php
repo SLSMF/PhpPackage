@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use SLSMF\\Client\ApiException;
-use SLSMF\\Client\Configuration;
-use SLSMF\\Client\HeaderSelector;
-use SLSMF\\Client\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * SensorApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -132,9 +132,9 @@ class SensorApi
      * @param  int $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\SensorsJsonInner[]
+     * @return \SLSMF\Client\Model\SensorsJsonInner[]
      */
     public function getSensors($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
@@ -151,9 +151,9 @@ class SensorApi
      * @param  int $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\SensorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\SensorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSensorsWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
@@ -196,11 +196,11 @@ class SensorApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\SensorsJsonInner[]' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\SensorsJsonInner[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\SensorsJsonInner[]' !== 'string') {
+                        if ('\SLSMF\Client\Model\SensorsJsonInner[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -218,13 +218,13 @@ class SensorApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\SensorsJsonInner[]', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\SensorsJsonInner[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SLSMF\\Client\Model\SensorsJsonInner[]';
+            $returnType = '\SLSMF\Client\Model\SensorsJsonInner[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -257,7 +257,7 @@ class SensorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\SensorsJsonInner[]',
+                        '\SLSMF\Client\Model\SensorsJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -303,7 +303,7 @@ class SensorApi
      */
     public function getSensorsAsyncWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\SensorsJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\SensorsJsonInner[]';
         $request = $this->getSensorsRequest($showall, $limit, $contentType);
 
         return $this->client

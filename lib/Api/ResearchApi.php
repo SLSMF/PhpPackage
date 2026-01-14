@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use SLSMF\\Client\ApiException;
-use SLSMF\\Client\Configuration;
-use SLSMF\\Client\HeaderSelector;
-use SLSMF\\Client\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * ResearchApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -147,7 +147,7 @@ class ResearchApi
      * @param  bool $fit_sample_interval Make time series regular, based on the sample rate. This is done by rounding down timestamps to the nearest fixed time intervals, and by adding missing records with slevel &#x3D; NA (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -181,7 +181,7 @@ class ResearchApi
      * @param  bool $fit_sample_interval Make time series regular, based on the sample rate. This is done by rounding down timestamps to the nearest fixed time intervals, and by adding missing records with slevel &#x3D; NA (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */

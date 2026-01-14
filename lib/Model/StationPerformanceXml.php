@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationPerformanceXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing the performance and metadata of stations in XML format
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class StationPerformanceXml implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'station' => '\SLSMF\\Client\Model\StationPerformanceXmlStationInner[]'
+        'station' => '\SLSMF\Client\Model\StationPerformanceXmlStationInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class StationPerformanceXml implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets station
      *
-     * @return \SLSMF\\Client\Model\StationPerformanceXmlStationInner[]|null
+     * @return \SLSMF\Client\Model\StationPerformanceXmlStationInner[]|null
      */
     public function getStation()
     {
@@ -304,7 +304,7 @@ class StationPerformanceXml implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets station
      *
-     * @param \SLSMF\\Client\Model\StationPerformanceXmlStationInner[]|null $station A single station entry
+     * @param \SLSMF\Client\Model\StationPerformanceXmlStationInner[]|null $station A single station entry
      *
      * @return self
      */

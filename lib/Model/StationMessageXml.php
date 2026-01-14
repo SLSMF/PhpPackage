@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationMessageXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing a response with example data, measurements, and timestamps in XML format
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class StationMessageXml implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'response' => '\SLSMF\\Client\Model\StationMessageXmlResponseInner[]'
+        'response' => '\SLSMF\Client\Model\StationMessageXmlResponseInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class StationMessageXml implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets response
      *
-     * @return \SLSMF\\Client\Model\StationMessageXmlResponseInner[]|null
+     * @return \SLSMF\Client\Model\StationMessageXmlResponseInner[]|null
      */
     public function getResponse()
     {
@@ -304,7 +304,7 @@ class StationMessageXml implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets response
      *
-     * @param \SLSMF\\Client\Model\StationMessageXmlResponseInner[]|null $response A single response entry
+     * @param \SLSMF\Client\Model\StationMessageXmlResponseInner[]|null $response A single response entry
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationJsonInner Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -90,7 +90,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\SLSMF\\Client\Model\StationJsonInnerSensorInner[]'
+        'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]'
     ];
 
     /**
@@ -1543,7 +1543,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensor
      *
-     * @return \SLSMF\\Client\Model\StationJsonInnerSensorInner[]
+     * @return \SLSMF\Client\Model\StationJsonInnerSensorInner[]
      */
     public function getSensor()
     {
@@ -1553,7 +1553,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensor
      *
-     * @param \SLSMF\\Client\Model\StationJsonInnerSensorInner[] $sensor Sensor information for the station
+     * @param \SLSMF\Client\Model\StationJsonInnerSensorInner[] $sensor Sensor information for the station
      *
      * @return self
      */

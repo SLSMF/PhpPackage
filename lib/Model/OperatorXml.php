@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * OperatorXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing an operator with only the full name in XML format
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class OperatorXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'operator' => '\SLSMF\\Client\Model\OperatorXmlOperatorInner[]'
+        'operator' => '\SLSMF\Client\Model\OperatorXmlOperatorInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class OperatorXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets operator
      *
-     * @return \SLSMF\\Client\Model\OperatorXmlOperatorInner[]|null
+     * @return \SLSMF\Client\Model\OperatorXmlOperatorInner[]|null
      */
     public function getOperator()
     {
@@ -304,7 +304,7 @@ class OperatorXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets operator
      *
-     * @param \SLSMF\\Client\Model\OperatorXmlOperatorInner[]|null $operator A single operator entry
+     * @param \SLSMF\Client\Model\OperatorXmlOperatorInner[]|null $operator A single operator entry
      *
      * @return self
      */

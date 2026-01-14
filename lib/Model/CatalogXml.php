@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * CatalogXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing SSC station data in XML format
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class CatalogXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'xmlnsxsi' => 'string',
         'xmlnsdcterms' => 'string',
         'xmlnsgeo' => 'string',
-        'station' => '\SLSMF\\Client\Model\CatalogXmlStationInner[]'
+        'station' => '\SLSMF\Client\Model\CatalogXmlStationInner[]'
     ];
 
     /**
@@ -396,7 +396,7 @@ class CatalogXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets station
      *
-     * @return \SLSMF\\Client\Model\CatalogXmlStationInner[]|null
+     * @return \SLSMF\Client\Model\CatalogXmlStationInner[]|null
      */
     public function getStation()
     {
@@ -406,7 +406,7 @@ class CatalogXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets station
      *
-     * @param \SLSMF\\Client\Model\CatalogXmlStationInner[]|null $station A station within the list
+     * @param \SLSMF\Client\Model\CatalogXmlStationInner[]|null $station A station within the list
      *
      * @return self
      */

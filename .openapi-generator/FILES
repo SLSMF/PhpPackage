@@ -120,12 +120,3 @@ lib/Model/TideModelJson.php
 lib/Model/TideModelJsonDataInner.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/StationResearchDataDetidedJsonDataInnerTest.php
-test/Model/StationResearchDataDetidedJsonTest.php
-test/Model/StationResearchDataJsonDataInnerTest.php
-test/Model/StationResearchDataJsonPaginationTest.php
-test/Model/StationResearchDataJsonTest.php
-test/Model/StationResearchDataPredictedJsonDataInnerTest.php
-test/Model/StationResearchDataPredictedJsonTest.php
-test/Model/TideModelJsonDataInnerTest.php
-test/Model/TideModelJsonTest.php
