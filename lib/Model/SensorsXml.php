@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * SensorsXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing a list of sensors and their associated metadata in XML format
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class SensorsXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sensor' => '\OpenAPI\Client\Model\SensorsXmlSensorInner[]'
+        'sensor' => '\SLSMF\\Client\Model\SensorsXmlSensorInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class SensorsXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensor
      *
-     * @return \OpenAPI\Client\Model\SensorsXmlSensorInner[]|null
+     * @return \SLSMF\\Client\Model\SensorsXmlSensorInner[]|null
      */
     public function getSensor()
     {
@@ -304,7 +304,7 @@ class SensorsXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensor
      *
-     * @param \OpenAPI\Client\Model\SensorsXmlSensorInner[]|null $sensor A sensor within the list
+     * @param \SLSMF\\Client\Model\SensorsXmlSensorInner[]|null $sensor A sensor within the list
      *
      * @return self
      */

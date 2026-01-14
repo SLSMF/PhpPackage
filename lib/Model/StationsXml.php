@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationsXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing a list of monitoring stations in XML format
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class StationsXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'station' => '\OpenAPI\Client\Model\StationsXmlStationInner[]'
+        'station' => '\SLSMF\\Client\Model\StationsXmlStationInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class StationsXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets station
      *
-     * @return \OpenAPI\Client\Model\StationsXmlStationInner[]|null
+     * @return \SLSMF\\Client\Model\StationsXmlStationInner[]|null
      */
     public function getStation()
     {
@@ -304,7 +304,7 @@ class StationsXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets station
      *
-     * @param \OpenAPI\Client\Model\StationsXmlStationInner[]|null $station A station within the list
+     * @param \SLSMF\\Client\Model\StationsXmlStationInner[]|null $station A station within the list
      *
      * @return self
      */

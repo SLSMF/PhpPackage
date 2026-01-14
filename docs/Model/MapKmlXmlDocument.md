@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | The name of the KML document | [optional]
-**style** | [**\OpenAPI\Client\Model\MapKmlXmlDocumentStyleInner[]**](MapKmlXmlDocumentStyleInner.md) | Styles applied to the placemarks | [optional]
-**placemark** | [**\OpenAPI\Client\Model\MapKmlXmlDocumentPlacemarkInner[]**](MapKmlXmlDocumentPlacemarkInner.md) | Geographical features represented as placemarks | [optional]
+**style** | [**\SLSMF\\Client\Model\MapKmlXmlDocumentStyleInner[]**](MapKmlXmlDocumentStyleInner.md) | Styles applied to the placemarks | [optional]
+**placemark** | [**\SLSMF\\Client\Model\MapKmlXmlDocumentPlacemarkInner[]**](MapKmlXmlDocumentPlacemarkInner.md) | Geographical features represented as placemarks | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

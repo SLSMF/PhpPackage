@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * MapGmlXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing a GML FeatureCollection with geographic points
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class MapGmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'gmlfeature_member' => '\OpenAPI\Client\Model\MapGmlXmlGmlFeatureMemberInner[]'
+        'gmlfeature_member' => '\SLSMF\\Client\Model\MapGmlXmlGmlFeatureMemberInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class MapGmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gmlfeature_member
      *
-     * @return \OpenAPI\Client\Model\MapGmlXmlGmlFeatureMemberInner[]|null
+     * @return \SLSMF\\Client\Model\MapGmlXmlGmlFeatureMemberInner[]|null
      */
     public function getGmlfeatureMember()
     {
@@ -304,7 +304,7 @@ class MapGmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmlfeature_member
      *
-     * @param \OpenAPI\Client\Model\MapGmlXmlGmlFeatureMemberInner[]|null $gmlfeature_member A collection of geographic features
+     * @param \SLSMF\\Client\Model\MapGmlXmlGmlFeatureMemberInner[]|null $gmlfeature_member A collection of geographic features
      *
      * @return self
      */

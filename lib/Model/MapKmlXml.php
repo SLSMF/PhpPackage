@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * MapKmlXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing the KML document for sealevel stations
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class MapKmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'document' => '\OpenAPI\Client\Model\MapKmlXmlDocument'
+        'document' => '\SLSMF\\Client\Model\MapKmlXmlDocument'
     ];
 
     /**
@@ -294,7 +294,7 @@ class MapKmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets document
      *
-     * @return \OpenAPI\Client\Model\MapKmlXmlDocument|null
+     * @return \SLSMF\\Client\Model\MapKmlXmlDocument|null
      */
     public function getDocument()
     {
@@ -304,7 +304,7 @@ class MapKmlXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets document
      *
-     * @param \OpenAPI\Client\Model\MapKmlXmlDocument|null $document document
+     * @param \SLSMF\\Client\Model\MapKmlXmlDocument|null $document document
      *
      * @return self
      */

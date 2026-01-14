@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationMessageJsonInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -296,6 +296,9 @@ class StationMessageJsonInner implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
+        if ($this->container['example_message'] === null) {
+            $invalidProperties[] = "'example_message' can't be null";
+        }
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
         }
@@ -323,7 +326,7 @@ class StationMessageJsonInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets example_message
      *
-     * @return string|null
+     * @return string
      */
     public function getExampleMessage()
     {
@@ -333,7 +336,7 @@ class StationMessageJsonInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets example_message
      *
-     * @param string|null $example_message Example message content in raw string format
+     * @param string $example_message Example message content in raw string format
      *
      * @return self
      */

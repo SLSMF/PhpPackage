@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing the metadata for a station in XML format
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,6 +59,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'example_message' => 'string',
         'code' => 'string',
         'location' => 'string',
         'country' => 'string',
@@ -89,7 +90,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\OpenAPI\Client\Model\StationXmlSensorInner[]'
+        'sensor' => '\SLSMF\\Client\Model\StationXmlSensorInner[]'
     ];
 
     /**
@@ -100,6 +101,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'example_message' => null,
         'code' => null,
         'location' => null,
         'country' => null,
@@ -139,6 +141,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'example_message' => true,
         'code' => false,
         'location' => false,
         'country' => false,
@@ -258,6 +261,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'example_message' => 'example_message',
         'code' => 'Code',
         'location' => 'Location',
         'country' => 'country',
@@ -297,6 +301,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'example_message' => 'setExampleMessage',
         'code' => 'setCode',
         'location' => 'setLocation',
         'country' => 'setCountry',
@@ -336,6 +341,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'example_message' => 'getExampleMessage',
         'code' => 'getCode',
         'location' => 'getLocation',
         'country' => 'getCountry',
@@ -426,6 +432,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('example_message', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('location', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
@@ -486,6 +493,9 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['example_message'] === null) {
+            $invalidProperties[] = "'example_message' can't be null";
+        }
         if ($this->container['code'] === null) {
             $invalidProperties[] = "'code' can't be null";
         }
@@ -593,6 +603,40 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets example_message
+     *
+     * @return string
+     */
+    public function getExampleMessage()
+    {
+        return $this->container['example_message'];
+    }
+
+    /**
+     * Sets example_message
+     *
+     * @param string $example_message Example data, can be null
+     *
+     * @return self
+     */
+    public function setExampleMessage($example_message)
+    {
+        if (is_null($example_message)) {
+            array_push($this->openAPINullablesSetToNull, 'example_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('example_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['example_message'] = $example_message;
+
+        return $this;
+    }
 
     /**
      * Gets code
@@ -1456,7 +1500,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensor
      *
-     * @return \OpenAPI\Client\Model\StationXmlSensorInner[]
+     * @return \SLSMF\\Client\Model\StationXmlSensorInner[]
      */
     public function getSensor()
     {
@@ -1466,7 +1510,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensor
      *
-     * @param \OpenAPI\Client\Model\StationXmlSensorInner[] $sensor Sensor information for the station
+     * @param \SLSMF\\Client\Model\StationXmlSensorInner[] $sensor Sensor information for the station
      *
      * @return self
      */

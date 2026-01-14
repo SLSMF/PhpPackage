@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationJsonInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -90,7 +90,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\OpenAPI\Client\Model\StationJsonInnerSensorInner[]'
+        'sensor' => '\SLSMF\\Client\Model\StationJsonInnerSensorInner[]'
     ];
 
     /**
@@ -585,6 +585,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['countryname'] === null) {
             $invalidProperties[] = "'countryname' can't be null";
+        }
+        if ($this->container['example_message'] === null) {
+            $invalidProperties[] = "'example_message' can't be null";
         }
         if ($this->container['totmess'] === null) {
             $invalidProperties[] = "'totmess' can't be null";
@@ -1452,7 +1455,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets example_message
      *
-     * @return string|null
+     * @return string
      */
     public function getExampleMessage()
     {
@@ -1462,7 +1465,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets example_message
      *
-     * @param string|null $example_message Example data, can be null
+     * @param string $example_message Example data, can be null
      *
      * @return self
      */
@@ -1540,7 +1543,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensor
      *
-     * @return \OpenAPI\Client\Model\StationJsonInnerSensorInner[]
+     * @return \SLSMF\\Client\Model\StationJsonInnerSensorInner[]
      */
     public function getSensor()
     {
@@ -1550,7 +1553,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensor
      *
-     * @param \OpenAPI\Client\Model\StationJsonInnerSensorInner[] $sensor Sensor information for the station
+     * @param \SLSMF\\Client\Model\StationJsonInnerSensorInner[] $sensor Sensor information for the station
      *
      * @return self
      */

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**example_message** | **string** | Example data, can be null |
 **code** | **string** | Station code identifier |
 **location** | **string** | Location name of the station |
 **country** | **string** | Country code where the station is located |
@@ -34,6 +35,6 @@ Name | Type | Description | Notes
 **countryname** | **string** | Country name |
 **totmess** | **int** | Total messages |
 **expectedmess** | **int** | Expected messages |
-**sensor** | [**\OpenAPI\Client\Model\StationXmlSensorInner[]**](StationXmlSensorInner.md) | Sensor information for the station |
+**sensor** | [**\SLSMF\\Client\Model\StationXmlSensorInner[]**](StationXmlSensorInner.md) | Sensor information for the station |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

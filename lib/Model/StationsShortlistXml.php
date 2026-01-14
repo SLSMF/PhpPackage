@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationsShortlistXml Class Doc Comment
  *
  * @category Class
  * @description Schema representing a shortlist of stations
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class StationsShortlistXml implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'station' => '\OpenAPI\Client\Model\StationsShortlistXmlStationInner[]'
+        'station' => '\SLSMF\\Client\Model\StationsShortlistXmlStationInner[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class StationsShortlistXml implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets station
      *
-     * @return \OpenAPI\Client\Model\StationsShortlistXmlStationInner[]|null
+     * @return \SLSMF\\Client\Model\StationsShortlistXmlStationInner[]|null
      */
     public function getStation()
     {
@@ -304,7 +304,7 @@ class StationsShortlistXml implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets station
      *
-     * @param \OpenAPI\Client\Model\StationsShortlistXmlStationInner[]|null $station A station within the list
+     * @param \SLSMF\\Client\Model\StationsShortlistXmlStationInner[]|null $station A station within the list
      *
      * @return self
      */

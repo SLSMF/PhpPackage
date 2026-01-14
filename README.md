@@ -1,4 +1,4 @@
-# php-client
+# SLSMFClient
 
 API of the IOC sealevelmonitoring facility
 
@@ -36,7 +36,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/php-client/vendor/autoload.php');
+require_once('/path/to/SLSMFClient/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -50,12 +50,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,13 +129,13 @@ Class | Method | HTTP request | Description
 - [StationPerformanceJsonInner](docs/Model/StationPerformanceJsonInner.md)
 - [StationPerformanceXml](docs/Model/StationPerformanceXml.md)
 - [StationPerformanceXmlStationInner](docs/Model/StationPerformanceXmlStationInner.md)
-- [StationResearchDataDetidedJsonInner](docs/Model/StationResearchDataDetidedJsonInner.md)
-- [StationResearchDataDetidedJsonInnerDataInner](docs/Model/StationResearchDataDetidedJsonInnerDataInner.md)
-- [StationResearchDataJsonInner](docs/Model/StationResearchDataJsonInner.md)
-- [StationResearchDataJsonInnerDataInner](docs/Model/StationResearchDataJsonInnerDataInner.md)
-- [StationResearchDataJsonInnerPagination](docs/Model/StationResearchDataJsonInnerPagination.md)
-- [StationResearchDataPredictedJsonInner](docs/Model/StationResearchDataPredictedJsonInner.md)
-- [StationResearchDataPredictedJsonInnerDataInner](docs/Model/StationResearchDataPredictedJsonInnerDataInner.md)
+- [StationResearchDataDetidedJson](docs/Model/StationResearchDataDetidedJson.md)
+- [StationResearchDataDetidedJsonDataInner](docs/Model/StationResearchDataDetidedJsonDataInner.md)
+- [StationResearchDataJson](docs/Model/StationResearchDataJson.md)
+- [StationResearchDataJsonDataInner](docs/Model/StationResearchDataJsonDataInner.md)
+- [StationResearchDataJsonPagination](docs/Model/StationResearchDataJsonPagination.md)
+- [StationResearchDataPredictedJson](docs/Model/StationResearchDataPredictedJson.md)
+- [StationResearchDataPredictedJsonDataInner](docs/Model/StationResearchDataPredictedJsonDataInner.md)
 - [StationXml](docs/Model/StationXml.md)
 - [StationXmlSensorInner](docs/Model/StationXmlSensorInner.md)
 - [StationsJsonInner](docs/Model/StationsJsonInner.md)
@@ -144,8 +144,8 @@ Class | Method | HTTP request | Description
 - [StationsShortlistXmlStationInner](docs/Model/StationsShortlistXmlStationInner.md)
 - [StationsXml](docs/Model/StationsXml.md)
 - [StationsXmlStationInner](docs/Model/StationsXmlStationInner.md)
-- [TideModelJsonInner](docs/Model/TideModelJsonInner.md)
-- [TideModelJsonInnerDataInner](docs/Model/TideModelJsonInnerDataInner.md)
+- [TideModelJson](docs/Model/TideModelJson.md)
+- [TideModelJsonDataInner](docs/Model/TideModelJsonDataInner.md)
 
 ## Authorization
 

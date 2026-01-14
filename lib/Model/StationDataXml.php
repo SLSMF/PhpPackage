@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace SLSMF\\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \SLSMF\\Client\ObjectSerializer;
 
 /**
  * StationDataXml Class Doc Comment
  *
  * @category Class
  * @description Sample XML Response
- * @package  OpenAPI\Client
+ * @package  SLSMF\\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class StationDataXml implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sample' => '\OpenAPI\Client\Model\StationDataXmlSample'
+        'sample' => '\SLSMF\\Client\Model\StationDataXmlSample'
     ];
 
     /**
@@ -294,7 +294,7 @@ class StationDataXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sample
      *
-     * @return \OpenAPI\Client\Model\StationDataXmlSample|null
+     * @return \SLSMF\\Client\Model\StationDataXmlSample|null
      */
     public function getSample()
     {
@@ -304,7 +304,7 @@ class StationDataXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sample
      *
-     * @param \OpenAPI\Client\Model\StationDataXmlSample|null $sample sample
+     * @param \SLSMF\\Client\Model\StationDataXmlSample|null $sample sample
      *
      * @return self
      */
