@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **slevel** | **float** |  |
 **prediction** | **float** |  |
 **residual** | **float** |  |
-**stime** | **\DateTime** |  |
+**stime** | **string** |  |
 **sensor** | **string** |  |
 **missing** | **string** |  | [optional]
 **out_of_range** | **string** |  | [optional]

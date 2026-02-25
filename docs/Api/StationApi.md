@@ -1,4 +1,6 @@
-# SLSMF\Client\StationApi
+# SLSMFClient\StationApi
+
+
 
 All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
@@ -16,7 +18,7 @@ All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the
 ## `getLatestStationMessage()`
 
 ```php
-getLatestStationMessage($code): \SLSMF\Client\Model\StationMessageJsonInner[]
+getLatestStationMessage($code): \SLSMFClient\Model\StationMessageJsonInner[]
 ```
 
 Retrieve latest message for a station.
@@ -29,18 +31,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$code = 'abas'; // string | Station code used in query
+$code = 'abas'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
 
 try {
     $result = $apiInstance->getLatestStationMessage($code);
@@ -54,11 +56,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
+| **code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;abas&#39;] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationMessageJsonInner[]**](../Model/StationMessageJsonInner.md)
+[**\SLSMFClient\Model\StationMessageJsonInner[]**](../Model/StationMessageJsonInner.md)
 
 ### Authorization
 
@@ -76,7 +78,7 @@ try {
 ## `getStationByCode()`
 
 ```php
-getStationByCode($code): \SLSMF\Client\Model\StationJsonInner[]
+getStationByCode($code): \SLSMFClient\Model\StationJsonInner[]
 ```
 
 Retrieve metadata for a station.
@@ -89,18 +91,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$code = 'abas'; // string | Station code used in query
+$code = 'abas'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
 
 try {
     $result = $apiInstance->getStationByCode($code);
@@ -114,11 +116,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
+| **code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;abas&#39;] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationJsonInner[]**](../Model/StationJsonInner.md)
+[**\SLSMFClient\Model\StationJsonInner[]**](../Model/StationJsonInner.md)
 
 ### Authorization
 
@@ -136,7 +138,7 @@ try {
 ## `getStationData()`
 
 ```php
-getStationData($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit): \SLSMF\Client\Model\StationDataJsonInner[]
+getStationData($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit): \SLSMFClient\Model\StationDataJsonInner[]
 ```
 
 Retrieve data for a station with max 30 day limit or 150 000 records.
@@ -149,24 +151,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$code = 'abas'; // string | Station code used in query
-$timestart = '2026-01-07T19:33'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$timestop = '2026-01-14T19:33'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$code = 'abas'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
+$timestart = '2026-02-18T12:46'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestop = '2026-02-25T12:46'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $includesensors = array('includesensors_example'); // string[] | sensors to include, default is all sensors
 $nofilter = false; // bool | Include all values when true; when false excludes value -999 (missing value), default = false
 $allsensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
-$skip_gaps_until = '2026-01-14T19:33'; // string | Date in format 'YYYY-MM-DDTHH:MM'. If there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
+$skip_gaps_until = '2026-02-25T12:46'; // string | Date in format 'YYYY-MM-DDTHH:MM'. If there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
 $limit = 10; // int | Maximum number of records returned per request
 
 try {
@@ -181,18 +183,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Station code used in query | [default to &#39;abas&#39;] |
-| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-01-07T19:33&#39;] |
-| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-01-14T19:33&#39;] |
+| **code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;abas&#39;] |
+| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-02-18T12:46&#39;] |
+| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-02-25T12:46&#39;] |
 | **includesensors** | [**string[]**](../Model/string.md)| sensors to include, default is all sensors | [optional] |
 | **nofilter** | **bool**| Include all values when true; when false excludes value -999 (missing value), default &#x3D; false | [optional] [default to false] |
 | **allsensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |
-| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2026-01-14T19:33&#39;] |
+| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2026-02-25T12:46&#39;] |
 | **limit** | **int**| Maximum number of records returned per request | [optional] [default to 10] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationDataJsonInner[]**](../Model/StationDataJsonInner.md)
+[**\SLSMFClient\Model\StationDataJsonInner[]**](../Model/StationDataJsonInner.md)
 
 ### Authorization
 
@@ -201,7 +203,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `text/html`, `text/plain; format=asc`, `text/plain; format=xtab`, `text/plain; format=ascii`
+- **Accept**: `application/json`, `application/xml`, `text/html`, `text/plain; format=asc`, `text/plain; format=xtab`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -210,7 +212,7 @@ try {
 ## `getStationPerformance()`
 
 ```php
-getStationPerformance($showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationPerformanceJsonInner[]
+getStationPerformance($showall, $operator, $order, $dir, $limit): \SLSMFClient\Model\StationPerformanceJsonInner[]
 ```
 
 Retrieve performance info for stations.
@@ -223,12 +225,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -260,7 +262,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationPerformanceJsonInner[]**](../Model/StationPerformanceJsonInner.md)
+[**\SLSMFClient\Model\StationPerformanceJsonInner[]**](../Model/StationPerformanceJsonInner.md)
 
 ### Authorization
 
@@ -278,7 +280,7 @@ try {
 ## `getStations()`
 
 ```php
-getStations($showall, $operator, $order, $dir, $limit): \SLSMF\Client\Model\StationsJsonInner[]
+getStations($showall, $operator, $order, $dir, $limit): \SLSMFClient\Model\StationsJsonInner[]
 ```
 
 Retrieve all stations.
@@ -291,12 +293,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -328,7 +330,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationsJsonInner[]**](../Model/StationsJsonInner.md)
+[**\SLSMFClient\Model\StationsJsonInner[]**](../Model/StationsJsonInner.md)
 
 ### Authorization
 
@@ -346,7 +348,7 @@ try {
 ## `getStationsMap()`
 
 ```php
-getStationsMap($show, $wrap, $code, $bbox, $showgauges, $showpar): \SLSMF\Client\Model\MapKmlXml
+getStationsMap($show, $wrap, $code, $bbox, $showgauges, $showpar): string
 ```
 
 Retrieve stations map.
@@ -359,12 +361,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -398,7 +400,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\MapKmlXml**](../Model/MapKmlXml.md)
+**string**
 
 ### Authorization
 
@@ -416,7 +418,7 @@ try {
 ## `getStationsShortlist()`
 
 ```php
-getStationsShortlist($limit): \SLSMF\Client\Model\StationsShortlistJsonInner[]
+getStationsShortlist($limit): \SLSMFClient\Model\StationsShortlistJsonInner[]
 ```
 
 Retrieve stations with limited info.
@@ -429,12 +431,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\StationApi(
+$apiInstance = new SLSMFClient\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -458,7 +460,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\StationsShortlistJsonInner[]**](../Model/StationsShortlistJsonInner.md)
+[**\SLSMFClient\Model\StationsShortlistJsonInner[]**](../Model/StationsShortlistJsonInner.md)
 
 ### Authorization
 

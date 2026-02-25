@@ -7,8 +7,7 @@ API of the IOC sealevelmonitoring facility
 
 ### Requirements
 
-PHP 7.4 and later.
-Should also work with PHP 8.0.
+PHP 8.1 and later.
 
 ### Composer
 
@@ -50,12 +49,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMFClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new SLSMFClient\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -84,7 +83,7 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v2/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier.
 *OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v2/operators/{operator_id} | Get fullname of operator by ID.
 *OperatorApi* | [**getOperators**](docs/Api/OperatorApi.md#getoperators) | **GET** /v2/operators | List of operators
-*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v2/research/stations/{code}/sensors/{sensor}/data | Retrieve data for a station max 3650 days in one request. By default 7 days are retrieved. Days with low completeness (&lt;30%), low distinctness (&lt;10%) or with a detected shift are removed in any case.
+*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v2/research/stations/{code}/sensors/{sensor}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
 *SensorApi* | [**getSensors**](docs/Api/SensorApi.md#getsensors) | **GET** /v2/sensors | Retrieve list of sensors.
 *StationApi* | [**getLatestStationMessage**](docs/Api/StationApi.md#getlateststationmessage) | **GET** /v2/stations/{code}/message | Retrieve latest message for a station.
 *StationApi* | [**getStationByCode**](docs/Api/StationApi.md#getstationbycode) | **GET** /v2/stations/{code} | Retrieve metadata for a station.
@@ -97,38 +96,14 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [CatalogJsonInner](docs/Model/CatalogJsonInner.md)
-- [CatalogXml](docs/Model/CatalogXml.md)
-- [CatalogXmlStationInner](docs/Model/CatalogXmlStationInner.md)
-- [MapGmlXml](docs/Model/MapGmlXml.md)
-- [MapGmlXmlGmlFeatureMemberInner](docs/Model/MapGmlXmlGmlFeatureMemberInner.md)
-- [MapGmlXmlGmlFeatureMemberInnerGmlPoint](docs/Model/MapGmlXmlGmlFeatureMemberInnerGmlPoint.md)
-- [MapKmlXml](docs/Model/MapKmlXml.md)
-- [MapKmlXmlDocument](docs/Model/MapKmlXmlDocument.md)
-- [MapKmlXmlDocumentPlacemarkInner](docs/Model/MapKmlXmlDocumentPlacemarkInner.md)
-- [MapKmlXmlDocumentPlacemarkInnerPoint](docs/Model/MapKmlXmlDocumentPlacemarkInnerPoint.md)
-- [MapKmlXmlDocumentStyleInner](docs/Model/MapKmlXmlDocumentStyleInner.md)
-- [MapKmlXmlDocumentStyleInnerIconStyle](docs/Model/MapKmlXmlDocumentStyleInnerIconStyle.md)
-- [MapKmlXmlDocumentStyleInnerIconStyleIcon](docs/Model/MapKmlXmlDocumentStyleInnerIconStyleIcon.md)
 - [OperatorJsonInner](docs/Model/OperatorJsonInner.md)
-- [OperatorXml](docs/Model/OperatorXml.md)
-- [OperatorXmlOperatorInner](docs/Model/OperatorXmlOperatorInner.md)
 - [OperatorsJsonInner](docs/Model/OperatorsJsonInner.md)
-- [OperatorsXml](docs/Model/OperatorsXml.md)
-- [OperatorsXmlOperatorInner](docs/Model/OperatorsXmlOperatorInner.md)
 - [SensorsJsonInner](docs/Model/SensorsJsonInner.md)
-- [SensorsXml](docs/Model/SensorsXml.md)
-- [SensorsXmlSensorInner](docs/Model/SensorsXmlSensorInner.md)
 - [StationDataJsonInner](docs/Model/StationDataJsonInner.md)
-- [StationDataXml](docs/Model/StationDataXml.md)
-- [StationDataXmlSample](docs/Model/StationDataXmlSample.md)
 - [StationJsonInner](docs/Model/StationJsonInner.md)
 - [StationJsonInnerSensorInner](docs/Model/StationJsonInnerSensorInner.md)
 - [StationMessageJsonInner](docs/Model/StationMessageJsonInner.md)
-- [StationMessageXml](docs/Model/StationMessageXml.md)
-- [StationMessageXmlResponseInner](docs/Model/StationMessageXmlResponseInner.md)
 - [StationPerformanceJsonInner](docs/Model/StationPerformanceJsonInner.md)
-- [StationPerformanceXml](docs/Model/StationPerformanceXml.md)
-- [StationPerformanceXmlStationInner](docs/Model/StationPerformanceXmlStationInner.md)
 - [StationResearchDataDetidedJson](docs/Model/StationResearchDataDetidedJson.md)
 - [StationResearchDataDetidedJsonDataInner](docs/Model/StationResearchDataDetidedJsonDataInner.md)
 - [StationResearchDataJson](docs/Model/StationResearchDataJson.md)
@@ -136,14 +111,8 @@ Class | Method | HTTP request | Description
 - [StationResearchDataJsonPagination](docs/Model/StationResearchDataJsonPagination.md)
 - [StationResearchDataPredictedJson](docs/Model/StationResearchDataPredictedJson.md)
 - [StationResearchDataPredictedJsonDataInner](docs/Model/StationResearchDataPredictedJsonDataInner.md)
-- [StationXml](docs/Model/StationXml.md)
-- [StationXmlSensorInner](docs/Model/StationXmlSensorInner.md)
 - [StationsJsonInner](docs/Model/StationsJsonInner.md)
 - [StationsShortlistJsonInner](docs/Model/StationsShortlistJsonInner.md)
-- [StationsShortlistXml](docs/Model/StationsShortlistXml.md)
-- [StationsShortlistXmlStationInner](docs/Model/StationsShortlistXmlStationInner.md)
-- [StationsXml](docs/Model/StationsXml.md)
-- [StationsXmlStationInner](docs/Model/StationsXmlStationInner.md)
 - [TideModelJson](docs/Model/TideModelJson.md)
 - [TideModelJsonDataInner](docs/Model/TideModelJsonDataInner.md)
 
@@ -175,5 +144,5 @@ info@ioc-sealevelmonitoring.org
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `2.0.0`
-    - Generator version: `7.8.0`
+    - Generator version: `7.20.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

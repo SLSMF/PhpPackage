@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ssc_id** | **string** | The unique identifier for the SSC |
+**ssc_id** | **string** | The unique identifier for the SSC | [optional]
 **psmsl** | **string** | PSMSL identifier | [optional]
-**name** | **string** | Name of the location |
-**country** | **string** | Country code in ISO 3166 format |
-**geolat** | **float** | Latitude of the location |
-**geolon** | **float** | Longitude of the location |
-**dctermsmodified** | **\DateTime** | Date and time of last modification |
+**name** | **string** | Name of the location | [optional]
+**country** | **string** | Country code in ISO 3166 format | [optional]
+**geo_lat** | **float** | Latitude of the location | [optional]
+**geo_lon** | **float** | Longitude of the location | [optional]
+**dcterms_modified** | **string** | Date and time of last modification | [optional]
 **ioc** | **string** | IOC code | [optional]
 **ptwc** | **string** | PTWC code | [optional]
 **gloss** | **string** | GLOSS identifier | [optional]

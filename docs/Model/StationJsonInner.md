@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **performanceoperator1** | **string** | Performance operator 1, can be null |
 **performanceoperator2** | **string** | Performance operator 2, can be null |
 **performanceoperator3** | **string** | Performance operator 3, can be null |
-**date_created** | **\DateTime** | Creation date of the station data |
+**date_created** | **string** | Creation date of the station data |
 **url** | **string** | URL for more information about the station, can be null |
 **statsensor** | **int** | StatSensor ID |
 **updatedata** | **string** | Update data frequency |
@@ -36,6 +36,6 @@ Name | Type | Description | Notes
 **example_message** | **string** | Example data, can be null |
 **totmess** | **int** | Total messages |
 **expectedmess** | **int** | Expected messages |
-**sensor** | [**\SLSMF\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station |
+**sensor** | [**\SLSMFClient\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

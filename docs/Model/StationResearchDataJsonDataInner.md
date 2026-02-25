@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slevel** | **float** |  |
-**stime** | **\DateTime** |  |
+**slevel** | **mixed** |  |
+**stime** | **string** |  |
 **sensor** | **string** |  |
 **missing** | **string** |  | [optional]
 **out_of_range** | **string** |  | [optional]
