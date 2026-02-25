@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMFClient\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationResearchDataPredictedJson Class Doc Comment
  *
  * @category Class
  * @description Schema for sea level data Json
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class StationResearchDataPredictedJson implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\SLSMFClient\Model\StationResearchDataPredictedJsonDataInner[]',
-        'pagination' => '\SLSMFClient\Model\StationResearchDataJsonPagination'
+        'data' => '\SLSMF\Client\Model\StationResearchDataPredictedJsonDataInner[]',
+        'pagination' => '\SLSMF\Client\Model\StationResearchDataJsonPagination'
     ];
 
     /**
@@ -301,7 +301,7 @@ class StationResearchDataPredictedJson implements ModelInterface, ArrayAccess, \
     /**
      * Gets data
      *
-     * @return \SLSMFClient\Model\StationResearchDataPredictedJsonDataInner[]|null
+     * @return \SLSMF\Client\Model\StationResearchDataPredictedJsonDataInner[]|null
      */
     public function getData()
     {
@@ -311,7 +311,7 @@ class StationResearchDataPredictedJson implements ModelInterface, ArrayAccess, \
     /**
      * Sets data
      *
-     * @param \SLSMFClient\Model\StationResearchDataPredictedJsonDataInner[]|null $data data
+     * @param \SLSMF\Client\Model\StationResearchDataPredictedJsonDataInner[]|null $data data
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class StationResearchDataPredictedJson implements ModelInterface, ArrayAccess, \
     /**
      * Gets pagination
      *
-     * @return \SLSMFClient\Model\StationResearchDataJsonPagination|null
+     * @return \SLSMF\Client\Model\StationResearchDataJsonPagination|null
      */
     public function getPagination()
     {
@@ -338,7 +338,7 @@ class StationResearchDataPredictedJson implements ModelInterface, ArrayAccess, \
     /**
      * Sets pagination
      *
-     * @param \SLSMFClient\Model\StationResearchDataJsonPagination|null $pagination pagination
+     * @param \SLSMF\Client\Model\StationResearchDataJsonPagination|null $pagination pagination
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient\Model
+ * @package  SLSMF\Client\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Model;
+namespace SLSMF\Client\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package SLSMFClient\Model
+ * @package SLSMF\Client\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

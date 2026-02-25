@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient;
+namespace SLSMF\Client;
 
 use GuzzleHttp\Psr7\Utils;
-use SLSMFClient\Model\ModelInterface;
+use SLSMF\Client\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -504,7 +504,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\SLSMFClient\Model\\' . $data->{$discriminator};
+                $subclass = '\SLSMF\Client\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use SLSMFClient\ApiException;
-use SLSMFClient\Configuration;
-use SLSMFClient\FormDataProcessor;
-use SLSMFClient\HeaderSelector;
-use SLSMFClient\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\FormDataProcessor;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * SensorApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -135,9 +135,9 @@ class SensorApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\SensorsJsonInner[]
+     * @return \SLSMF\Client\Model\SensorsJsonInner[]
      */
     public function getSensors($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
@@ -154,9 +154,9 @@ class SensorApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSensors'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\SensorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\SensorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSensorsWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
@@ -188,7 +188,7 @@ class SensorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\SensorsJsonInner[]',
+                        '\SLSMF\Client\Model\SensorsJsonInner[]',
                         $request,
                         $response,
                     );
@@ -210,7 +210,7 @@ class SensorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\SensorsJsonInner[]',
+                '\SLSMF\Client\Model\SensorsJsonInner[]',
                 $request,
                 $response,
             );
@@ -219,7 +219,7 @@ class SensorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\SensorsJsonInner[]',
+                        '\SLSMF\Client\Model\SensorsJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -267,7 +267,7 @@ class SensorApi
      */
     public function getSensorsAsyncWithHttpInfo($showall = 'all', $limit = 10, string $contentType = self::contentTypes['getSensors'][0])
     {
-        $returnType = '\SLSMFClient\Model\SensorsJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\SensorsJsonInner[]';
         $request = $this->getSensorsRequest($showall, $limit, $contentType);
 
         return $this->client

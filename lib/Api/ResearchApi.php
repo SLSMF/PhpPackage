@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use SLSMFClient\ApiException;
-use SLSMFClient\Configuration;
-use SLSMFClient\FormDataProcessor;
-use SLSMFClient\HeaderSelector;
-use SLSMFClient\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\FormDataProcessor;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * ResearchApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -150,7 +150,7 @@ class ResearchApi
      * @param  bool|null $fit_to_sample_rate Align the data to the sample rate, by adding extra records with slevel set to NA and qc flag missing. Timestamps are rounded down to the expected time of measurement based on the sample rate, starting from midnight (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -184,7 +184,7 @@ class ResearchApi
      * @param  bool|null $fit_to_sample_rate Align the data to the sample rate, by adding extra records with slevel set to NA and qc flag missing. Timestamps are rounded down to the expected time of measurement based on the sample rate, starting from midnight (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */

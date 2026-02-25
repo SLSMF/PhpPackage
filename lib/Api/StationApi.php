@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use SLSMFClient\ApiException;
-use SLSMFClient\Configuration;
-use SLSMFClient\FormDataProcessor;
-use SLSMFClient\HeaderSelector;
-use SLSMFClient\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\FormDataProcessor;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * StationApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -152,9 +152,9 @@ class StationApi
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationMessageJsonInner[]
+     * @return \SLSMF\Client\Model\StationMessageJsonInner[]
      */
     public function getLatestStationMessage($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
@@ -170,9 +170,9 @@ class StationApi
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLatestStationMessage'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationMessageJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationMessageJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLatestStationMessageWithHttpInfo($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
@@ -204,7 +204,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationMessageJsonInner[]',
+                        '\SLSMF\Client\Model\StationMessageJsonInner[]',
                         $request,
                         $response,
                     );
@@ -226,7 +226,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationMessageJsonInner[]',
+                '\SLSMF\Client\Model\StationMessageJsonInner[]',
                 $request,
                 $response,
             );
@@ -235,7 +235,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationMessageJsonInner[]',
+                        '\SLSMF\Client\Model\StationMessageJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -281,7 +281,7 @@ class StationApi
      */
     public function getLatestStationMessageAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getLatestStationMessage'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationMessageJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationMessageJsonInner[]';
         $request = $this->getLatestStationMessageRequest($code, $contentType);
 
         return $this->client
@@ -431,9 +431,9 @@ class StationApi
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationJsonInner[]
+     * @return \SLSMF\Client\Model\StationJsonInner[]
      */
     public function getStationByCode($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
@@ -449,9 +449,9 @@ class StationApi
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationByCode'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStationByCodeWithHttpInfo($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
@@ -483,7 +483,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationJsonInner[]',
+                        '\SLSMF\Client\Model\StationJsonInner[]',
                         $request,
                         $response,
                     );
@@ -505,7 +505,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationJsonInner[]',
+                '\SLSMF\Client\Model\StationJsonInner[]',
                 $request,
                 $response,
             );
@@ -514,7 +514,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationJsonInner[]',
+                        '\SLSMF\Client\Model\StationJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -560,7 +560,7 @@ class StationApi
      */
     public function getStationByCodeAsyncWithHttpInfo($code, string $contentType = self::contentTypes['getStationByCode'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationJsonInner[]';
         $request = $this->getStationByCodeRequest($code, $contentType);
 
         return $this->client
@@ -708,20 +708,20 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:46')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:46')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:46')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationDataJsonInner[]
+     * @return \SLSMF\Client\Model\StationDataJsonInner[]
      */
-    public function getStationData($code, $timestart = '2026-02-18T12:46', $timestop = '2026-02-25T12:46', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationData($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         list($response) = $this->getStationDataWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
         return $response;
@@ -733,20 +733,20 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:46')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:46')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:46')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationDataJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationDataJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationDataWithHttpInfo($code, $timestart = '2026-02-18T12:46', $timestop = '2026-02-25T12:46', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataWithHttpInfo($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
 
@@ -776,7 +776,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationDataJsonInner[]',
+                        '\SLSMF\Client\Model\StationDataJsonInner[]',
                         $request,
                         $response,
                     );
@@ -798,7 +798,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationDataJsonInner[]',
+                '\SLSMF\Client\Model\StationDataJsonInner[]',
                 $request,
                 $response,
             );
@@ -807,7 +807,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationDataJsonInner[]',
+                        '\SLSMF\Client\Model\StationDataJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -825,19 +825,19 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:46')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:46')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:46')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsync($code, $timestart = '2026-02-18T12:46', $timestop = '2026-02-25T12:46', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsync($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         return $this->getStationDataAsyncWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType)
             ->then(
@@ -853,21 +853,21 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:46')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:46')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:46')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsyncWithHttpInfo($code, $timestart = '2026-02-18T12:46', $timestop = '2026-02-25T12:46', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsyncWithHttpInfo($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationDataJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationDataJsonInner[]';
         $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
 
         return $this->client
@@ -910,19 +910,19 @@ class StationApi
      * Create request for operation 'getStationData'
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:46')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:46')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:46')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationDataRequest($code, $timestart = '2026-02-18T12:46', $timestop = '2026-02-25T12:46', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataRequest($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1104,9 +1104,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationPerformance'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationPerformanceJsonInner[]
+     * @return \SLSMF\Client\Model\StationPerformanceJsonInner[]
      */
     public function getStationPerformance($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
@@ -1126,9 +1126,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationPerformance'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationPerformanceJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationPerformanceJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStationPerformanceWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
@@ -1160,7 +1160,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationPerformanceJsonInner[]',
+                        '\SLSMF\Client\Model\StationPerformanceJsonInner[]',
                         $request,
                         $response,
                     );
@@ -1182,7 +1182,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationPerformanceJsonInner[]',
+                '\SLSMF\Client\Model\StationPerformanceJsonInner[]',
                 $request,
                 $response,
             );
@@ -1191,7 +1191,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationPerformanceJsonInner[]',
+                        '\SLSMF\Client\Model\StationPerformanceJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1245,7 +1245,7 @@ class StationApi
      */
     public function getStationPerformanceAsyncWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStationPerformance'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationPerformanceJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationPerformanceJsonInner[]';
         $request = $this->getStationPerformanceRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         return $this->client
@@ -1432,9 +1432,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStations'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationsJsonInner[]
+     * @return \SLSMF\Client\Model\StationsJsonInner[]
      */
     public function getStations($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
@@ -1454,9 +1454,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStations'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationsJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStationsWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
@@ -1488,7 +1488,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationsJsonInner[]',
+                        '\SLSMF\Client\Model\StationsJsonInner[]',
                         $request,
                         $response,
                     );
@@ -1510,7 +1510,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationsJsonInner[]',
+                '\SLSMF\Client\Model\StationsJsonInner[]',
                 $request,
                 $response,
             );
@@ -1519,7 +1519,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationsJsonInner[]',
+                        '\SLSMF\Client\Model\StationsJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1573,7 +1573,7 @@ class StationApi
      */
     public function getStationsAsyncWithHttpInfo($showall = 'all', $operator = null, $order = 'code', $dir = 'asc', $limit = 10, string $contentType = self::contentTypes['getStations'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationsJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationsJsonInner[]';
         $request = $this->getStationsRequest($showall, $operator, $order, $dir, $limit, $contentType);
 
         return $this->client
@@ -1761,7 +1761,7 @@ class StationApi
      * @param  string|null $showpar Parameter to show on map (optional, default to 'status')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsMap'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1784,7 +1784,7 @@ class StationApi
      * @param  string|null $showpar Parameter to show on map (optional, default to 'status')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsMap'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2111,9 +2111,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\StationsShortlistJsonInner[]
+     * @return \SLSMF\Client\Model\StationsShortlistJsonInner[]
      */
     public function getStationsShortlist($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
@@ -2129,9 +2129,9 @@ class StationApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationsShortlist'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\StationsShortlistJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\StationsShortlistJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStationsShortlistWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
@@ -2163,7 +2163,7 @@ class StationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\StationsShortlistJsonInner[]',
+                        '\SLSMF\Client\Model\StationsShortlistJsonInner[]',
                         $request,
                         $response,
                     );
@@ -2185,7 +2185,7 @@ class StationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\StationsShortlistJsonInner[]',
+                '\SLSMF\Client\Model\StationsShortlistJsonInner[]',
                 $request,
                 $response,
             );
@@ -2194,7 +2194,7 @@ class StationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\StationsShortlistJsonInner[]',
+                        '\SLSMF\Client\Model\StationsShortlistJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2240,7 +2240,7 @@ class StationApi
      */
     public function getStationsShortlistAsyncWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getStationsShortlist'][0])
     {
-        $returnType = '\SLSMFClient\Model\StationsShortlistJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\StationsShortlistJsonInner[]';
         $request = $this->getStationsShortlistRequest($limit, $contentType);
 
         return $this->client

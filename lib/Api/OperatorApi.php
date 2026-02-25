@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMFClient\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use SLSMFClient\ApiException;
-use SLSMFClient\Configuration;
-use SLSMFClient\FormDataProcessor;
-use SLSMFClient\HeaderSelector;
-use SLSMFClient\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\FormDataProcessor;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * OperatorApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMFClient
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -137,9 +137,9 @@ class OperatorApi
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\OperatorJsonInner[]
+     * @return \SLSMF\Client\Model\OperatorJsonInner[]
      */
     public function getOperatorById($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -155,9 +155,9 @@ class OperatorApi
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\OperatorJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\OperatorJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperatorByIdWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -189,7 +189,7 @@ class OperatorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\OperatorJsonInner[]',
+                        '\SLSMF\Client\Model\OperatorJsonInner[]',
                         $request,
                         $response,
                     );
@@ -211,7 +211,7 @@ class OperatorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\OperatorJsonInner[]',
+                '\SLSMF\Client\Model\OperatorJsonInner[]',
                 $request,
                 $response,
             );
@@ -220,7 +220,7 @@ class OperatorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\OperatorJsonInner[]',
+                        '\SLSMF\Client\Model\OperatorJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,7 +266,7 @@ class OperatorApi
      */
     public function getOperatorByIdAsyncWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        $returnType = '\SLSMFClient\Model\OperatorJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\OperatorJsonInner[]';
         $request = $this->getOperatorByIdRequest($operator_id, $contentType);
 
         return $this->client
@@ -410,9 +410,9 @@ class OperatorApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMFClient\Model\OperatorsJsonInner[]
+     * @return \SLSMF\Client\Model\OperatorsJsonInner[]
      */
     public function getOperators($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
@@ -428,9 +428,9 @@ class OperatorApi
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperators'] to see the possible values for this operation
      *
-     * @throws \SLSMFClient\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMFClient\Model\OperatorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\OperatorsJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperatorsWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
@@ -462,7 +462,7 @@ class OperatorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMFClient\Model\OperatorsJsonInner[]',
+                        '\SLSMF\Client\Model\OperatorsJsonInner[]',
                         $request,
                         $response,
                     );
@@ -484,7 +484,7 @@ class OperatorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMFClient\Model\OperatorsJsonInner[]',
+                '\SLSMF\Client\Model\OperatorsJsonInner[]',
                 $request,
                 $response,
             );
@@ -493,7 +493,7 @@ class OperatorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMFClient\Model\OperatorsJsonInner[]',
+                        '\SLSMF\Client\Model\OperatorsJsonInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -539,7 +539,7 @@ class OperatorApi
      */
     public function getOperatorsAsyncWithHttpInfo($limit = 10, string $contentType = self::contentTypes['getOperators'][0])
     {
-        $returnType = '\SLSMFClient\Model\OperatorsJsonInner[]';
+        $returnType = '\SLSMF\Client\Model\OperatorsJsonInner[]';
         $request = $this->getOperatorsRequest($limit, $contentType);
 
         return $this->client
