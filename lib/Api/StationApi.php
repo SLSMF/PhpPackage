@@ -708,12 +708,12 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T13:28')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T13:28')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T13:28')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
@@ -721,7 +721,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationDataJsonInner[]
      */
-    public function getStationData($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationData($code, $timestart = '2026-02-18T13:28', $timestop = '2026-02-25T13:28', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T13:28', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         list($response) = $this->getStationDataWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
         return $response;
@@ -733,12 +733,12 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T13:28')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T13:28')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T13:28')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
@@ -746,7 +746,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationDataJsonInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationDataWithHttpInfo($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataWithHttpInfo($code, $timestart = '2026-02-18T13:28', $timestop = '2026-02-25T13:28', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T13:28', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
 
@@ -825,19 +825,19 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T13:28')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T13:28')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T13:28')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsync($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsync($code, $timestart = '2026-02-18T13:28', $timestop = '2026-02-25T13:28', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T13:28', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         return $this->getStationDataAsyncWithHttpInfo($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType)
             ->then(
@@ -853,19 +853,19 @@ class StationApi
      * Retrieve data for a station with max 30 day limit or 150 000 records.
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T13:28')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T13:28')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T13:28')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsyncWithHttpInfo($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsyncWithHttpInfo($code, $timestart = '2026-02-18T13:28', $timestop = '2026-02-25T13:28', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T13:28', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationDataJsonInner[]';
         $request = $this->getStationDataRequest($code, $timestart, $timestop, $includesensors, $nofilter, $allsensors, $skip_gaps_until, $limit, $contentType);
@@ -910,19 +910,19 @@ class StationApi
      * Create request for operation 'getStationData'
      *
      * @param  string $code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T12:56')
-     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T12:56')
+     * @param  string|null $timestart default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-18T13:28')
+     * @param  string|null $timestop default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-02-25T13:28')
      * @param  string[]|null $includesensors sensors to include, default is all sensors (optional)
      * @param  bool|null $nofilter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $allsensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
-     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T12:56')
+     * @param  string|null $skip_gaps_until Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. (optional, default to '2026-02-25T13:28')
      * @param  int|null $limit Maximum number of records returned per request (optional, default to 10)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationData'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationDataRequest($code, $timestart = '2026-02-18T12:56', $timestop = '2026-02-25T12:56', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T12:56', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataRequest($code, $timestart = '2026-02-18T13:28', $timestop = '2026-02-25T13:28', $includesensors = null, $nofilter = false, $allsensors = false, $skip_gaps_until = '2026-02-25T13:28', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
 
         // verify the required parameter 'code' is set
