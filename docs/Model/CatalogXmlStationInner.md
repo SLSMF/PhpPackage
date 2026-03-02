@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ssc_id** | **string** | The unique identifier for the SSC |
+**ssc_id** | **string** | The unique identifier for the SSC | [optional]
 **psmsl** | **string** | PSMSL identifier | [optional]
 **ioc** | **string** | IOC code | [optional]
 **ptwc** | **string** | PTWC code | [optional]
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **sonel_tg** | **string** | SONEL tide gauge identifier | [optional]
 **name** | **string** | Name of the location |
 **country** | **string** | Country code in ISO 3166 format |
-**geolat** | **float** | Latitude of the location |
-**geolon** | **float** | Longitude of the location |
-**dctermsmodified** | **\DateTime** | Date and time of last modification |
+**geo_lat** | **float** | Latitude of the location |
+**geo_lon** | **float** | Longitude of the location |
+**dcterms_modified** | **\DateTime** | Date and time of last modification |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

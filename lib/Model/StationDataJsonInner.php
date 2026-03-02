@@ -295,10 +295,6 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['stime'] === null) {
             $invalidProperties[] = "'stime' can't be null";
         }
-        if (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", $this->container['stime'])) {
-            $invalidProperties[] = "invalid value for 'stime', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.";
-        }
-
         if ($this->container['sensor'] === null) {
             $invalidProperties[] = "'sensor' can't be null";
         }
@@ -366,11 +362,6 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
         if (is_null($stime)) {
             throw new \InvalidArgumentException('non-nullable stime cannot be null');
         }
-
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", ObjectSerializer::toString($stime)))) {
-            throw new \InvalidArgumentException("invalid value for \$stime when calling StationDataJsonInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.");
-        }
-
         $this->container['stime'] = $stime;
 
         return $this;
