@@ -90,7 +90,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]'
+        'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]',
+        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]'
     ];
 
     /**
@@ -133,7 +134,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => null,
         'totmess' => null,
         'expectedmess' => null,
-        'sensor' => null
+        'sensor' => null,
+        'associated_stations' => null
     ];
 
     /**
@@ -174,7 +176,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => true,
         'totmess' => false,
         'expectedmess' => false,
-        'sensor' => false
+        'sensor' => false,
+        'associated_stations' => false
     ];
 
     /**
@@ -295,7 +298,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'example_message',
         'totmess' => 'totmess',
         'expectedmess' => 'expectedmess',
-        'sensor' => 'sensor'
+        'sensor' => 'sensor',
+        'associated_stations' => 'associated_stations'
     ];
 
     /**
@@ -336,7 +340,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'setExampleMessage',
         'totmess' => 'setTotmess',
         'expectedmess' => 'setExpectedmess',
-        'sensor' => 'setSensor'
+        'sensor' => 'setSensor',
+        'associated_stations' => 'setAssociatedStations'
     ];
 
     /**
@@ -377,7 +382,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'getExampleMessage',
         'totmess' => 'getTotmess',
         'expectedmess' => 'getExpectedmess',
-        'sensor' => 'getSensor'
+        'sensor' => 'getSensor',
+        'associated_stations' => 'getAssociatedStations'
     ];
 
     /**
@@ -470,6 +476,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('totmess', $data ?? [], null);
         $this->setIfExists('expectedmess', $data ?? [], null);
         $this->setIfExists('sensor', $data ?? [], null);
+        $this->setIfExists('associated_stations', $data ?? [], null);
     }
 
     /**
@@ -1563,6 +1570,33 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sensor cannot be null');
         }
         $this->container['sensor'] = $sensor;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_stations
+     *
+     * @return \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null
+     */
+    public function getAssociatedStations()
+    {
+        return $this->container['associated_stations'];
+    }
+
+    /**
+     * Sets associated_stations
+     *
+     * @param \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null $associated_stations associated station
+     *
+     * @return self
+     */
+    public function setAssociatedStations($associated_stations)
+    {
+        if (is_null($associated_stations)) {
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
+        }
+        $this->container['associated_stations'] = $associated_stations;
 
         return $this;
     }

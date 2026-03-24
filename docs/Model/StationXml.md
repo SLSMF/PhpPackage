@@ -36,5 +36,6 @@ Name | Type | Description | Notes
 **totmess** | **int** | Total messages | [optional]
 **expectedmess** | **int** | Expected messages | [optional]
 **sensor** | [**\SLSMF\Client\Model\StationXmlSensor**](StationXmlSensor.md) |  | [optional]
+**associated_stations** | [**\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]**](StationsXmlStationInnerAssociatedStationsInner.md) | associated station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

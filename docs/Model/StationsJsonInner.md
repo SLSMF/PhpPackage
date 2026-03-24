@@ -47,5 +47,6 @@ Name | Type | Description | Notes
 **lastvalue** | **float** | Last recorded value | [optional]
 **connect** | **string** | Connection identifier |
 **countryname** | **string** | Name of the country | [optional]
+**associated_stations** | [**\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]**](StationsJsonInnerAssociatedStationsInner.md) | associated station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

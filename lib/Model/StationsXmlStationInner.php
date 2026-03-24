@@ -100,7 +100,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => 'string',
         'lastvalue' => 'float',
         'connect' => 'string',
-        'countryname' => 'string'
+        'countryname' => 'string',
+        'associated_stations' => '\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]'
     ];
 
     /**
@@ -153,7 +154,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => null,
         'lastvalue' => 'float',
         'connect' => null,
-        'countryname' => null
+        'countryname' => null,
+        'associated_stations' => null
     ];
 
     /**
@@ -204,7 +206,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => false,
         'lastvalue' => false,
         'connect' => false,
-        'countryname' => false
+        'countryname' => false,
+        'associated_stations' => false
     ];
 
     /**
@@ -335,7 +338,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => 'lastupdate',
         'lastvalue' => 'lastvalue',
         'connect' => 'connect',
-        'countryname' => 'countryname'
+        'countryname' => 'countryname',
+        'associated_stations' => 'associated_stations'
     ];
 
     /**
@@ -386,7 +390,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => 'setLastupdate',
         'lastvalue' => 'setLastvalue',
         'connect' => 'setConnect',
-        'countryname' => 'setCountryname'
+        'countryname' => 'setCountryname',
+        'associated_stations' => 'setAssociatedStations'
     ];
 
     /**
@@ -437,7 +442,8 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'lastupdate' => 'getLastupdate',
         'lastvalue' => 'getLastvalue',
         'connect' => 'getConnect',
-        'countryname' => 'getCountryname'
+        'countryname' => 'getCountryname',
+        'associated_stations' => 'getAssociatedStations'
     ];
 
     /**
@@ -540,6 +546,7 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('lastvalue', $data ?? [], null);
         $this->setIfExists('connect', $data ?? [], null);
         $this->setIfExists('countryname', $data ?? [], null);
+        $this->setIfExists('associated_stations', $data ?? [], null);
     }
 
     /**
@@ -1925,6 +1932,33 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable countryname cannot be null');
         }
         $this->container['countryname'] = $countryname;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_stations
+     *
+     * @return \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null
+     */
+    public function getAssociatedStations()
+    {
+        return $this->container['associated_stations'];
+    }
+
+    /**
+     * Sets associated_stations
+     *
+     * @param \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null $associated_stations associated station
+     *
+     * @return self
+     */
+    public function setAssociatedStations($associated_stations)
+    {
+        if (is_null($associated_stations)) {
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
+        }
+        $this->container['associated_stations'] = $associated_stations;
 
         return $this;
     }

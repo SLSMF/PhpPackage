@@ -90,7 +90,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\SLSMF\Client\Model\StationXmlSensor'
+        'sensor' => '\SLSMF\Client\Model\StationXmlSensor',
+        'associated_stations' => '\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]'
     ];
 
     /**
@@ -132,7 +133,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => null,
         'totmess' => null,
         'expectedmess' => null,
-        'sensor' => null
+        'sensor' => null,
+        'associated_stations' => null
     ];
 
     /**
@@ -172,7 +174,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => false,
         'totmess' => false,
         'expectedmess' => false,
-        'sensor' => false
+        'sensor' => false,
+        'associated_stations' => false
     ];
 
     /**
@@ -292,7 +295,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => 'countryname',
         'totmess' => 'totmess',
         'expectedmess' => 'expectedmess',
-        'sensor' => 'sensor'
+        'sensor' => 'sensor',
+        'associated_stations' => 'associated_stations'
     ];
 
     /**
@@ -332,7 +336,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => 'setCountryname',
         'totmess' => 'setTotmess',
         'expectedmess' => 'setExpectedmess',
-        'sensor' => 'setSensor'
+        'sensor' => 'setSensor',
+        'associated_stations' => 'setAssociatedStations'
     ];
 
     /**
@@ -372,7 +377,8 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'countryname' => 'getCountryname',
         'totmess' => 'getTotmess',
         'expectedmess' => 'getExpectedmess',
-        'sensor' => 'getSensor'
+        'sensor' => 'getSensor',
+        'associated_stations' => 'getAssociatedStations'
     ];
 
     /**
@@ -464,6 +470,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('totmess', $data ?? [], null);
         $this->setIfExists('expectedmess', $data ?? [], null);
         $this->setIfExists('sensor', $data ?? [], null);
+        $this->setIfExists('associated_stations', $data ?? [], null);
     }
 
     /**
@@ -1424,6 +1431,33 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sensor cannot be null');
         }
         $this->container['sensor'] = $sensor;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_stations
+     *
+     * @return \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null
+     */
+    public function getAssociatedStations()
+    {
+        return $this->container['associated_stations'];
+    }
+
+    /**
+     * Sets associated_stations
+     *
+     * @param \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null $associated_stations associated station
+     *
+     * @return self
+     */
+    public function setAssociatedStations($associated_stations)
+    {
+        if (is_null($associated_stations)) {
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
+        }
+        $this->container['associated_stations'] = $associated_stations;
 
         return $this;
     }

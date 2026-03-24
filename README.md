@@ -138,11 +138,13 @@ Class | Method | HTTP request | Description
 - [StationXml](docs/Model/StationXml.md)
 - [StationXmlSensor](docs/Model/StationXmlSensor.md)
 - [StationsJsonInner](docs/Model/StationsJsonInner.md)
+- [StationsJsonInnerAssociatedStationsInner](docs/Model/StationsJsonInnerAssociatedStationsInner.md)
 - [StationsShortlistJsonInner](docs/Model/StationsShortlistJsonInner.md)
 - [StationsShortlistXml](docs/Model/StationsShortlistXml.md)
 - [StationsShortlistXmlStationInner](docs/Model/StationsShortlistXmlStationInner.md)
 - [StationsXml](docs/Model/StationsXml.md)
 - [StationsXmlStationInner](docs/Model/StationsXmlStationInner.md)
+- [StationsXmlStationInnerAssociatedStationsInner](docs/Model/StationsXmlStationInnerAssociatedStationsInner.md)
 - [TideModelJson](docs/Model/TideModelJson.md)
 - [TideModelJsonDataInner](docs/Model/TideModelJsonDataInner.md)
 
