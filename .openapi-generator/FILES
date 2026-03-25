@@ -34,7 +34,6 @@ docs/Model/StationDataJsonInner.md
 docs/Model/StationDataXml.md
 docs/Model/StationDataXmlSample.md
 docs/Model/StationJsonInner.md
-docs/Model/StationJsonInnerAssociatedStationsInner.md
 docs/Model/StationJsonInnerSensorInner.md
 docs/Model/StationMessageJsonInner.md
 docs/Model/StationMessageXml.md
@@ -50,7 +49,6 @@ docs/Model/StationResearchDataJsonPagination.md
 docs/Model/StationResearchDataPredictedJson.md
 docs/Model/StationResearchDataPredictedJsonDataInner.md
 docs/Model/StationXml.md
-docs/Model/StationXmlAssociatedStationsInner.md
 docs/Model/StationXmlSensor.md
 docs/Model/StationsJsonInner.md
 docs/Model/StationsJsonInnerAssociatedStationsInner.md
@@ -99,7 +97,6 @@ lib/Model/StationDataJsonInner.php
 lib/Model/StationDataXml.php
 lib/Model/StationDataXmlSample.php
 lib/Model/StationJsonInner.php
-lib/Model/StationJsonInnerAssociatedStationsInner.php
 lib/Model/StationJsonInnerSensorInner.php
 lib/Model/StationMessageJsonInner.php
 lib/Model/StationMessageXml.php
@@ -115,7 +112,6 @@ lib/Model/StationResearchDataJsonPagination.php
 lib/Model/StationResearchDataPredictedJson.php
 lib/Model/StationResearchDataPredictedJsonDataInner.php
 lib/Model/StationXml.php
-lib/Model/StationXmlAssociatedStationsInner.php
 lib/Model/StationXmlSensor.php
 lib/Model/StationsJsonInner.php
 lib/Model/StationsJsonInnerAssociatedStationsInner.php

@@ -86,11 +86,11 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'lat' => false,
-        'lon' => false,
-        'status' => false,
-        'localoperator' => false
+        'code' => true,
+        'lat' => true,
+        'lon' => true,
+        'status' => true,
+        'localoperator' => true
     ];
 
     /**
@@ -338,7 +338,14 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
     public function setCode($code)
     {
         if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['code'] = $code;
 
@@ -365,7 +372,14 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
     public function setLat($lat)
     {
         if (is_null($lat)) {
-            throw new \InvalidArgumentException('non-nullable lat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lat'] = $lat;
 
@@ -392,7 +406,14 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
     public function setLon($lon)
     {
         if (is_null($lon)) {
-            throw new \InvalidArgumentException('non-nullable lon cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lon');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lon', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lon'] = $lon;
 
@@ -419,7 +440,14 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -446,7 +474,14 @@ class StationsXmlStationInnerAssociatedStationsInner implements ModelInterface, 
     public function setLocaloperator($localoperator)
     {
         if (is_null($localoperator)) {
-            throw new \InvalidArgumentException('non-nullable localoperator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'localoperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('localoperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['localoperator'] = $localoperator;
 

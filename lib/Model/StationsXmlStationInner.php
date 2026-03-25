@@ -168,26 +168,26 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'location' => false,
         'country' => false,
         'type' => false,
-        'dcp_id' => false,
-        'wmo' => false,
+        'dcp_id' => true,
+        'wmo' => true,
         'xmt_int' => false,
         'lat' => false,
         'lon' => false,
-        'har' => false,
-        'gloss_id' => false,
+        'har' => true,
+        'gloss_id' => true,
         'ot12_code' => true,
         'example' => true,
         'utc_offset' => false,
         'operator_id' => true,
         'status' => false,
         'status_description' => true,
-        'localoperator' => false,
+        'localoperator' => true,
         'performanceoperator1' => true,
         'performanceoperator2' => true,
         'performanceoperator3' => true,
         'date_created' => false,
         'url' => true,
-        'sensorid' => false,
+        'sensorid' => true,
         'statday' => true,
         'observations' => true,
         'first' => true,
@@ -195,18 +195,18 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
         'updatedata' => true,
         'timestampdata' => true,
         'timestampupdate' => true,
-        'sensor' => false,
-        'rate' => false,
-        'samples' => false,
-        'units' => false,
+        'sensor' => true,
+        'rate' => true,
+        'samples' => true,
+        'units' => true,
         'i' => true,
-        'offset' => false,
-        'timeorder' => false,
-        'lasttime' => false,
-        'lastupdate' => false,
-        'lastvalue' => false,
-        'connect' => false,
-        'countryname' => false,
+        'offset' => true,
+        'timeorder' => true,
+        'lasttime' => true,
+        'lastupdate' => true,
+        'lastvalue' => true,
+        'connect' => true,
+        'countryname' => true,
         'associated_stations' => false
     ];
 
@@ -620,7 +620,7 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'lastupdate', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.";
         }
 
-        if ($this->container['connect'] === null) {
+        if ($this->container['connect'] === null && !$this->isNullableSetToNull('connect')) {
             $invalidProperties[] = "'connect' can't be null";
         }
         return $invalidProperties;
@@ -766,7 +766,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setDcpId($dcp_id)
     {
         if (is_null($dcp_id)) {
-            throw new \InvalidArgumentException('non-nullable dcp_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'dcp_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dcp_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['dcp_id'] = $dcp_id;
 
@@ -793,7 +800,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setWmo($wmo)
     {
         if (is_null($wmo)) {
-            throw new \InvalidArgumentException('non-nullable wmo cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'wmo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('wmo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['wmo'] = $wmo;
 
@@ -901,7 +915,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setHar($har)
     {
         if (is_null($har)) {
-            throw new \InvalidArgumentException('non-nullable har cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'har');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('har', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['har'] = $har;
 
@@ -928,7 +949,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setGlossId($gloss_id)
     {
         if (is_null($gloss_id)) {
-            throw new \InvalidArgumentException('non-nullable gloss_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gloss_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gloss_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gloss_id'] = $gloss_id;
 
@@ -1145,7 +1173,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setLocaloperator($localoperator)
     {
         if (is_null($localoperator)) {
-            throw new \InvalidArgumentException('non-nullable localoperator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'localoperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('localoperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['localoperator'] = $localoperator;
 
@@ -1340,7 +1375,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSensorid($sensorid)
     {
         if (is_null($sensorid)) {
-            throw new \InvalidArgumentException('non-nullable sensorid cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sensorid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sensorid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sensorid'] = $sensorid;
 
@@ -1615,7 +1657,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSensor($sensor)
     {
         if (is_null($sensor)) {
-            throw new \InvalidArgumentException('non-nullable sensor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sensor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sensor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sensor'] = $sensor;
 
@@ -1642,7 +1691,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setRate($rate)
     {
         if (is_null($rate)) {
-            throw new \InvalidArgumentException('non-nullable rate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rate'] = $rate;
 
@@ -1669,7 +1725,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSamples($samples)
     {
         if (is_null($samples)) {
-            throw new \InvalidArgumentException('non-nullable samples cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'samples');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('samples', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['samples'] = $samples;
 
@@ -1696,7 +1759,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setUnits($units)
     {
         if (is_null($units)) {
-            throw new \InvalidArgumentException('non-nullable units cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'units');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('units', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['units'] = $units;
 
@@ -1757,7 +1827,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setOffset($offset)
     {
         if (is_null($offset)) {
-            throw new \InvalidArgumentException('non-nullable offset cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'offset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('offset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['offset'] = $offset;
 
@@ -1784,7 +1861,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setTimeorder($timeorder)
     {
         if (is_null($timeorder)) {
-            throw new \InvalidArgumentException('non-nullable timeorder cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timeorder');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timeorder', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timeorder'] = $timeorder;
 
@@ -1811,10 +1895,17 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setLasttime($lasttime)
     {
         if (is_null($lasttime)) {
-            throw new \InvalidArgumentException('non-nullable lasttime cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lasttime');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lasttime', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lasttime)))) {
+        if (!is_null($lasttime) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lasttime)))) {
             throw new \InvalidArgumentException("invalid value for \$lasttime when calling StationsXmlStationInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
@@ -1843,10 +1934,17 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setLastupdate($lastupdate)
     {
         if (is_null($lastupdate)) {
-            throw new \InvalidArgumentException('non-nullable lastupdate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastupdate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastupdate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lastupdate)))) {
+        if (!is_null($lastupdate) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lastupdate)))) {
             throw new \InvalidArgumentException("invalid value for \$lastupdate when calling StationsXmlStationInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
@@ -1875,7 +1973,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setLastvalue($lastvalue)
     {
         if (is_null($lastvalue)) {
-            throw new \InvalidArgumentException('non-nullable lastvalue cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastvalue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastvalue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lastvalue'] = $lastvalue;
 
@@ -1885,7 +1990,7 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets connect
      *
-     * @return string
+     * @return string|null
      */
     public function getConnect()
     {
@@ -1895,14 +2000,21 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets connect
      *
-     * @param string $connect Connection identifier
+     * @param string|null $connect Connection identifier
      *
      * @return self
      */
     public function setConnect($connect)
     {
         if (is_null($connect)) {
-            throw new \InvalidArgumentException('non-nullable connect cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'connect');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('connect', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['connect'] = $connect;
 
@@ -1929,7 +2041,14 @@ class StationsXmlStationInner implements ModelInterface, ArrayAccess, \JsonSeria
     public function setCountryname($countryname)
     {
         if (is_null($countryname)) {
-            throw new \InvalidArgumentException('non-nullable countryname cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'countryname');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('countryname', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['countryname'] = $countryname;
 

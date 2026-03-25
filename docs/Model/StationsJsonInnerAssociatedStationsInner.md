@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** | Station code identifier | [optional]
 **main_station** | **int** | Station code identifier | [optional]
-**lat** | **float** | Latitude of the station | [optional]
-**lon** | **float** | Longitude of the station | [optional]
+**lat_assoc** | **float** | Latitude of the station | [optional]
+**lon_assoc** | **float** | Longitude of the station | [optional]
 **status** | **int** | Status code | [optional]
 **localoperator** | **int** | Local operator ID | [optional]
 

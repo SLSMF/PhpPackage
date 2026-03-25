@@ -91,7 +91,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'totmess' => 'int',
         'expectedmess' => 'int',
         'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]',
-        'associated_stations' => '\SLSMF\Client\Model\StationJsonInnerAssociatedStationsInner[]'
+        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]'
     ];
 
     /**
@@ -1599,7 +1599,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets associated_stations
      *
-     * @return \SLSMF\Client\Model\StationJsonInnerAssociatedStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null
      */
     public function getAssociatedStations()
     {
@@ -1609,7 +1609,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets associated_stations
      *
-     * @param \SLSMF\Client\Model\StationJsonInnerAssociatedStationsInner[]|null $associated_stations associated station
+     * @param \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null $associated_stations associated station
      *
      * @return self
      */

@@ -91,7 +91,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'totmess' => 'int',
         'expectedmess' => 'int',
         'sensor' => '\SLSMF\Client\Model\StationXmlSensor',
-        'associated_stations' => '\SLSMF\Client\Model\StationXmlAssociatedStationsInner[]'
+        'associated_stations' => '\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]'
     ];
 
     /**
@@ -1522,7 +1522,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets associated_stations
      *
-     * @return \SLSMF\Client\Model\StationXmlAssociatedStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null
      */
     public function getAssociatedStations()
     {
@@ -1532,7 +1532,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets associated_stations
      *
-     * @param \SLSMF\Client\Model\StationXmlAssociatedStationsInner[]|null $associated_stations associated station
+     * @param \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null $associated_stations associated station
      *
      * @return self
      */
