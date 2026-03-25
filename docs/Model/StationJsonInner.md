@@ -8,35 +8,35 @@ Name | Type | Description | Notes
 **location** | **string** | Location name of the station |
 **country** | **string** | Country code where the station is located |
 **type** | **string** | Type of station |
-**dcp_id** | **string** | DCP ID of the station |
-**wmo** | **string** | WMO code of the station |
+**dcp_id** | **string** | DCP ID of the station | [optional]
+**wmo** | **string** | WMO code of the station | [optional]
 **xmt_int** | **int** | XMtInt value |
 **lat** | **float** | Latitude of the station |
 **lon** | **float** | Longitude of the station |
-**har** | **int** | Har value, can be null |
-**gloss_id** | **string** | GlossID value, can be null |
-**ot12_code** | **string** | OT12Code value, can be null |
-**example** | **string** | Example value, can be null |
+**har** | **int** | Har value, can be null | [optional]
+**gloss_id** | **string** | GlossID value, can be null | [optional]
+**ot12_code** | **string** | OT12Code value, can be null | [optional]
+**example** | **string** | Example value, can be null | [optional]
 **utc_offset** | **int** | UTC Offset |
-**operator_id** | **int** | Operator ID, can be null |
+**operator_id** | **int** | Operator ID, can be null | [optional]
 **status** | **string** | Status of the station |
 **status_description** | **string** | Description of the station&#39;s status, can be null |
-**localoperator** | **string** | Local operator of the station |
-**performanceoperator1** | **string** | Performance operator 1, can be null |
-**performanceoperator2** | **string** | Performance operator 2, can be null |
-**performanceoperator3** | **string** | Performance operator 3, can be null |
-**date_created** | **string** | Creation date of the station data |
-**url** | **string** | URL for more information about the station, can be null |
-**statsensor** | **int** | StatSensor ID |
-**updatedata** | **string** | Update data frequency |
-**timestampdata** | **string** | Timestamp data |
-**timestampupdate** | **string** | Timestamp update |
-**transmittype** | **string** | Type of transmission |
-**countryname** | **string** | Country name |
-**example_message** | **string** | Example data, can be null |
-**totmess** | **int** | Total messages |
-**expectedmess** | **int** | Expected messages |
-**sensor** | [**\SLSMF\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station |
-**associated_stations** | [**\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]**](StationsJsonInnerAssociatedStationsInner.md) | associated station | [optional]
+**localoperator** | **string** | Local operator of the station | [optional]
+**performanceoperator1** | **string** | Performance operator 1, can be null | [optional]
+**performanceoperator2** | **string** | Performance operator 2, can be null | [optional]
+**performanceoperator3** | **string** | Performance operator 3, can be null | [optional]
+**date_created** | **string** | Creation date of the station data | [optional]
+**url** | **string** | URL for more information about the station, can be null | [optional]
+**statsensor** | **int** | StatSensor ID | [optional]
+**updatedata** | **string** | Update data frequency | [optional]
+**timestampdata** | **string** | Timestamp data | [optional]
+**timestampupdate** | **string** | Timestamp update | [optional]
+**transmittype** | **string** | Type of transmission | [optional]
+**countryname** | **string** | Country name | [optional]
+**example_message** | **string** | Example data, can be null | [optional]
+**totmess** | **int** | Total messages | [optional]
+**expectedmess** | **int** | Expected messages | [optional]
+**sensor** | [**\SLSMF\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station | [optional]
+**associated_stations** | [**\SLSMF\Client\Model\StationJsonInnerAssociatedStationsInner[]**](StationJsonInnerAssociatedStationsInner.md) | associated station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -112,19 +112,19 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
         'sensorid' => false,
         'sensor' => false,
         'rate' => false,
-        'samples' => false,
+        'samples' => true,
         'i' => true,
-        'offset' => false,
+        'offset' => true,
         'graph_url' => true,
         'show' => false,
-        'lasttime' => false,
-        'lastupdate' => false,
-        'lastvalue' => false,
-        'performance' => false,
-        'units' => false,
-        'timeorder' => false,
-        'received' => false,
-        'expected' => false
+        'lasttime' => true,
+        'lastupdate' => true,
+        'lastvalue' => true,
+        'performance' => true,
+        'units' => true,
+        'timeorder' => true,
+        'received' => true,
+        'expected' => true
     ];
 
     /**
@@ -505,7 +505,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSamples($samples)
     {
         if (is_null($samples)) {
-            throw new \InvalidArgumentException('non-nullable samples cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'samples');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('samples', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['samples'] = $samples;
 
@@ -566,7 +573,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOffset($offset)
     {
         if (is_null($offset)) {
-            throw new \InvalidArgumentException('non-nullable offset cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'offset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('offset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['offset'] = $offset;
 
@@ -654,10 +668,17 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLasttime($lasttime)
     {
         if (is_null($lasttime)) {
-            throw new \InvalidArgumentException('non-nullable lasttime cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lasttime');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lasttime', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", ObjectSerializer::toString($lasttime)))) {
+        if (!is_null($lasttime) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", ObjectSerializer::toString($lasttime)))) {
             throw new \InvalidArgumentException("invalid value for \$lasttime when calling StationXmlSensor., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.");
         }
 
@@ -686,10 +707,17 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastupdate($lastupdate)
     {
         if (is_null($lastupdate)) {
-            throw new \InvalidArgumentException('non-nullable lastupdate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastupdate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastupdate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", ObjectSerializer::toString($lastupdate)))) {
+        if (!is_null($lastupdate) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", ObjectSerializer::toString($lastupdate)))) {
             throw new \InvalidArgumentException("invalid value for \$lastupdate when calling StationXmlSensor., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.");
         }
 
@@ -718,7 +746,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastvalue($lastvalue)
     {
         if (is_null($lastvalue)) {
-            throw new \InvalidArgumentException('non-nullable lastvalue cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastvalue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastvalue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lastvalue'] = $lastvalue;
 
@@ -745,7 +780,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPerformance($performance)
     {
         if (is_null($performance)) {
-            throw new \InvalidArgumentException('non-nullable performance cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'performance');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('performance', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['performance'] = $performance;
 
@@ -772,7 +814,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnits($units)
     {
         if (is_null($units)) {
-            throw new \InvalidArgumentException('non-nullable units cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'units');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('units', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['units'] = $units;
 
@@ -799,7 +848,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTimeorder($timeorder)
     {
         if (is_null($timeorder)) {
-            throw new \InvalidArgumentException('non-nullable timeorder cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timeorder');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timeorder', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timeorder'] = $timeorder;
 
@@ -826,7 +882,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setReceived($received)
     {
         if (is_null($received)) {
-            throw new \InvalidArgumentException('non-nullable received cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'received');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('received', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['received'] = $received;
 
@@ -853,7 +916,14 @@ class StationXmlSensor implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setExpected($expected)
     {
         if (is_null($expected)) {
-            throw new \InvalidArgumentException('non-nullable expected cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'expected');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expected', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['expected'] = $expected;
 

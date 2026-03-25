@@ -91,7 +91,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'totmess' => 'int',
         'expectedmess' => 'int',
         'sensor' => '\SLSMF\Client\Model\StationXmlSensor',
-        'associated_stations' => '\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]'
+        'associated_stations' => '\SLSMF\Client\Model\StationXmlAssociatedStationsInner[]'
     ];
 
     /**
@@ -148,13 +148,13 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'location' => false,
         'country' => false,
         'type' => false,
-        'dcp_id' => false,
-        'wmo' => false,
+        'dcp_id' => true,
+        'wmo' => true,
         'xmt_int' => false,
         'lat' => false,
         'lon' => false,
-        'har' => false,
-        'gloss_id' => false,
+        'har' => true,
+        'gloss_id' => true,
         'ot12_code' => true,
         'utc_offset' => false,
         'operator_id' => true,
@@ -164,16 +164,16 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
         'performanceoperator1' => true,
         'performanceoperator2' => true,
         'performanceoperator3' => true,
-        'date_created' => false,
+        'date_created' => true,
         'url' => true,
-        'statsensor' => false,
-        'updatedata' => false,
+        'statsensor' => true,
+        'updatedata' => true,
         'timestampdata' => false,
-        'timestampupdate' => false,
-        'transmittype' => false,
-        'countryname' => false,
-        'totmess' => false,
-        'expectedmess' => false,
+        'timestampupdate' => true,
+        'transmittype' => true,
+        'countryname' => true,
+        'totmess' => true,
+        'expectedmess' => true,
         'sensor' => false,
         'associated_stations' => false
     ];
@@ -677,7 +677,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDcpId($dcp_id)
     {
         if (is_null($dcp_id)) {
-            throw new \InvalidArgumentException('non-nullable dcp_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'dcp_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dcp_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['dcp_id'] = $dcp_id;
 
@@ -704,7 +711,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setWmo($wmo)
     {
         if (is_null($wmo)) {
-            throw new \InvalidArgumentException('non-nullable wmo cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'wmo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('wmo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['wmo'] = $wmo;
 
@@ -812,7 +826,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHar($har)
     {
         if (is_null($har)) {
-            throw new \InvalidArgumentException('non-nullable har cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'har');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('har', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['har'] = $har;
 
@@ -839,7 +860,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGlossId($gloss_id)
     {
         if (is_null($gloss_id)) {
-            throw new \InvalidArgumentException('non-nullable gloss_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gloss_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gloss_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gloss_id'] = $gloss_id;
 
@@ -1151,7 +1179,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateCreated($date_created)
     {
         if (is_null($date_created)) {
-            throw new \InvalidArgumentException('non-nullable date_created cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_created');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_created', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_created'] = $date_created;
 
@@ -1212,7 +1247,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatsensor($statsensor)
     {
         if (is_null($statsensor)) {
-            throw new \InvalidArgumentException('non-nullable statsensor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'statsensor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('statsensor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['statsensor'] = $statsensor;
 
@@ -1239,7 +1281,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedata($updatedata)
     {
         if (is_null($updatedata)) {
-            throw new \InvalidArgumentException('non-nullable updatedata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updatedata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updatedata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updatedata'] = $updatedata;
 
@@ -1293,7 +1342,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTimestampupdate($timestampupdate)
     {
         if (is_null($timestampupdate)) {
-            throw new \InvalidArgumentException('non-nullable timestampupdate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timestampupdate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timestampupdate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timestampupdate'] = $timestampupdate;
 
@@ -1320,7 +1376,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTransmittype($transmittype)
     {
         if (is_null($transmittype)) {
-            throw new \InvalidArgumentException('non-nullable transmittype cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'transmittype');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('transmittype', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['transmittype'] = $transmittype;
 
@@ -1347,7 +1410,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCountryname($countryname)
     {
         if (is_null($countryname)) {
-            throw new \InvalidArgumentException('non-nullable countryname cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'countryname');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('countryname', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['countryname'] = $countryname;
 
@@ -1374,7 +1444,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotmess($totmess)
     {
         if (is_null($totmess)) {
-            throw new \InvalidArgumentException('non-nullable totmess cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'totmess');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('totmess', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['totmess'] = $totmess;
 
@@ -1401,7 +1478,14 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setExpectedmess($expectedmess)
     {
         if (is_null($expectedmess)) {
-            throw new \InvalidArgumentException('non-nullable expectedmess cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'expectedmess');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expectedmess', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['expectedmess'] = $expectedmess;
 
@@ -1438,7 +1522,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets associated_stations
      *
-     * @return \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationXmlAssociatedStationsInner[]|null
      */
     public function getAssociatedStations()
     {
@@ -1448,7 +1532,7 @@ class StationXml implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets associated_stations
      *
-     * @param \SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]|null $associated_stations associated station
+     * @param \SLSMF\Client\Model\StationXmlAssociatedStationsInner[]|null $associated_stations associated station
      *
      * @return self
      */
