@@ -38,5 +38,6 @@ Name | Type | Description | Notes
 **expectedmess** | **int** | Expected messages | [optional]
 **sensor** | [**\SLSMF\Client\Model\StationJsonInnerSensorInner[]**](StationJsonInnerSensorInner.md) | Sensor information for the station | [optional]
 **associated_stations** | [**\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]**](StationsJsonInnerAssociatedStationsInner.md) | associated station | [optional]
+**secondary_of** | **string** | Link to main station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

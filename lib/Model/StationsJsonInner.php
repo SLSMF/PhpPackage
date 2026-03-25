@@ -101,7 +101,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => 'float',
         'connect' => 'string',
         'countryname' => 'string',
-        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]'
+        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]',
+        'secondary_of' => 'string'
     ];
 
     /**
@@ -155,7 +156,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => 'float',
         'connect' => null,
         'countryname' => null,
-        'associated_stations' => null
+        'associated_stations' => null,
+        'secondary_of' => null
     ];
 
     /**
@@ -207,7 +209,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => true,
         'connect' => true,
         'countryname' => true,
-        'associated_stations' => false
+        'associated_stations' => false,
+        'secondary_of' => true
     ];
 
     /**
@@ -339,7 +342,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => 'lastvalue',
         'connect' => 'connect',
         'countryname' => 'countryname',
-        'associated_stations' => 'associated_stations'
+        'associated_stations' => 'associated_stations',
+        'secondary_of' => 'secondary_of'
     ];
 
     /**
@@ -391,7 +395,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => 'setLastvalue',
         'connect' => 'setConnect',
         'countryname' => 'setCountryname',
-        'associated_stations' => 'setAssociatedStations'
+        'associated_stations' => 'setAssociatedStations',
+        'secondary_of' => 'setSecondaryOf'
     ];
 
     /**
@@ -443,7 +448,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastvalue' => 'getLastvalue',
         'connect' => 'getConnect',
         'countryname' => 'getCountryname',
-        'associated_stations' => 'getAssociatedStations'
+        'associated_stations' => 'getAssociatedStations',
+        'secondary_of' => 'getSecondaryOf'
     ];
 
     /**
@@ -547,6 +553,7 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('connect', $data ?? [], null);
         $this->setIfExists('countryname', $data ?? [], null);
         $this->setIfExists('associated_stations', $data ?? [], null);
+        $this->setIfExists('secondary_of', $data ?? [], null);
     }
 
     /**
@@ -2069,6 +2076,40 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
         }
         $this->container['associated_stations'] = $associated_stations;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondary_of
+     *
+     * @return string|null
+     */
+    public function getSecondaryOf()
+    {
+        return $this->container['secondary_of'];
+    }
+
+    /**
+     * Sets secondary_of
+     *
+     * @param string|null $secondary_of Link to main station
+     *
+     * @return self
+     */
+    public function setSecondaryOf($secondary_of)
+    {
+        if (is_null($secondary_of)) {
+            array_push($this->openAPINullablesSetToNull, 'secondary_of');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('secondary_of', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['secondary_of'] = $secondary_of;
 
         return $this;
     }
