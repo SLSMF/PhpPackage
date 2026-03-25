@@ -129,5 +129,3 @@ lib/Model/TideModelJson.php
 lib/Model/TideModelJsonDataInner.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/StationJsonInnerAssociatedStationsInnerTest.php
-test/Model/StationXmlAssociatedStationsInnerTest.php

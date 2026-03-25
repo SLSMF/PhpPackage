@@ -60,8 +60,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static $openAPITypes = [
         'code' => 'string',
         'main_station' => 'int',
-        'lat' => 'float',
-        'lon' => 'float',
+        'lat_assoc' => 'float',
+        'lon_assoc' => 'float',
         'status' => 'int',
         'localoperator' => 'int'
     ];
@@ -76,8 +76,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static $openAPIFormats = [
         'code' => null,
         'main_station' => null,
-        'lat' => 'float',
-        'lon' => 'float',
+        'lat_assoc' => 'float',
+        'lon_assoc' => 'float',
         'status' => null,
         'localoperator' => null
     ];
@@ -90,8 +90,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static array $openAPINullables = [
         'code' => false,
         'main_station' => false,
-        'lat' => true,
-        'lon' => true,
+        'lat_assoc' => true,
+        'lon_assoc' => true,
         'status' => true,
         'localoperator' => true
     ];
@@ -184,8 +184,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static $attributeMap = [
         'code' => 'code',
         'main_station' => 'main_station',
-        'lat' => 'Lat',
-        'lon' => 'Lon',
+        'lat_assoc' => 'lat_assoc',
+        'lon_assoc' => 'lon_assoc',
         'status' => 'status',
         'localoperator' => 'localoperator'
     ];
@@ -198,8 +198,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static $setters = [
         'code' => 'setCode',
         'main_station' => 'setMainStation',
-        'lat' => 'setLat',
-        'lon' => 'setLon',
+        'lat_assoc' => 'setLatAssoc',
+        'lon_assoc' => 'setLonAssoc',
         'status' => 'setStatus',
         'localoperator' => 'setLocaloperator'
     ];
@@ -212,8 +212,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     protected static $getters = [
         'code' => 'getCode',
         'main_station' => 'getMainStation',
-        'lat' => 'getLat',
-        'lon' => 'getLon',
+        'lat_assoc' => 'getLatAssoc',
+        'lon_assoc' => 'getLonAssoc',
         'status' => 'getStatus',
         'localoperator' => 'getLocaloperator'
     ];
@@ -277,8 +277,8 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('main_station', $data ?? [], null);
-        $this->setIfExists('lat', $data ?? [], null);
-        $this->setIfExists('lon', $data ?? [], null);
+        $this->setIfExists('lat_assoc', $data ?? [], null);
+        $this->setIfExists('lon_assoc', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('localoperator', $data ?? [], null);
     }
@@ -380,69 +380,69 @@ class StationJsonInnerAssociatedStationsInner implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets lat
+     * Gets lat_assoc
      *
      * @return float|null
      */
-    public function getLat()
+    public function getLatAssoc()
     {
-        return $this->container['lat'];
+        return $this->container['lat_assoc'];
     }
 
     /**
-     * Sets lat
+     * Sets lat_assoc
      *
-     * @param float|null $lat Latitude of the station
+     * @param float|null $lat_assoc Latitude of the station
      *
      * @return self
      */
-    public function setLat($lat)
+    public function setLatAssoc($lat_assoc)
     {
-        if (is_null($lat)) {
-            array_push($this->openAPINullablesSetToNull, 'lat');
+        if (is_null($lat_assoc)) {
+            array_push($this->openAPINullablesSetToNull, 'lat_assoc');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lat', $nullablesSetToNull);
+            $index = array_search('lat_assoc', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['lat'] = $lat;
+        $this->container['lat_assoc'] = $lat_assoc;
 
         return $this;
     }
 
     /**
-     * Gets lon
+     * Gets lon_assoc
      *
      * @return float|null
      */
-    public function getLon()
+    public function getLonAssoc()
     {
-        return $this->container['lon'];
+        return $this->container['lon_assoc'];
     }
 
     /**
-     * Sets lon
+     * Sets lon_assoc
      *
-     * @param float|null $lon Longitude of the station
+     * @param float|null $lon_assoc Longitude of the station
      *
      * @return self
      */
-    public function setLon($lon)
+    public function setLonAssoc($lon_assoc)
     {
-        if (is_null($lon)) {
-            array_push($this->openAPINullablesSetToNull, 'lon');
+        if (is_null($lon_assoc)) {
+            array_push($this->openAPINullablesSetToNull, 'lon_assoc');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lon', $nullablesSetToNull);
+            $index = array_search('lon_assoc', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['lon'] = $lon;
+        $this->container['lon_assoc'] = $lon_assoc;
 
         return $this;
     }
