@@ -60,6 +60,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'id' => 'int',
         'fullname' => 'string',
+        'acronym' => 'string',
+        'country' => 'string',
+        'imis_institute_id' => 'int',
         'provided' => 'int',
         'operated' => 'int'
     ];
@@ -74,6 +77,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPIFormats = [
         'id' => null,
         'fullname' => null,
+        'acronym' => null,
+        'country' => null,
+        'imis_institute_id' => null,
         'provided' => null,
         'operated' => null
     ];
@@ -86,6 +92,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'id' => false,
         'fullname' => false,
+        'acronym' => false,
+        'country' => false,
+        'imis_institute_id' => false,
         'provided' => false,
         'operated' => false
     ];
@@ -178,6 +187,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static $attributeMap = [
         'id' => 'id',
         'fullname' => 'fullname',
+        'acronym' => 'acronym',
+        'country' => 'country',
+        'imis_institute_id' => 'imis_institute_id',
         'provided' => 'provided',
         'operated' => 'operated'
     ];
@@ -190,6 +202,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static $setters = [
         'id' => 'setId',
         'fullname' => 'setFullname',
+        'acronym' => 'setAcronym',
+        'country' => 'setCountry',
+        'imis_institute_id' => 'setImisInstituteId',
         'provided' => 'setProvided',
         'operated' => 'setOperated'
     ];
@@ -202,6 +217,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'id' => 'getId',
         'fullname' => 'getFullname',
+        'acronym' => 'getAcronym',
+        'country' => 'getCountry',
+        'imis_institute_id' => 'getImisInstituteId',
         'provided' => 'getProvided',
         'operated' => 'getOperated'
     ];
@@ -265,6 +283,9 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('fullname', $data ?? [], null);
+        $this->setIfExists('acronym', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('imis_institute_id', $data ?? [], null);
         $this->setIfExists('provided', $data ?? [], null);
         $this->setIfExists('operated', $data ?? [], null);
     }
@@ -373,6 +394,87 @@ class OperatorsXmlOperatorInner implements ModelInterface, ArrayAccess, \JsonSer
             throw new \InvalidArgumentException('non-nullable fullname cannot be null');
         }
         $this->container['fullname'] = $fullname;
+
+        return $this;
+    }
+
+    /**
+     * Gets acronym
+     *
+     * @return string|null
+     */
+    public function getAcronym()
+    {
+        return $this->container['acronym'];
+    }
+
+    /**
+     * Sets acronym
+     *
+     * @param string|null $acronym acronym of the operator
+     *
+     * @return self
+     */
+    public function setAcronym($acronym)
+    {
+        if (is_null($acronym)) {
+            throw new \InvalidArgumentException('non-nullable acronym cannot be null');
+        }
+        $this->container['acronym'] = $acronym;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country Full name of the country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
+        }
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets imis_institute_id
+     *
+     * @return int|null
+     */
+    public function getImisInstituteId()
+    {
+        return $this->container['imis_institute_id'];
+    }
+
+    /**
+     * Sets imis_institute_id
+     *
+     * @param int|null $imis_institute_id MarineInfo is a catalogue that offers a comprehensive range of interlinked data covering various topics relevant to the marine research domain.
+     *
+     * @return self
+     */
+    public function setImisInstituteId($imis_institute_id)
+    {
+        if (is_null($imis_institute_id)) {
+            throw new \InvalidArgumentException('non-nullable imis_institute_id cannot be null');
+        }
+        $this->container['imis_institute_id'] = $imis_institute_id;
 
         return $this;
     }

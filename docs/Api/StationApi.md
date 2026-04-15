@@ -163,12 +163,12 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     $config
 );
 $code = 'abas'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
-$timestart = '2026-03-18T21:22'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$timestop = '2026-03-25T21:22'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestart = '2026-04-08T12:49'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$timestop = '2026-04-15T12:49'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $includesensors = array('includesensors_example'); // string[] | sensors to include, default is all sensors
 $nofilter = false; // bool | Include all values when true; when false excludes value -999 (missing value), default = false
 $allsensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
-$skip_gaps_until = '2026-03-25T21:22'; // string | Date in format 'YYYY-MM-DDTHH:MM'. If there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
+$skip_gaps_until = '2026-04-15T12:49'; // string | Date in format 'YYYY-MM-DDTHH:MM'. If there is no data available within the specified 'starttime' to 'stoptime' interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty.
 $limit = 10; // int | Maximum number of records returned per request
 
 try {
@@ -184,12 +184,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;abas&#39;] |
-| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-03-18T21:22&#39;] |
-| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-03-25T21:22&#39;] |
+| **timestart** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-04-08T12:49&#39;] |
+| **timestop** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-04-15T12:49&#39;] |
 | **includesensors** | [**string[]**](../Model/string.md)| sensors to include, default is all sensors | [optional] |
 | **nofilter** | **bool**| Include all values when true; when false excludes value -999 (missing value), default &#x3D; false | [optional] [default to false] |
 | **allsensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |
-| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2026-03-25T21:22&#39;] |
+| **skip_gaps_until** | **string**| Date in format &#39;YYYY-MM-DDTHH:MM&#39;. If there is no data available within the specified &#39;starttime&#39; to &#39;stoptime&#39; interval, the interval will be shifted to the next datetime for which data is available, while maintaining the original interval size in days. If no data is available before the given date, the response will be empty. | [optional] [default to &#39;2026-04-15T12:49&#39;] |
 | **limit** | **int**| Maximum number of records returned per request | [optional] [default to 10] |
 
 ### Return type
