@@ -64,7 +64,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => 'string',
         'imis_institute_id' => 'int',
         'provided' => 'int',
-        'operated' => 'int'
+        'operated' => 'int',
+        'contact_for_performance' => 'string',
+        'contact_person1' => 'string',
+        'contact_email1' => 'string',
+        'contact_phone1' => 'string',
+        'contact_person2' => 'string',
+        'contact_email2' => 'string',
+        'contact_phone2' => 'string'
     ];
 
     /**
@@ -81,7 +88,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => null,
         'imis_institute_id' => null,
         'provided' => null,
-        'operated' => null
+        'operated' => null,
+        'contact_for_performance' => null,
+        'contact_person1' => null,
+        'contact_email1' => null,
+        'contact_phone1' => null,
+        'contact_person2' => null,
+        'contact_email2' => null,
+        'contact_phone2' => null
     ];
 
     /**
@@ -96,7 +110,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => false,
         'imis_institute_id' => false,
         'provided' => false,
-        'operated' => false
+        'operated' => false,
+        'contact_for_performance' => true,
+        'contact_person1' => true,
+        'contact_email1' => true,
+        'contact_phone1' => true,
+        'contact_person2' => true,
+        'contact_email2' => true,
+        'contact_phone2' => true
     ];
 
     /**
@@ -191,7 +212,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => 'country',
         'imis_institute_id' => 'imis_institute_id',
         'provided' => 'provided',
-        'operated' => 'operated'
+        'operated' => 'operated',
+        'contact_for_performance' => 'contact_for_performance',
+        'contact_person1' => 'contact_person1',
+        'contact_email1' => 'contact_email1',
+        'contact_phone1' => 'contact_phone1',
+        'contact_person2' => 'contact_person2',
+        'contact_email2' => 'contact_email2',
+        'contact_phone2' => 'contact_phone2'
     ];
 
     /**
@@ -206,7 +234,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => 'setCountry',
         'imis_institute_id' => 'setImisInstituteId',
         'provided' => 'setProvided',
-        'operated' => 'setOperated'
+        'operated' => 'setOperated',
+        'contact_for_performance' => 'setContactForPerformance',
+        'contact_person1' => 'setContactPerson1',
+        'contact_email1' => 'setContactEmail1',
+        'contact_phone1' => 'setContactPhone1',
+        'contact_person2' => 'setContactPerson2',
+        'contact_email2' => 'setContactEmail2',
+        'contact_phone2' => 'setContactPhone2'
     ];
 
     /**
@@ -221,7 +256,14 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         'country' => 'getCountry',
         'imis_institute_id' => 'getImisInstituteId',
         'provided' => 'getProvided',
-        'operated' => 'getOperated'
+        'operated' => 'getOperated',
+        'contact_for_performance' => 'getContactForPerformance',
+        'contact_person1' => 'getContactPerson1',
+        'contact_email1' => 'getContactEmail1',
+        'contact_phone1' => 'getContactPhone1',
+        'contact_person2' => 'getContactPerson2',
+        'contact_email2' => 'getContactEmail2',
+        'contact_phone2' => 'getContactPhone2'
     ];
 
     /**
@@ -288,6 +330,13 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('imis_institute_id', $data ?? [], null);
         $this->setIfExists('provided', $data ?? [], null);
         $this->setIfExists('operated', $data ?? [], null);
+        $this->setIfExists('contact_for_performance', $data ?? [], null);
+        $this->setIfExists('contact_person1', $data ?? [], null);
+        $this->setIfExists('contact_email1', $data ?? [], null);
+        $this->setIfExists('contact_phone1', $data ?? [], null);
+        $this->setIfExists('contact_person2', $data ?? [], null);
+        $this->setIfExists('contact_email2', $data ?? [], null);
+        $this->setIfExists('contact_phone2', $data ?? [], null);
     }
 
     /**
@@ -529,6 +578,244 @@ class OperatorsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable operated cannot be null');
         }
         $this->container['operated'] = $operated;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_for_performance
+     *
+     * @return string|null
+     */
+    public function getContactForPerformance()
+    {
+        return $this->container['contact_for_performance'];
+    }
+
+    /**
+     * Sets contact_for_performance
+     *
+     * @param string|null $contact_for_performance contact_for_performance
+     *
+     * @return self
+     */
+    public function setContactForPerformance($contact_for_performance)
+    {
+        if (is_null($contact_for_performance)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_for_performance');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_for_performance', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_for_performance'] = $contact_for_performance;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_person1
+     *
+     * @return string|null
+     */
+    public function getContactPerson1()
+    {
+        return $this->container['contact_person1'];
+    }
+
+    /**
+     * Sets contact_person1
+     *
+     * @param string|null $contact_person1 contact_person1
+     *
+     * @return self
+     */
+    public function setContactPerson1($contact_person1)
+    {
+        if (is_null($contact_person1)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_person1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_person1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_person1'] = $contact_person1;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_email1
+     *
+     * @return string|null
+     */
+    public function getContactEmail1()
+    {
+        return $this->container['contact_email1'];
+    }
+
+    /**
+     * Sets contact_email1
+     *
+     * @param string|null $contact_email1 contact_email1
+     *
+     * @return self
+     */
+    public function setContactEmail1($contact_email1)
+    {
+        if (is_null($contact_email1)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_email1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_email1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_email1'] = $contact_email1;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_phone1
+     *
+     * @return string|null
+     */
+    public function getContactPhone1()
+    {
+        return $this->container['contact_phone1'];
+    }
+
+    /**
+     * Sets contact_phone1
+     *
+     * @param string|null $contact_phone1 contact_phone1
+     *
+     * @return self
+     */
+    public function setContactPhone1($contact_phone1)
+    {
+        if (is_null($contact_phone1)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_phone1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_phone1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_phone1'] = $contact_phone1;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_person2
+     *
+     * @return string|null
+     */
+    public function getContactPerson2()
+    {
+        return $this->container['contact_person2'];
+    }
+
+    /**
+     * Sets contact_person2
+     *
+     * @param string|null $contact_person2 contact_person2
+     *
+     * @return self
+     */
+    public function setContactPerson2($contact_person2)
+    {
+        if (is_null($contact_person2)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_person2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_person2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_person2'] = $contact_person2;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_email2
+     *
+     * @return string|null
+     */
+    public function getContactEmail2()
+    {
+        return $this->container['contact_email2'];
+    }
+
+    /**
+     * Sets contact_email2
+     *
+     * @param string|null $contact_email2 contact_email2
+     *
+     * @return self
+     */
+    public function setContactEmail2($contact_email2)
+    {
+        if (is_null($contact_email2)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_email2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_email2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_email2'] = $contact_email2;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_phone2
+     *
+     * @return string|null
+     */
+    public function getContactPhone2()
+    {
+        return $this->container['contact_phone2'];
+    }
+
+    /**
+     * Sets contact_phone2
+     *
+     * @param string|null $contact_phone2 contact_phone2
+     *
+     * @return self
+     */
+    public function setContactPhone2($contact_phone2)
+    {
+        if (is_null($contact_phone2)) {
+            array_push($this->openAPINullablesSetToNull, 'contact_phone2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('contact_phone2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['contact_phone2'] = $contact_phone2;
 
         return $this;
     }
