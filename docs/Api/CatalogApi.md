@@ -1,20 +1,20 @@
-# SLSMF\Client\CatalogApi
+# SLSMF\\Client\CatalogApi
 
 
 
-All URIs are relative to https://api.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCatalogEntries()**](CatalogApi.md#getCatalogEntries) | **GET** /v2/catalog | Retrieve list of all catalog entries. |
-| [**getCatalogEntryByCode()**](CatalogApi.md#getCatalogEntryByCode) | **GET** /v2/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier. |
-| [**getCatalogEntryByOrganisationAndCode()**](CatalogApi.md#getCatalogEntryByOrganisationAndCode) | **GET** /v2/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier. |
+| [**getCatalogEntries()**](CatalogApi.md#getCatalogEntries) | **GET** /v2.1/catalog | Retrieve list of all catalog entries. |
+| [**getCatalogEntryByCode()**](CatalogApi.md#getCatalogEntryByCode) | **GET** /v2.1/catalog/{ssc_code} | Retrieve specific catalog entry by it&#39;s catalog identifier. |
+| [**getCatalogEntryByOrganisationAndCode()**](CatalogApi.md#getCatalogEntryByOrganisationAndCode) | **GET** /v2.1/catalog/{organisation}/{external_code} | Retrieve a specific catalog entry by it&#39;s external identifier. |
 
 
 ## `getCatalogEntries()`
 
 ```php
-getCatalogEntries($country, $limit): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntries($country_code, $limit): \SLSMF\\Client\Model\CatalogEntry[]
 ```
 
 Retrieve list of all catalog entries.
@@ -27,22 +27,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$country = 'country_example'; // string | country iso2
+$country_code = JP; // string | Country ISO 3166-1 alpha-2 code
 $limit = 10; // int | Maximum number of records returned per request
 
 try {
-    $result = $apiInstance->getCatalogEntries($country, $limit);
+    $result = $apiInstance->getCatalogEntries($country_code, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntries: ', $e->getMessage(), PHP_EOL;
@@ -53,12 +53,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **country** | **string**| country iso2 | [optional] |
+| **country_code** | **string**| Country ISO 3166-1 alpha-2 code | [optional] |
 | **limit** | **int**| Maximum number of records returned per request | [optional] [default to 10] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\\Client\Model\CatalogEntry[]**](../Model/CatalogEntry.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ try {
 ## `getCatalogEntryByCode()`
 
 ```php
-getCatalogEntryByCode($code): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByCode($ssc_code): \SLSMF\\Client\Model\CatalogEntry
 ```
 
 Retrieve specific catalog entry by it's catalog identifier.
@@ -89,21 +89,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$code = 'SSC-abas'; // string | SSC-code
+$ssc_code = 'SSC-abas'; // string | SSC-code
 
 try {
-    $result = $apiInstance->getCatalogEntryByCode($code);
+    $result = $apiInstance->getCatalogEntryByCode($ssc_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntryByCode: ', $e->getMessage(), PHP_EOL;
@@ -114,11 +114,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| SSC-code | [default to &#39;SSC-abas&#39;] |
+| **ssc_code** | **string**| SSC-code | [default to &#39;SSC-abas&#39;] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\\Client\Model\CatalogEntry**](../Model/CatalogEntry.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ try {
 ## `getCatalogEntryByOrganisationAndCode()`
 
 ```php
-getCatalogEntryByOrganisationAndCode($organisation, $code): \SLSMF\Client\Model\CatalogJsonInner[]
+getCatalogEntryByOrganisationAndCode($organisation, $external_code): \SLSMF\\Client\Model\CatalogEntry
 ```
 
 Retrieve a specific catalog entry by it's external identifier.
@@ -149,22 +149,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\\Client\Api\CatalogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $organisation = 'ioc'; // string | The source organisation for the provided code.
-$code = 'abas'; // string | Search the catalog by an external code.
+$external_code = 'abas'; // string | External station code used in query. See SSC catalog codes in https://www.ioc-sealevelmonitoring.org/ssc/
 
 try {
-    $result = $apiInstance->getCatalogEntryByOrganisationAndCode($organisation, $code);
+    $result = $apiInstance->getCatalogEntryByOrganisationAndCode($organisation, $external_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogEntryByOrganisationAndCode: ', $e->getMessage(), PHP_EOL;
@@ -176,11 +176,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation** | **string**| The source organisation for the provided code. | [default to &#39;ioc&#39;] |
-| **code** | **string**| Search the catalog by an external code. | [default to &#39;abas&#39;] |
+| **external_code** | **string**| External station code used in query. See SSC catalog codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;abas&#39;] |
 
 ### Return type
 
-[**\SLSMF\Client\Model\CatalogJsonInner[]**](../Model/CatalogJsonInner.md)
+[**\SLSMF\\Client\Model\CatalogEntry**](../Model/CatalogEntry.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slevel** | **mixed** |  |
+**slevel** | **float** |  |
 **stime** | **string** |  |
 **sensor** | **string** |  |
 **missing** | **string** |  | [optional]
