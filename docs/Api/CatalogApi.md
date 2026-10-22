@@ -1,7 +1,5 @@
 # SLSMF\\Client\CatalogApi
 
-
-
 All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

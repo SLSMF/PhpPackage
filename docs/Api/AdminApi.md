@@ -1,22 +1,20 @@
 # SLSMF\\Client\AdminApi
 
-admin
-
 All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getResearchMetadata()**](AdminApi.md#getResearchMetadata) | **GET** /v2.1/research/metadata/{sensor_id} | Retrieve daily metadata records from the research collection. |
+| [**getResearchMetadata_0()**](AdminApi.md#getResearchMetadata_0) | **GET** /v2.1/research/metadata/{sensor_id} | Retrieve daily metadata records from the research collection. |
 | [**getStationHistory()**](AdminApi.md#getStationHistory) | **GET** /v2.1/stations/{station_code}/history | Retrieve metadata for a station. |
-| [**getStationSensorConstituents()**](AdminApi.md#getStationSensorConstituents) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics | **Experimental** Retrieve tide model data of sensor. |
-| [**getStationSensorPredictions()**](AdminApi.md#getStationSensorPredictions) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics/predictions/data | **Experimental** Retrieve sea level predictions based on latest tide model of the sensor. Maximum 365 days in one request. By default next day is retrieved. |
-| [**getStationSensorResearchDataDetidedTD()**](AdminApi.md#getStationSensorResearchDataDetidedTD) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics/data | **Experimental** Retrieve detided data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. |
+| [**getStationSensorConstituents_0()**](AdminApi.md#getStationSensorConstituents_0) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics | **Experimental** Retrieve tide model data of sensor. |
+| [**getStationSensorPredictions_0()**](AdminApi.md#getStationSensorPredictions_0) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics/predictions/data | **Experimental** Retrieve sea level predictions based on latest tide model of the sensor. Maximum 365 days in one request. By default next day is retrieved. |
+| [**getStationSensorResearchDataDetidedTD_0()**](AdminApi.md#getStationSensorResearchDataDetidedTD_0) | **GET** /v2.1/research/stations/{station_code}/sensors/{sensor}/tidal-harmonics/data | **Experimental** Retrieve detided data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. |
 
 
-## `getResearchMetadata()`
+## `getResearchMetadata_0()`
 
 ```php
-getResearchMetadata($sensor_id, $start_date, $stop_date): \SLSMF\\Client\Model\GetResearchMetadata200Response
+getResearchMetadata_0($sensor_id, $start_date, $stop_date): \SLSMF\\Client\Model\GetResearchMetadata200Response
 ```
 
 Retrieve daily metadata records from the research collection.
@@ -45,10 +43,10 @@ $start_date = '2026-10-14'; // string | From date, included in result, format 'Y
 $stop_date = '2026-10-22'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
-    $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);
+    $result = $apiInstance->getResearchMetadata_0($sensor_id, $start_date, $stop_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->getResearchMetadata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->getResearchMetadata_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -137,10 +135,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getStationSensorConstituents()`
+## `getStationSensorConstituents_0()`
 
 ```php
-getStationSensorConstituents($station_code, $sensor, $stop_date, $lateral_correction): string
+getStationSensorConstituents_0($station_code, $sensor, $stop_date, $lateral_correction): string
 ```
 
 **Experimental** Retrieve tide model data of sensor.
@@ -170,10 +168,10 @@ $stop_date = '2026-10-22'; // string | Retrieve the latest tidal prediction mode
 $lateral_correction = true; // bool | Apply lateral correction to amplitude and phase
 
 try {
-    $result = $apiInstance->getStationSensorConstituents($station_code, $sensor, $stop_date, $lateral_correction);
+    $result = $apiInstance->getStationSensorConstituents_0($station_code, $sensor, $stop_date, $lateral_correction);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->getStationSensorConstituents: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->getStationSensorConstituents_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -203,10 +201,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getStationSensorPredictions()`
+## `getStationSensorPredictions_0()`
 
 ```php
-getStationSensorPredictions($station_code, $sensor, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average): string
+getStationSensorPredictions_0($station_code, $sensor, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average): string
 ```
 
 **Experimental** Retrieve sea level predictions based on latest tide model of the sensor. Maximum 365 days in one request. By default next day is retrieved.
@@ -240,10 +238,10 @@ $page = 1; // int | Page number for paginated results. Selects the n‑th consec
 $subtract_30d_average = false; // bool | Subtract 30-day average
 
 try {
-    $result = $apiInstance->getStationSensorPredictions($station_code, $sensor, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average);
+    $result = $apiInstance->getStationSensorPredictions_0($station_code, $sensor, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->getStationSensorPredictions: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->getStationSensorPredictions_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -277,10 +275,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getStationSensorResearchDataDetidedTD()`
+## `getStationSensorResearchDataDetidedTD_0()`
 
 ```php
-getStationSensorResearchDataDetidedTD($station_code, $sensor, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line): string
+getStationSensorResearchDataDetidedTD_0($station_code, $sensor, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line): string
 ```
 
 **Experimental** Retrieve detided data for a station with a maximum of 365 days in one request. By default 7 days are retrieved.
@@ -322,10 +320,10 @@ $filter_spikes_via_median = true; // bool | Set slevel = NA when sea level flagg
 $filter_flat_line = true; // bool | Set slevel = NA when sea level flagged as flat line
 
 try {
-    $result = $apiInstance->getStationSensorResearchDataDetidedTD($station_code, $sensor, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line);
+    $result = $apiInstance->getStationSensorResearchDataDetidedTD_0($station_code, $sensor, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->getStationSensorResearchDataDetidedTD: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->getStationSensorResearchDataDetidedTD_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

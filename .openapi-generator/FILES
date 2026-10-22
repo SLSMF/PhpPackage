@@ -57,7 +57,6 @@ lib/Api/ResearchApi.php
 lib/Api/StationApi.php
 lib/ApiException.php
 lib/Configuration.php
-lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/CatalogEntry.php
 lib/Model/CatalogEntryGlossIdInner.php
@@ -104,6 +103,10 @@ lib/Model/TideModelJsonDataInner.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AdminApiTest.php
+test/Api/CatalogApiTest.php
+test/Api/OperatorApiTest.php
+test/Api/ResearchApiTest.php
+test/Api/StationApiTest.php
 test/Model/CatalogEntryGlossIdInnerTest.php
 test/Model/CatalogEntryPsmslIdInnerTest.php
 test/Model/CatalogEntryPtwcIdInnerTest.php
@@ -130,6 +133,12 @@ test/Model/StationMessageInnerStationsInnerTest.php
 test/Model/StationMessageInnerTest.php
 test/Model/StationPerformanceSensorsInnerTest.php
 test/Model/StationPerformanceTest.php
+test/Model/StationResearchDataDetidedJsonDataInnerTest.php
+test/Model/StationResearchDataDetidedJsonTest.php
+test/Model/StationResearchDataJsonDataInnerTest.php
+test/Model/StationResearchDataJsonTest.php
+test/Model/StationResearchDataPredictedJsonDataInnerTest.php
+test/Model/StationResearchDataPredictedJsonTest.php
 test/Model/StationResearchMetaDataTest.php
 test/Model/StationSensorsInnerTest.php
 test/Model/StationTest.php
@@ -137,3 +146,5 @@ test/Model/StationsInnerAssociatedStationsInnerTest.php
 test/Model/StationsInnerSensorsInnerTest.php
 test/Model/StationsInnerTest.php
 test/Model/StationsShortlistInnerTest.php
+test/Model/TideModelJsonDataInnerTest.php
+test/Model/TideModelJsonTest.php
