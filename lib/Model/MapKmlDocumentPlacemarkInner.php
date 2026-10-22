@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * MapKmlDocumentPlacemarkInner Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class MapKmlDocumentPlacemarkInner implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'name' => 'string',
         'description' => 'string',
-        'point' => '\SLSMF\\Client\Model\MapKmlDocumentPlacemarkInnerPoint'
+        'point' => '\SLSMF\Client\Model\MapKmlDocumentPlacemarkInnerPoint'
     ];
 
     /**
@@ -361,7 +361,7 @@ class MapKmlDocumentPlacemarkInner implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets point
      *
-     * @return \SLSMF\\Client\Model\MapKmlDocumentPlacemarkInnerPoint|null
+     * @return \SLSMF\Client\Model\MapKmlDocumentPlacemarkInnerPoint|null
      */
     public function getPoint()
     {
@@ -371,7 +371,7 @@ class MapKmlDocumentPlacemarkInner implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets point
      *
-     * @param \SLSMF\\Client\Model\MapKmlDocumentPlacemarkInnerPoint|null $point point
+     * @param \SLSMF\Client\Model\MapKmlDocumentPlacemarkInnerPoint|null $point point
      *
      * @return self
      */

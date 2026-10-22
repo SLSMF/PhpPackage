@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * CatalogEntry Class Doc Comment
  *
  * @category Class
  * @description Schema representing SSC data
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,13 +66,13 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'float',
         'longitude' => 'float',
         'modified_at' => 'string',
-        'ioc_code' => '\SLSMF\\Client\Model\StationsInnerAssociatedStationsInner[]',
-        'psmsl_id' => '\SLSMF\\Client\Model\CatalogEntryPsmslIdInner[]',
-        'ptwc_id' => '\SLSMF\\Client\Model\CatalogEntryPtwcIdInner[]',
-        'gloss_id' => '\SLSMF\\Client\Model\CatalogEntryGlossIdInner[]',
-        'uhslc_id' => '\SLSMF\\Client\Model\CatalogEntryUhslcIdInner[]',
-        'sonel_gps_id' => '\SLSMF\\Client\Model\CatalogEntrySonelGpsIdInner[]',
-        'sonel_tg_id' => '\SLSMF\\Client\Model\CatalogEntrySonelTgIdInner[]'
+        'ioc_code' => '\SLSMF\Client\Model\StationsInnerAssociatedStationsInner[]',
+        'psmsl_id' => '\SLSMF\Client\Model\CatalogEntryPsmslIdInner[]',
+        'ptwc_id' => '\SLSMF\Client\Model\CatalogEntryPtwcIdInner[]',
+        'gloss_id' => '\SLSMF\Client\Model\CatalogEntryGlossIdInner[]',
+        'uhslc_id' => '\SLSMF\Client\Model\CatalogEntryUhslcIdInner[]',
+        'sonel_gps_id' => '\SLSMF\Client\Model\CatalogEntrySonelGpsIdInner[]',
+        'sonel_tg_id' => '\SLSMF\Client\Model\CatalogEntrySonelTgIdInner[]'
     ];
 
     /**
@@ -611,7 +611,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ioc_code
      *
-     * @return \SLSMF\\Client\Model\StationsInnerAssociatedStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationsInnerAssociatedStationsInner[]|null
      */
     public function getIocCode()
     {
@@ -621,7 +621,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ioc_code
      *
-     * @param \SLSMF\\Client\Model\StationsInnerAssociatedStationsInner[]|null $ioc_code IOC code
+     * @param \SLSMF\Client\Model\StationsInnerAssociatedStationsInner[]|null $ioc_code IOC code
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets psmsl_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntryPsmslIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntryPsmslIdInner[]|null
      */
     public function getPsmslId()
     {
@@ -655,7 +655,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets psmsl_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntryPsmslIdInner[]|null $psmsl_id PSMSL identifier
+     * @param \SLSMF\Client\Model\CatalogEntryPsmslIdInner[]|null $psmsl_id PSMSL identifier
      *
      * @return self
      */
@@ -679,7 +679,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ptwc_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntryPtwcIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntryPtwcIdInner[]|null
      */
     public function getPtwcId()
     {
@@ -689,7 +689,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ptwc_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntryPtwcIdInner[]|null $ptwc_id PTWC code
+     * @param \SLSMF\Client\Model\CatalogEntryPtwcIdInner[]|null $ptwc_id PTWC code
      *
      * @return self
      */
@@ -713,7 +713,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gloss_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntryGlossIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntryGlossIdInner[]|null
      */
     public function getGlossId()
     {
@@ -723,7 +723,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gloss_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntryGlossIdInner[]|null $gloss_id GLOSS identifier
+     * @param \SLSMF\Client\Model\CatalogEntryGlossIdInner[]|null $gloss_id GLOSS identifier
      *
      * @return self
      */
@@ -747,7 +747,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets uhslc_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntryUhslcIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntryUhslcIdInner[]|null
      */
     public function getUhslcId()
     {
@@ -757,7 +757,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uhslc_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntryUhslcIdInner[]|null $uhslc_id UHSLC identifier
+     * @param \SLSMF\Client\Model\CatalogEntryUhslcIdInner[]|null $uhslc_id UHSLC identifier
      *
      * @return self
      */
@@ -781,7 +781,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sonel_gps_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntrySonelGpsIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntrySonelGpsIdInner[]|null
      */
     public function getSonelGpsId()
     {
@@ -791,7 +791,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sonel_gps_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntrySonelGpsIdInner[]|null $sonel_gps_id SONEL GPS identifier
+     * @param \SLSMF\Client\Model\CatalogEntrySonelGpsIdInner[]|null $sonel_gps_id SONEL GPS identifier
      *
      * @return self
      */
@@ -815,7 +815,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sonel_tg_id
      *
-     * @return \SLSMF\\Client\Model\CatalogEntrySonelTgIdInner[]|null
+     * @return \SLSMF\Client\Model\CatalogEntrySonelTgIdInner[]|null
      */
     public function getSonelTgId()
     {
@@ -825,7 +825,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sonel_tg_id
      *
-     * @param \SLSMF\\Client\Model\CatalogEntrySonelTgIdInner[]|null $sonel_tg_id SONEL tide gauge identifier
+     * @param \SLSMF\Client\Model\CatalogEntrySonelTgIdInner[]|null $sonel_tg_id SONEL tide gauge identifier
      *
      * @return self
      */

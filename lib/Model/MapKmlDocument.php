@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * MapKmlDocument Class Doc Comment
  *
  * @category Class
  * @description The main document element containing styles and placemarks
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class MapKmlDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'style' => '\SLSMF\\Client\Model\MapKmlDocumentStyleInner[]',
-        'placemark' => '\SLSMF\\Client\Model\MapKmlDocumentPlacemarkInner[]'
+        'style' => '\SLSMF\Client\Model\MapKmlDocumentStyleInner[]',
+        'placemark' => '\SLSMF\Client\Model\MapKmlDocumentPlacemarkInner[]'
     ];
 
     /**
@@ -335,7 +335,7 @@ class MapKmlDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets style
      *
-     * @return \SLSMF\\Client\Model\MapKmlDocumentStyleInner[]|null
+     * @return \SLSMF\Client\Model\MapKmlDocumentStyleInner[]|null
      */
     public function getStyle()
     {
@@ -345,7 +345,7 @@ class MapKmlDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets style
      *
-     * @param \SLSMF\\Client\Model\MapKmlDocumentStyleInner[]|null $style Styles applied to the placemarks
+     * @param \SLSMF\Client\Model\MapKmlDocumentStyleInner[]|null $style Styles applied to the placemarks
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class MapKmlDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets placemark
      *
-     * @return \SLSMF\\Client\Model\MapKmlDocumentPlacemarkInner[]|null
+     * @return \SLSMF\Client\Model\MapKmlDocumentPlacemarkInner[]|null
      */
     public function getPlacemark()
     {
@@ -372,7 +372,7 @@ class MapKmlDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placemark
      *
-     * @param \SLSMF\\Client\Model\MapKmlDocumentPlacemarkInner[]|null $placemark Geographical features represented as placemarks
+     * @param \SLSMF\Client\Model\MapKmlDocumentPlacemarkInner[]|null $placemark Geographical features represented as placemarks
      *
      * @return self
      */

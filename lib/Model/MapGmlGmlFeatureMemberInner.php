@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * MapGmlGmlFeatureMemberInner Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class MapGmlGmlFeatureMemberInner implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'gml_point' => '\SLSMF\\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint'
+        'gml_point' => '\SLSMF\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint'
     ];
 
     /**
@@ -293,7 +293,7 @@ class MapGmlGmlFeatureMemberInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets gml_point
      *
-     * @return \SLSMF\\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint|null
+     * @return \SLSMF\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint|null
      */
     public function getGmlPoint()
     {
@@ -303,7 +303,7 @@ class MapGmlGmlFeatureMemberInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets gml_point
      *
-     * @param \SLSMF\\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint|null $gml_point gml_point
+     * @param \SLSMF\Client\Model\MapGmlGmlFeatureMemberInnerGmlPoint|null $gml_point gml_point
      *
      * @return self
      */

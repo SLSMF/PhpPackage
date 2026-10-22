@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * GetResearchMetadata200Response Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class GetResearchMetadata200Response implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\SLSMF\\Client\Model\GetResearchMetadata200ResponseDataInner[]'
+        'data' => '\SLSMF\Client\Model\GetResearchMetadata200ResponseDataInner[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class GetResearchMetadata200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets data
      *
-     * @return \SLSMF\\Client\Model\GetResearchMetadata200ResponseDataInner[]|null
+     * @return \SLSMF\Client\Model\GetResearchMetadata200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class GetResearchMetadata200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets data
      *
-     * @param \SLSMF\\Client\Model\GetResearchMetadata200ResponseDataInner[]|null $data data
+     * @param \SLSMF\Client\Model\GetResearchMetadata200ResponseDataInner[]|null $data data
      *
      * @return self
      */

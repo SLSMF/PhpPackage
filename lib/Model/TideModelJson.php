@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * TideModelJson Class Doc Comment
  *
  * @category Class
  * @description Schema representing a list of sensors and their associated metadata
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class TideModelJson implements ModelInterface, ArrayAccess, \JsonSerializable
         'sensor' => 'string',
         'time_reference' => 'string',
         'end_date_input_data' => 'string',
-        'data' => '\SLSMF\\Client\Model\TideModelJsonDataInner[]'
+        'data' => '\SLSMF\Client\Model\TideModelJsonDataInner[]'
     ];
 
     /**
@@ -408,7 +408,7 @@ class TideModelJson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \SLSMF\\Client\Model\TideModelJsonDataInner[]
+     * @return \SLSMF\Client\Model\TideModelJsonDataInner[]
      */
     public function getData()
     {
@@ -418,7 +418,7 @@ class TideModelJson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \SLSMF\\Client\Model\TideModelJsonDataInner[] $data data
+     * @param \SLSMF\Client\Model\TideModelJsonDataInner[] $data data
      *
      * @return self
      */

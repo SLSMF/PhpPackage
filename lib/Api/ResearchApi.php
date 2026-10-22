@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use SLSMF\\Client\ApiException;
-use SLSMF\\Client\Configuration;
-use SLSMF\\Client\HeaderSelector;
-use SLSMF\\Client\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * ResearchApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -145,9 +145,9 @@ class ResearchApi
      * @param  string $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-10-22')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\GetResearchMetadata200Response
+     * @return \SLSMF\Client\Model\GetResearchMetadata200Response
      */
     public function getResearchMetadata($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
@@ -165,9 +165,9 @@ class ResearchApi
      * @param  string $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-10-22')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\GetResearchMetadata200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\GetResearchMetadata200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResearchMetadataWithHttpInfo($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
@@ -198,11 +198,11 @@ class ResearchApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\GetResearchMetadata200Response' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\GetResearchMetadata200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\GetResearchMetadata200Response' !== 'string') {
+                        if ('\SLSMF\Client\Model\GetResearchMetadata200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -220,7 +220,7 @@ class ResearchApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\GetResearchMetadata200Response', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\GetResearchMetadata200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -239,7 +239,7 @@ class ResearchApi
                 );
             }
 
-            $returnType = '\SLSMF\\Client\Model\GetResearchMetadata200Response';
+            $returnType = '\SLSMF\Client\Model\GetResearchMetadata200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -272,7 +272,7 @@ class ResearchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\GetResearchMetadata200Response',
+                        '\SLSMF\Client\Model\GetResearchMetadata200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -320,7 +320,7 @@ class ResearchApi
      */
     public function getResearchMetadataAsyncWithHttpInfo($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\GetResearchMetadata200Response';
+        $returnType = '\SLSMF\Client\Model\GetResearchMetadata200Response';
         $request = $this->getResearchMetadataRequest($sensor_id, $start_date, $stop_date, $contentType);
 
         return $this->client
@@ -511,7 +511,7 @@ class ResearchApi
      * @param  bool $fit_to_sample_rate Align the data to the sample rate, by adding extra records with slevel set to NA and qc flag missing. Timestamps are rounded down to the expected time of measurement based on the sample rate, starting from midnight (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -545,7 +545,7 @@ class ResearchApi
      * @param  bool $fit_to_sample_rate Align the data to the sample rate, by adding extra records with slevel set to NA and qc flag missing. Timestamps are rounded down to the expected time of measurement based on the sample rate, starting from midnight (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationResearchData'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1068,7 +1068,7 @@ class ResearchApi
      * @param  bool $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1089,7 +1089,7 @@ class ResearchApi
      * @param  bool $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1444,7 +1444,7 @@ class ResearchApi
      * @param  bool $subtract_30d_average Subtract 30-day average (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorPredictions'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1469,7 +1469,7 @@ class ResearchApi
      * @param  bool $subtract_30d_average Subtract 30-day average (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorPredictions'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1887,7 +1887,7 @@ class ResearchApi
      * @param  bool $filter_flat_line Set slevel &#x3D; NA when sea level flagged as flat line (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorResearchDataDetidedTD'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1920,7 +1920,7 @@ class ResearchApi
      * @param  bool $filter_flat_line Set slevel &#x3D; NA when sea level flagged as flat line (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorResearchDataDetidedTD'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */

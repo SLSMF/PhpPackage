@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **last_observation_value** | **float** | Last recorded value | [optional]
 **last_observation_sensor_type** | **string** | Sensor type of the last recorded value | [optional]
 **secondary_of** | **string** | Link to main station | [optional]
-**associated_stations** | [**\SLSMF\\Client\Model\StationsInnerAssociatedStationsInner[]**](StationsInnerAssociatedStationsInner.md) | Link to main station | [optional]
-**sensors** | [**\SLSMF\\Client\Model\StationsInnerSensorsInner[]**](StationsInnerSensorsInner.md) | Sensor information for the station | [optional]
+**associated_stations** | [**\SLSMF\Client\Model\StationsInnerAssociatedStationsInner[]**](StationsInnerAssociatedStationsInner.md) | Link to main station | [optional]
+**sensors** | [**\SLSMF\Client\Model\StationsInnerSensorsInner[]**](StationsInnerSensorsInner.md) | Sensor information for the station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

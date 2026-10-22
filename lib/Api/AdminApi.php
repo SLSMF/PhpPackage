@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Api;
+namespace SLSMF\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use SLSMF\\Client\ApiException;
-use SLSMF\\Client\Configuration;
-use SLSMF\\Client\HeaderSelector;
-use SLSMF\\Client\ObjectSerializer;
+use SLSMF\Client\ApiException;
+use SLSMF\Client\Configuration;
+use SLSMF\Client\HeaderSelector;
+use SLSMF\Client\ObjectSerializer;
 
 /**
  * AdminApi Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -145,9 +145,9 @@ class AdminApi
      * @param  string $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-10-22')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\GetResearchMetadata200Response
+     * @return \SLSMF\Client\Model\GetResearchMetadata200Response
      */
     public function getResearchMetadata_0($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata_0'][0])
     {
@@ -165,9 +165,9 @@ class AdminApi
      * @param  string $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-10-22')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\GetResearchMetadata200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\GetResearchMetadata200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResearchMetadata_0WithHttpInfo($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata_0'][0])
     {
@@ -198,11 +198,11 @@ class AdminApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\GetResearchMetadata200Response' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\GetResearchMetadata200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\GetResearchMetadata200Response' !== 'string') {
+                        if ('\SLSMF\Client\Model\GetResearchMetadata200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -220,7 +220,7 @@ class AdminApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\GetResearchMetadata200Response', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\GetResearchMetadata200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -239,7 +239,7 @@ class AdminApi
                 );
             }
 
-            $returnType = '\SLSMF\\Client\Model\GetResearchMetadata200Response';
+            $returnType = '\SLSMF\Client\Model\GetResearchMetadata200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -272,7 +272,7 @@ class AdminApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\GetResearchMetadata200Response',
+                        '\SLSMF\Client\Model\GetResearchMetadata200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -320,7 +320,7 @@ class AdminApi
      */
     public function getResearchMetadata_0AsyncWithHttpInfo($sensor_id, $start_date = '2026-10-14', $stop_date = '2026-10-22', string $contentType = self::contentTypes['getResearchMetadata_0'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\GetResearchMetadata200Response';
+        $returnType = '\SLSMF\Client\Model\GetResearchMetadata200Response';
         $request = $this->getResearchMetadata_0Request($sensor_id, $start_date, $stop_date, $contentType);
 
         return $this->client
@@ -495,9 +495,9 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationHistory'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\\Client\Model\Station
+     * @return \SLSMF\Client\Model\Station
      */
     public function getStationHistory($station_code, string $contentType = self::contentTypes['getStationHistory'][0])
     {
@@ -513,9 +513,9 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationHistory'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\\Client\Model\Station, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\Station, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStationHistoryWithHttpInfo($station_code, string $contentType = self::contentTypes['getStationHistory'][0])
     {
@@ -546,11 +546,11 @@ class AdminApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SLSMF\\Client\Model\Station' === '\SplFileObject') {
+                    if ('\SLSMF\Client\Model\Station' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SLSMF\\Client\Model\Station' !== 'string') {
+                        if ('\SLSMF\Client\Model\Station' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -568,7 +568,7 @@ class AdminApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SLSMF\\Client\Model\Station', []),
+                        ObjectSerializer::deserialize($content, '\SLSMF\Client\Model\Station', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -587,7 +587,7 @@ class AdminApi
                 );
             }
 
-            $returnType = '\SLSMF\\Client\Model\Station';
+            $returnType = '\SLSMF\Client\Model\Station';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -620,7 +620,7 @@ class AdminApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\\Client\Model\Station',
+                        '\SLSMF\Client\Model\Station',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -664,7 +664,7 @@ class AdminApi
      */
     public function getStationHistoryAsyncWithHttpInfo($station_code, string $contentType = self::contentTypes['getStationHistory'][0])
     {
-        $returnType = '\SLSMF\\Client\Model\Station';
+        $returnType = '\SLSMF\Client\Model\Station';
         $request = $this->getStationHistoryRequest($station_code, $contentType);
 
         return $this->client
@@ -817,7 +817,7 @@ class AdminApi
      * @param  bool $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -838,7 +838,7 @@ class AdminApi
      * @param  bool $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1193,7 +1193,7 @@ class AdminApi
      * @param  bool $subtract_30d_average Subtract 30-day average (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorPredictions_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1218,7 +1218,7 @@ class AdminApi
      * @param  bool $subtract_30d_average Subtract 30-day average (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorPredictions_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1636,7 +1636,7 @@ class AdminApi
      * @param  bool $filter_flat_line Set slevel &#x3D; NA when sea level flagged as flat line (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorResearchDataDetidedTD_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -1669,7 +1669,7 @@ class AdminApi
      * @param  bool $filter_flat_line Set slevel &#x3D; NA when sea level flagged as flat line (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorResearchDataDetidedTD_0'] to see the possible values for this operation
      *
-     * @throws \SLSMF\\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */

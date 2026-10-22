@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * MapKmlDocumentStyleInner Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class MapKmlDocumentStyleInner implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'icon_style' => '\SLSMF\\Client\Model\MapKmlDocumentStyleInnerIconStyle'
+        'icon_style' => '\SLSMF\Client\Model\MapKmlDocumentStyleInnerIconStyle'
     ];
 
     /**
@@ -327,7 +327,7 @@ class MapKmlDocumentStyleInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets icon_style
      *
-     * @return \SLSMF\\Client\Model\MapKmlDocumentStyleInnerIconStyle|null
+     * @return \SLSMF\Client\Model\MapKmlDocumentStyleInnerIconStyle|null
      */
     public function getIconStyle()
     {
@@ -337,7 +337,7 @@ class MapKmlDocumentStyleInner implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets icon_style
      *
-     * @param \SLSMF\\Client\Model\MapKmlDocumentStyleInnerIconStyle|null $icon_style icon_style
+     * @param \SLSMF\Client\Model\MapKmlDocumentStyleInnerIconStyle|null $icon_style icon_style
      *
      * @return self
      */

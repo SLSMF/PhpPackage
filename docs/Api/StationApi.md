@@ -1,4 +1,4 @@
-# SLSMF\\Client\StationApi
+# SLSMF\Client\StationApi
 
 All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
 
@@ -17,7 +17,7 @@ All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the
 ## `getLatestStationMessage()`
 
 ```php
-getLatestStationMessage($station_code, $wmo, $locator_id, $nmc, $parser_status_code, $limit, $offset): \SLSMF\\Client\Model\StationMessageInner[]
+getLatestStationMessage($station_code, $wmo, $locator_id, $nmc, $parser_status_code, $limit, $offset): \SLSMF\Client\Model\StationMessageInner[]
 ```
 
 Retrieve last messages for a station.
@@ -30,12 +30,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -71,7 +71,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationMessageInner[]**](../Model/StationMessageInner.md)
+[**\SLSMF\Client\Model\StationMessageInner[]**](../Model/StationMessageInner.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ try {
 ## `getStationByCode()`
 
 ```php
-getStationByCode($station_code): \SLSMF\\Client\Model\Station
+getStationByCode($station_code): \SLSMF\Client\Model\Station
 ```
 
 Retrieve metadata for a station.
@@ -102,12 +102,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\Station**](../Model/Station.md)
+[**\SLSMF\Client\Model\Station**](../Model/Station.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ try {
 ## `getStationData()`
 
 ```php
-getStationData($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit): \SLSMF\\Client\Model\StationDataInner[]
+getStationData($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit): \SLSMF\Client\Model\StationDataInner[]
 ```
 
 Retrieve data of a station with max 30 day limit or 150 000 records.
@@ -162,20 +162,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $station_code = 'acaj'; // string | Station code used in query.
-$start_time = '2026-10-15T11:21'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$stop_time = '2026-10-22T11:21'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$start_time = '2026-10-15T11:34'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$stop_time = '2026-10-22T11:34'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $include_sensors = array('include_sensors_example'); // string[] | sensors to include, default is all sensors
 $no_filter = false; // bool | Include all values when true; when false excludes value -999 (missing value), default = false
 $show_all_sensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
@@ -195,8 +195,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **station_code** | **string**| Station code used in query. | [default to &#39;acaj&#39;] |
-| **start_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-15T11:21&#39;] |
-| **stop_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-22T11:21&#39;] |
+| **start_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-15T11:34&#39;] |
+| **stop_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-22T11:34&#39;] |
 | **include_sensors** | [**string[]**](../Model/string.md)| sensors to include, default is all sensors | [optional] |
 | **no_filter** | **bool**| Include all values when true; when false excludes value -999 (missing value), default &#x3D; false | [optional] [default to false] |
 | **show_all_sensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |
@@ -205,7 +205,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationDataInner[]**](../Model/StationDataInner.md)
+[**\SLSMF\Client\Model\StationDataInner[]**](../Model/StationDataInner.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ try {
 ## `getStationPerformance()`
 
 ```php
-getStationPerformance($station_code): \SLSMF\\Client\Model\StationPerformance
+getStationPerformance($station_code): \SLSMF\Client\Model\StationPerformance
 ```
 
 Retrieve performance info of a station.
@@ -236,12 +236,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -265,7 +265,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationPerformance**](../Model/StationPerformance.md)
+[**\SLSMF\Client\Model\StationPerformance**](../Model/StationPerformance.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ try {
 ## `getStations()`
 
 ```php
-getStations($operator_id, $datastream, $network, $operator_status_code, $data_status_code, $order, $direction, $limit): \SLSMF\\Client\Model\StationsInner[]
+getStations($operator_id, $datastream, $network, $operator_status_code, $data_status_code, $order, $direction, $limit): \SLSMF\Client\Model\StationsInner[]
 ```
 
 Retrieve metadata of all stations.
@@ -296,12 +296,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -339,7 +339,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationsInner[]**](../Model/StationsInner.md)
+[**\SLSMF\Client\Model\StationsInner[]**](../Model/StationsInner.md)
 
 ### Authorization
 
@@ -370,12 +370,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -427,7 +427,7 @@ try {
 ## `getStationsPerformance()`
 
 ```php
-getStationsPerformance($datastream, $operator_id, $order, $direction, $limit): \SLSMF\\Client\Model\StationPerformance[]
+getStationsPerformance($datastream, $operator_id, $order, $direction, $limit): \SLSMF\Client\Model\StationPerformance[]
 ```
 
 Retrieve performance info of all stations.
@@ -440,12 +440,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -477,7 +477,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationPerformance[]**](../Model/StationPerformance.md)
+[**\SLSMF\Client\Model\StationPerformance[]**](../Model/StationPerformance.md)
 
 ### Authorization
 
@@ -495,7 +495,7 @@ try {
 ## `getStationsShortlist()`
 
 ```php
-getStationsShortlist($limit): \SLSMF\\Client\Model\StationsShortlistInner[]
+getStationsShortlist($limit): \SLSMF\Client\Model\StationsShortlistInner[]
 ```
 
 Retrieve limited metadata of all stations.
@@ -508,12 +508,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SLSMF\\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+// $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\\Client\Api\StationApi(
+$apiInstance = new SLSMF\Client\Api\StationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -537,7 +537,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\\Client\Model\StationsShortlistInner[]**](../Model/StationsShortlistInner.md)
+[**\SLSMF\Client\Model\StationsShortlistInner[]**](../Model/StationsShortlistInner.md)
 
 ### Authorization
 

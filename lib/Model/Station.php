@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * Station Class Doc Comment
  *
  * @category Class
  * @description Schema representing the metadata for a station
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -98,8 +98,8 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_observation_value' => 'float',
         'last_observation_sensor_type' => 'string',
         'secondary_of' => 'string',
-        'associated_stations' => '\SLSMF\\Client\Model\StationAssociatedStationsInner[]',
-        'sensors' => '\SLSMF\\Client\Model\StationSensorsInner[]'
+        'associated_stations' => '\SLSMF\Client\Model\StationAssociatedStationsInner[]',
+        'sensors' => '\SLSMF\Client\Model\StationSensorsInner[]'
     ];
 
     /**
@@ -1899,7 +1899,7 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets associated_stations
      *
-     * @return \SLSMF\\Client\Model\StationAssociatedStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationAssociatedStationsInner[]|null
      */
     public function getAssociatedStations()
     {
@@ -1909,7 +1909,7 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets associated_stations
      *
-     * @param \SLSMF\\Client\Model\StationAssociatedStationsInner[]|null $associated_stations Link to main station
+     * @param \SLSMF\Client\Model\StationAssociatedStationsInner[]|null $associated_stations Link to main station
      *
      * @return self
      */
@@ -1933,7 +1933,7 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensors
      *
-     * @return \SLSMF\\Client\Model\StationSensorsInner[]|null
+     * @return \SLSMF\Client\Model\StationSensorsInner[]|null
      */
     public function getSensors()
     {
@@ -1943,7 +1943,7 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensors
      *
-     * @param \SLSMF\\Client\Model\StationSensorsInner[]|null $sensors Sensor information for the station
+     * @param \SLSMF\Client\Model\StationSensorsInner[]|null $sensors Sensor information for the station
      *
      * @return self
      */

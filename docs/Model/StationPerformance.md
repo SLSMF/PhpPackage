@@ -25,6 +25,6 @@ Name | Type | Description | Notes
 **avg_observation_to_db_latency_1h** | **float** | Average latency from observation to database entry in minutes. Data is the last rolling hour of sensor with latest observation | [optional]
 **avg_observation_to_db_latency_24h** | **float** | Average latency from observation to database entry in minutes. Data is the last rolling 24 hours of sensor with latest observation | [optional]
 **best_performing_sl_sensor_24h** | **string** | Sea level measuring sensor with highest 24h ratio | [optional]
-**sensors** | [**\SLSMF\\Client\Model\StationPerformanceSensorsInner[]**](StationPerformanceSensorsInner.md) | Sensor information for the station |
+**sensors** | [**\SLSMF\Client\Model\StationPerformanceSensorsInner[]**](StationPerformanceSensorsInner.md) | Sensor information for the station |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

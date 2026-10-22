@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationMessageInner Class Doc Comment
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -69,7 +69,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
         'message_time' => 'string',
         'message' => 'string',
         'data' => 'string',
-        'stations' => '\SLSMF\\Client\Model\StationMessageInnerStationsInner[]'
+        'stations' => '\SLSMF\Client\Model\StationMessageInnerStationsInner[]'
     ];
 
     /**
@@ -692,7 +692,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets stations
      *
-     * @return \SLSMF\\Client\Model\StationMessageInnerStationsInner[]|null
+     * @return \SLSMF\Client\Model\StationMessageInnerStationsInner[]|null
      */
     public function getStations()
     {
@@ -702,7 +702,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets stations
      *
-     * @param \SLSMF\\Client\Model\StationMessageInnerStationsInner[]|null $stations stations
+     * @param \SLSMF\Client\Model\StationMessageInnerStationsInner[]|null $stations stations
      *
      * @return self
      */

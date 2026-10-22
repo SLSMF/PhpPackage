@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace SLSMF\\Client\Model;
+namespace SLSMF\Client\Model;
 
 use \ArrayAccess;
-use \SLSMF\\Client\ObjectSerializer;
+use \SLSMF\Client\ObjectSerializer;
 
 /**
  * StationPerformance Class Doc Comment
  *
  * @category Class
  * @description Schema representing the performance and metadata of stations
- * @package  SLSMF\\Client
+ * @package  SLSMF\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -80,7 +80,7 @@ class StationPerformance implements ModelInterface, ArrayAccess, \JsonSerializab
         'avg_observation_to_db_latency_1h' => 'float',
         'avg_observation_to_db_latency_24h' => 'float',
         'best_performing_sl_sensor_24h' => 'string',
-        'sensors' => '\SLSMF\\Client\Model\StationPerformanceSensorsInner[]'
+        'sensors' => '\SLSMF\Client\Model\StationPerformanceSensorsInner[]'
     ];
 
     /**
@@ -1143,7 +1143,7 @@ class StationPerformance implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets sensors
      *
-     * @return \SLSMF\\Client\Model\StationPerformanceSensorsInner[]
+     * @return \SLSMF\Client\Model\StationPerformanceSensorsInner[]
      */
     public function getSensors()
     {
@@ -1153,7 +1153,7 @@ class StationPerformance implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets sensors
      *
-     * @param \SLSMF\\Client\Model\StationPerformanceSensorsInner[] $sensors Sensor information for the station
+     * @param \SLSMF\Client\Model\StationPerformanceSensorsInner[] $sensors Sensor information for the station
      *
      * @return self
      */

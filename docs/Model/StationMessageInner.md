@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **message_time** | **string** | Message timestamp in the format &#39;YYYY-MM-DD HH:MM:SS&#39; | [optional]
 **message** | **string** | Message content in raw string format | [optional]
 **data** | **string** | Tab-separated data values with timestamps | [optional]
-**stations** | [**\SLSMF\\Client\Model\StationMessageInnerStationsInner[]**](StationMessageInnerStationsInner.md) |  | [optional]
+**stations** | [**\SLSMF\Client\Model\StationMessageInnerStationsInner[]**](StationMessageInnerStationsInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
