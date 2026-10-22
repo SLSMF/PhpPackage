@@ -1,6 +1,6 @@
 # SLSMF\Client\StationApi
 
-All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://api.sealevelmonitoring.local, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -174,8 +174,8 @@ $apiInstance = new SLSMF\Client\Api\StationApi(
     $config
 );
 $station_code = 'acaj'; // string | Station code used in query.
-$start_time = '2026-10-15T12:12'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$stop_time = '2026-10-22T12:12'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$start_time = '2026-10-15T13:05'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$stop_time = '2026-10-22T13:05'; // string | default is date and time of request minus 12 hours. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $include_sensors = array('include_sensors_example'); // string[] | sensors to include, default is all sensors
 $no_filter = false; // bool | Include all values when true; when false excludes value -999 (missing value), default = false
 $show_all_sensors = false; // bool | Show sensors that were set as hidden in the database, default=false.
@@ -195,8 +195,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **station_code** | **string**| Station code used in query. | [default to &#39;acaj&#39;] |
-| **start_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-15T12:12&#39;] |
-| **stop_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-22T12:12&#39;] |
+| **start_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-15T13:05&#39;] |
+| **stop_time** | **string**| default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-10-22T13:05&#39;] |
 | **include_sensors** | [**string[]**](../Model/string.md)| sensors to include, default is all sensors | [optional] |
 | **no_filter** | **bool**| Include all values when true; when false excludes value -999 (missing value), default &#x3D; false | [optional] [default to false] |
 | **show_all_sensors** | **bool**| Show sensors that were set as hidden in the database, default&#x3D;false. | [optional] [default to false] |

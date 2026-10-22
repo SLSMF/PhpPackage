@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://devapi.ioc-sealevelmonitoring.org';
+    protected $host = 'http://api.sealevelmonitoring.local';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -473,7 +473,7 @@ class Configuration
     {
         return [
             [
-                "url" => "http://devapi.ioc-sealevelmonitoring.org",
+                "url" => "http://api.sealevelmonitoring.local",
                 "description" => "No description provided",
             ]
         ];

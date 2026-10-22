@@ -352,7 +352,10 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['arrived_at']) && !preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", $this->container['arrived_at'])) {
+        if ($this->container['arrived_at'] === null) {
+            $invalidProperties[] = "'arrived_at' can't be null";
+        }
+        if (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/", $this->container['arrived_at'])) {
             $invalidProperties[] = "invalid value for 'arrived_at', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.";
         }
 
@@ -360,6 +363,12 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'message_time', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$/.";
         }
 
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
+        }
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -574,7 +583,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets arrived_at
      *
-     * @return string|null
+     * @return string
      */
     public function getArrivedAt()
     {
@@ -584,7 +593,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets arrived_at
      *
-     * @param string|null $arrived_at Timestamp of when the message was received
+     * @param string $arrived_at Timestamp of when the message was received
      *
      * @return self
      */
@@ -638,7 +647,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets message
      *
-     * @return string|null
+     * @return string
      */
     public function getMessage()
     {
@@ -648,7 +657,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets message
      *
-     * @param string|null $message Message content in raw string format
+     * @param string $message Message content in raw string format
      *
      * @return self
      */
@@ -665,7 +674,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return string|null
+     * @return string
      */
     public function getData()
     {
@@ -675,7 +684,7 @@ class StationMessageInner implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param string|null $data Tab-separated data values with timestamps
+     * @param string $data Tab-separated data values with timestamps
      *
      * @return self
      */

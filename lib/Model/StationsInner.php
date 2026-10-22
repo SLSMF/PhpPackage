@@ -170,7 +170,7 @@ class StationsInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_observation_value' => true,
         'last_observation_sensor_type' => true,
         'secondary_of' => true,
-        'associated_stations' => true,
+        'associated_stations' => false,
         'sensors' => false
     ];
 
@@ -565,12 +565,12 @@ class StationsInner implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if (!is_null($this->container['last_observation_time']) && !preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", $this->container['last_observation_time'])) {
-            $invalidProperties[] = "invalid value for 'last_observation_time', must be conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.";
+        if (!is_null($this->container['last_observation_time']) && !preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", $this->container['last_observation_time'])) {
+            $invalidProperties[] = "invalid value for 'last_observation_time', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.";
         }
 
-        if (!is_null($this->container['last_observation_transmission']) && !preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", $this->container['last_observation_transmission'])) {
-            $invalidProperties[] = "invalid value for 'last_observation_transmission', must be conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.";
+        if (!is_null($this->container['last_observation_transmission']) && !preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", $this->container['last_observation_transmission'])) {
+            $invalidProperties[] = "invalid value for 'last_observation_transmission', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.";
         }
 
         return $invalidProperties;
@@ -1383,8 +1383,8 @@ class StationsInner implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable last_observation_time cannot be null');
         }
 
-        if ((!preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", ObjectSerializer::toString($last_observation_time)))) {
-            throw new \InvalidArgumentException("invalid value for \$last_observation_time when calling StationsInner., must conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.");
+        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($last_observation_time)))) {
+            throw new \InvalidArgumentException("invalid value for \$last_observation_time when calling StationsInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
         $this->container['last_observation_time'] = $last_observation_time;
@@ -1415,8 +1415,8 @@ class StationsInner implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable last_observation_transmission cannot be null');
         }
 
-        if ((!preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", ObjectSerializer::toString($last_observation_transmission)))) {
-            throw new \InvalidArgumentException("invalid value for \$last_observation_transmission when calling StationsInner., must conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.");
+        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($last_observation_transmission)))) {
+            throw new \InvalidArgumentException("invalid value for \$last_observation_transmission when calling StationsInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
         $this->container['last_observation_transmission'] = $last_observation_transmission;
@@ -1546,14 +1546,7 @@ class StationsInner implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAssociatedStations($associated_stations)
     {
         if (is_null($associated_stations)) {
-            array_push($this->openAPINullablesSetToNull, 'associated_stations');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('associated_stations', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
         }
         $this->container['associated_stations'] = $associated_stations;
 

@@ -674,7 +674,7 @@ class StationsShortlistInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets last_observation_time
      *
-     * @param string $last_observation_time Last recorded time at the station
+     * @param string $last_observation_time Last observation time
      *
      * @return self
      */

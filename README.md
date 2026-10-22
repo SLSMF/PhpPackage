@@ -76,7 +76,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://devapi.ioc-sealevelmonitoring.org*
+All URIs are relative to *http://api.sealevelmonitoring.local*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

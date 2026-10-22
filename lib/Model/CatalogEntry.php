@@ -112,13 +112,13 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => true,
         'longitude' => true,
         'modified_at' => true,
-        'ioc_code' => true,
-        'psmsl_id' => true,
-        'ptwc_id' => true,
-        'gloss_id' => true,
-        'uhslc_id' => true,
-        'sonel_gps_id' => true,
-        'sonel_tg_id' => true
+        'ioc_code' => false,
+        'psmsl_id' => false,
+        'ptwc_id' => false,
+        'gloss_id' => false,
+        'uhslc_id' => false,
+        'sonel_gps_id' => false,
+        'sonel_tg_id' => false
     ];
 
     /**
@@ -628,14 +628,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIocCode($ioc_code)
     {
         if (is_null($ioc_code)) {
-            array_push($this->openAPINullablesSetToNull, 'ioc_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ioc_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ioc_code cannot be null');
         }
         $this->container['ioc_code'] = $ioc_code;
 
@@ -662,14 +655,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPsmslId($psmsl_id)
     {
         if (is_null($psmsl_id)) {
-            array_push($this->openAPINullablesSetToNull, 'psmsl_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('psmsl_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable psmsl_id cannot be null');
         }
         $this->container['psmsl_id'] = $psmsl_id;
 
@@ -696,14 +682,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPtwcId($ptwc_id)
     {
         if (is_null($ptwc_id)) {
-            array_push($this->openAPINullablesSetToNull, 'ptwc_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ptwc_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ptwc_id cannot be null');
         }
         $this->container['ptwc_id'] = $ptwc_id;
 
@@ -730,14 +709,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGlossId($gloss_id)
     {
         if (is_null($gloss_id)) {
-            array_push($this->openAPINullablesSetToNull, 'gloss_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gloss_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gloss_id cannot be null');
         }
         $this->container['gloss_id'] = $gloss_id;
 
@@ -764,14 +736,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUhslcId($uhslc_id)
     {
         if (is_null($uhslc_id)) {
-            array_push($this->openAPINullablesSetToNull, 'uhslc_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uhslc_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable uhslc_id cannot be null');
         }
         $this->container['uhslc_id'] = $uhslc_id;
 
@@ -798,14 +763,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSonelGpsId($sonel_gps_id)
     {
         if (is_null($sonel_gps_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sonel_gps_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sonel_gps_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sonel_gps_id cannot be null');
         }
         $this->container['sonel_gps_id'] = $sonel_gps_id;
 
@@ -832,14 +790,7 @@ class CatalogEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSonelTgId($sonel_tg_id)
     {
         if (is_null($sonel_tg_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sonel_tg_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sonel_tg_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sonel_tg_id cannot be null');
         }
         $this->container['sonel_tg_id'] = $sonel_tg_id;
 

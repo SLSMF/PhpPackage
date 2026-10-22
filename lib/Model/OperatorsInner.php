@@ -100,7 +100,7 @@ class OperatorsInner implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'operator' => false,
         'operator_id' => false,
-        'acronym' => false,
+        'acronym' => true,
         'country' => false,
         'country_code' => false,
         'imis_institute_id' => false,
@@ -446,7 +446,14 @@ class OperatorsInner implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcronym($acronym)
     {
         if (is_null($acronym)) {
-            throw new \InvalidArgumentException('non-nullable acronym cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'acronym');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('acronym', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['acronym'] = $acronym;
 
