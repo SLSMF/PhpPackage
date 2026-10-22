@@ -629,14 +629,6 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if (!is_null($this->container['last_observation_time']) && !preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", $this->container['last_observation_time'])) {
-            $invalidProperties[] = "invalid value for 'last_observation_time', must be conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.";
-        }
-
-        if (!is_null($this->container['last_observation_transmission']) && !preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", $this->container['last_observation_transmission'])) {
-            $invalidProperties[] = "invalid value for 'last_observation_transmission', must be conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -1752,11 +1744,6 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($last_observation_time)) {
             throw new \InvalidArgumentException('non-nullable last_observation_time cannot be null');
         }
-
-        if ((!preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", ObjectSerializer::toString($last_observation_time)))) {
-            throw new \InvalidArgumentException("invalid value for \$last_observation_time when calling Station., must conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.");
-        }
-
         $this->container['last_observation_time'] = $last_observation_time;
 
         return $this;
@@ -1784,11 +1771,6 @@ class Station implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($last_observation_transmission)) {
             throw new \InvalidArgumentException('non-nullable last_observation_transmission cannot be null');
         }
-
-        if ((!preg_match("/^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/", ObjectSerializer::toString($last_observation_transmission)))) {
-            throw new \InvalidArgumentException("invalid value for \$last_observation_transmission when calling Station., must conform to the pattern /^d{4}-d{2}-d{2} d{2}:d{2}:d{2}.d{3}$/.");
-        }
-
         $this->container['last_observation_transmission'] = $last_observation_transmission;
 
         return $this;
