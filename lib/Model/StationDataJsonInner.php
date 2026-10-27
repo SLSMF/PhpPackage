@@ -59,7 +59,7 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'slevel' => 'float',
-        'stime' => 'string',
+        'stime' => 'mixed',
         'sensor' => 'string'
     ];
 
@@ -83,7 +83,7 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'slevel' => false,
-        'stime' => false,
+        'stime' => true,
         'sensor' => false
     ];
 
@@ -292,7 +292,7 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['slevel'] === null) {
             $invalidProperties[] = "'slevel' can't be null";
         }
-        if ($this->container['stime'] === null) {
+        if ($this->container['stime'] === null && !$this->isNullableSetToNull('stime')) {
             $invalidProperties[] = "'stime' can't be null";
         }
         if ($this->container['sensor'] === null) {
@@ -343,7 +343,7 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets stime
      *
-     * @return string
+     * @return mixed|null
      */
     public function getStime()
     {
@@ -353,14 +353,21 @@ class StationDataJsonInner implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets stime
      *
-     * @param string $stime Date-time in the format YYYY-MM-dd HH24:mm:ss
+     * @param mixed|null $stime Date-time in the format YYYY-MM-dd HH24:mm:ss
      *
      * @return self
      */
     public function setStime($stime)
     {
         if (is_null($stime)) {
-            throw new \InvalidArgumentException('non-nullable stime cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'stime');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stime', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['stime'] = $stime;
 

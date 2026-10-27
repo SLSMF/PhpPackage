@@ -328,7 +328,7 @@ class CatalogApi
 
 
 
-        $resourcePath = '/v2/catalog';
+        $resourcePath = '/v3/catalog';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -611,7 +611,7 @@ class CatalogApi
         }
 
 
-        $resourcePath = '/v2/catalog/{code}';
+        $resourcePath = '/v3/catalog/{code}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -896,7 +896,7 @@ class CatalogApi
         }
 
 
-        $resourcePath = '/v2/catalog/{organisation}/{code}';
+        $resourcePath = '/v3/catalog/{organisation}/{code}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

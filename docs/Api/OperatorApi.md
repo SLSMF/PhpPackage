@@ -2,12 +2,12 @@
 
 
 
-All URIs are relative to http://devapi.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org/beta, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getOperatorById()**](OperatorApi.md#getOperatorById) | **GET** /v2/operators/{operator_id} | Get fullname of operator by ID. |
-| [**getOperators()**](OperatorApi.md#getOperators) | **GET** /v2/operators | List of operators |
+| [**getOperatorById()**](OperatorApi.md#getOperatorById) | **GET** /v3/operators/{operator_id} | Get fullname of operator by ID. |
+| [**getOperators()**](OperatorApi.md#getOperators) | **GET** /v3/operators | List of operators |
 
 
 ## `getOperatorById()`

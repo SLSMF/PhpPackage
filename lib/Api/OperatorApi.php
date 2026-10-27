@@ -325,7 +325,7 @@ class OperatorApi
         }
 
 
-        $resourcePath = '/v2/operators/{operator_id}';
+        $resourcePath = '/v3/operators/{operator_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -592,7 +592,7 @@ class OperatorApi
 
 
 
-        $resourcePath = '/v2/operators';
+        $resourcePath = '/v3/operators';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -58,7 +58,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'slevel' => 'mixed',
         'stime' => 'string',
         'sensor' => 'string',
         'missing' => 'string',
@@ -79,7 +78,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'slevel' => null,
         'stime' => null,
         'sensor' => null,
         'missing' => null,
@@ -98,7 +96,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'slevel' => true,
         'stime' => false,
         'sensor' => false,
         'missing' => false,
@@ -197,7 +194,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'slevel' => 'slevel',
         'stime' => 'stime',
         'sensor' => 'sensor',
         'missing' => 'missing',
@@ -216,7 +212,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'slevel' => 'setSlevel',
         'stime' => 'setStime',
         'sensor' => 'setSensor',
         'missing' => 'setMissing',
@@ -235,7 +230,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'slevel' => 'getSlevel',
         'stime' => 'getStime',
         'sensor' => 'getSensor',
         'missing' => 'getMissing',
@@ -305,7 +299,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('slevel', $data ?? [], null);
         $this->setIfExists('stime', $data ?? [], null);
         $this->setIfExists('sensor', $data ?? [], null);
         $this->setIfExists('missing', $data ?? [], null);
@@ -345,9 +338,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['slevel'] === null && !$this->isNullableSetToNull('slevel')) {
-            $invalidProperties[] = "'slevel' can't be null";
-        }
         if ($this->container['stime'] === null) {
             $invalidProperties[] = "'stime' can't be null";
         }
@@ -372,40 +362,6 @@ class StationResearchDataJsonDataInner implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets slevel
-     *
-     * @return mixed|null
-     */
-    public function getSlevel()
-    {
-        return $this->container['slevel'];
-    }
-
-    /**
-     * Sets slevel
-     *
-     * @param mixed|null $slevel slevel
-     *
-     * @return self
-     */
-    public function setSlevel($slevel)
-    {
-        if (is_null($slevel)) {
-            array_push($this->openAPINullablesSetToNull, 'slevel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slevel', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['slevel'] = $slevel;
-
-        return $this;
-    }
 
     /**
      * Gets stime

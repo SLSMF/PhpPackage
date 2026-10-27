@@ -74,24 +74,24 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://devapi.ioc-sealevelmonitoring.org*
+All URIs are relative to *http://devapi.ioc-sealevelmonitoring.org/beta*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CatalogApi* | [**getCatalogEntries**](docs/Api/CatalogApi.md#getcatalogentries) | **GET** /v2/catalog | Retrieve list of all catalog entries.
-*CatalogApi* | [**getCatalogEntryByCode**](docs/Api/CatalogApi.md#getcatalogentrybycode) | **GET** /v2/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier.
-*CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v2/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier.
-*OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v2/operators/{operator_id} | Get fullname of operator by ID.
-*OperatorApi* | [**getOperators**](docs/Api/OperatorApi.md#getoperators) | **GET** /v2/operators | List of operators
-*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v2/research/stations/{code}/sensors/{sensor}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
-*SensorApi* | [**getSensors**](docs/Api/SensorApi.md#getsensors) | **GET** /v2/sensors | Retrieve list of sensors.
-*StationApi* | [**getLatestStationMessage**](docs/Api/StationApi.md#getlateststationmessage) | **GET** /v2/stations/{code}/message | Retrieve latest message for a station.
-*StationApi* | [**getStationByCode**](docs/Api/StationApi.md#getstationbycode) | **GET** /v2/stations/{code} | Retrieve metadata for a station.
-*StationApi* | [**getStationData**](docs/Api/StationApi.md#getstationdata) | **GET** /v2/stations/{code}/data | Retrieve data for a station with max 30 day limit or 150 000 records.
-*StationApi* | [**getStationPerformance**](docs/Api/StationApi.md#getstationperformance) | **GET** /v2/stations/performance | Retrieve performance info for stations.
-*StationApi* | [**getStations**](docs/Api/StationApi.md#getstations) | **GET** /v2/stations | Retrieve all stations.
-*StationApi* | [**getStationsMap**](docs/Api/StationApi.md#getstationsmap) | **GET** /v2/stations/map | Retrieve stations map.
-*StationApi* | [**getStationsShortlist**](docs/Api/StationApi.md#getstationsshortlist) | **GET** /v2/stations/shortlist | Retrieve stations with limited info.
+*CatalogApi* | [**getCatalogEntries**](docs/Api/CatalogApi.md#getcatalogentries) | **GET** /v3/catalog | Retrieve list of all catalog entries.
+*CatalogApi* | [**getCatalogEntryByCode**](docs/Api/CatalogApi.md#getcatalogentrybycode) | **GET** /v3/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier.
+*CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v3/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier.
+*OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v3/operators/{operator_id} | Get fullname of operator by ID.
+*OperatorApi* | [**getOperators**](docs/Api/OperatorApi.md#getoperators) | **GET** /v3/operators | List of operators
+*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v3/research/stations/{code}/sensors/{sensor}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
+*SensorApi* | [**getSensors**](docs/Api/SensorApi.md#getsensors) | **GET** /v3/sensors | Retrieve list of sensors.
+*StationApi* | [**getLatestStationMessage**](docs/Api/StationApi.md#getlateststationmessage) | **GET** /v3/stations/{code}/message | Retrieve latest message for a station.
+*StationApi* | [**getStationByCode**](docs/Api/StationApi.md#getstationbycode) | **GET** /v3/stations/{code} | Retrieve metadata for a station.
+*StationApi* | [**getStationData**](docs/Api/StationApi.md#getstationdata) | **GET** /v3/stations/{code}/data | Retrieve data for a station with max 30 day limit or 150 000 records.
+*StationApi* | [**getStationPerformance**](docs/Api/StationApi.md#getstationperformance) | **GET** /v3/stations/performance | Retrieve performance info for stations.
+*StationApi* | [**getStations**](docs/Api/StationApi.md#getstations) | **GET** /v3/stations | Retrieve all stations.
+*StationApi* | [**getStationsMap**](docs/Api/StationApi.md#getstationsmap) | **GET** /v3/stations/map | Retrieve stations map.
+*StationApi* | [**getStationsShortlist**](docs/Api/StationApi.md#getstationsshortlist) | **GET** /v3/stations/shortlist | Retrieve stations with limited info.
 
 ## Models
 
