@@ -90,7 +90,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'string',
         'totmess' => 'int',
         'expectedmess' => 'int',
-        'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]'
+        'sensor' => '\SLSMF\Client\Model\StationJsonInnerSensorInner[]',
+        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]',
+        'secondary_of' => 'string'
     ];
 
     /**
@@ -133,7 +135,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => null,
         'totmess' => null,
         'expectedmess' => null,
-        'sensor' => null
+        'sensor' => null,
+        'associated_stations' => null,
+        'secondary_of' => null
     ];
 
     /**
@@ -146,13 +150,13 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'location' => false,
         'country' => false,
         'type' => false,
-        'dcp_id' => false,
-        'wmo' => false,
+        'dcp_id' => true,
+        'wmo' => true,
         'xmt_int' => false,
         'lat' => false,
         'lon' => false,
-        'har' => false,
-        'gloss_id' => false,
+        'har' => true,
+        'gloss_id' => true,
         'ot12_code' => true,
         'example' => true,
         'utc_offset' => false,
@@ -163,18 +167,20 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'performanceoperator1' => true,
         'performanceoperator2' => true,
         'performanceoperator3' => true,
-        'date_created' => false,
+        'date_created' => true,
         'url' => true,
-        'statsensor' => false,
-        'updatedata' => false,
-        'timestampdata' => false,
-        'timestampupdate' => false,
-        'transmittype' => false,
-        'countryname' => false,
+        'statsensor' => true,
+        'updatedata' => true,
+        'timestampdata' => true,
+        'timestampupdate' => true,
+        'transmittype' => true,
+        'countryname' => true,
         'example_message' => true,
-        'totmess' => false,
-        'expectedmess' => false,
-        'sensor' => false
+        'totmess' => true,
+        'expectedmess' => true,
+        'sensor' => false,
+        'associated_stations' => false,
+        'secondary_of' => true
     ];
 
     /**
@@ -295,7 +301,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'example_message',
         'totmess' => 'totmess',
         'expectedmess' => 'expectedmess',
-        'sensor' => 'sensor'
+        'sensor' => 'sensor',
+        'associated_stations' => 'associated_stations',
+        'secondary_of' => 'secondary_of'
     ];
 
     /**
@@ -336,7 +344,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'setExampleMessage',
         'totmess' => 'setTotmess',
         'expectedmess' => 'setExpectedmess',
-        'sensor' => 'setSensor'
+        'sensor' => 'setSensor',
+        'associated_stations' => 'setAssociatedStations',
+        'secondary_of' => 'setSecondaryOf'
     ];
 
     /**
@@ -377,7 +387,9 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'example_message' => 'getExampleMessage',
         'totmess' => 'getTotmess',
         'expectedmess' => 'getExpectedmess',
-        'sensor' => 'getSensor'
+        'sensor' => 'getSensor',
+        'associated_stations' => 'getAssociatedStations',
+        'secondary_of' => 'getSecondaryOf'
     ];
 
     /**
@@ -470,6 +482,8 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('totmess', $data ?? [], null);
         $this->setIfExists('expectedmess', $data ?? [], null);
         $this->setIfExists('sensor', $data ?? [], null);
+        $this->setIfExists('associated_stations', $data ?? [], null);
+        $this->setIfExists('secondary_of', $data ?? [], null);
     }
 
     /**
@@ -511,12 +525,6 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
-        if ($this->container['dcp_id'] === null) {
-            $invalidProperties[] = "'dcp_id' can't be null";
-        }
-        if ($this->container['wmo'] === null) {
-            $invalidProperties[] = "'wmo' can't be null";
-        }
         if ($this->container['xmt_int'] === null) {
             $invalidProperties[] = "'xmt_int' can't be null";
         }
@@ -526,77 +534,14 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['lon'] === null) {
             $invalidProperties[] = "'lon' can't be null";
         }
-        if ($this->container['har'] === null) {
-            $invalidProperties[] = "'har' can't be null";
-        }
-        if ($this->container['gloss_id'] === null) {
-            $invalidProperties[] = "'gloss_id' can't be null";
-        }
-        if ($this->container['ot12_code'] === null && !$this->isNullableSetToNull('ot12_code')) {
-            $invalidProperties[] = "'ot12_code' can't be null";
-        }
-        if ($this->container['example'] === null && !$this->isNullableSetToNull('example')) {
-            $invalidProperties[] = "'example' can't be null";
-        }
         if ($this->container['utc_offset'] === null) {
             $invalidProperties[] = "'utc_offset' can't be null";
-        }
-        if ($this->container['operator_id'] === null && !$this->isNullableSetToNull('operator_id')) {
-            $invalidProperties[] = "'operator_id' can't be null";
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
         if ($this->container['status_description'] === null && !$this->isNullableSetToNull('status_description')) {
             $invalidProperties[] = "'status_description' can't be null";
-        }
-        if ($this->container['localoperator'] === null) {
-            $invalidProperties[] = "'localoperator' can't be null";
-        }
-        if ($this->container['performanceoperator1'] === null && !$this->isNullableSetToNull('performanceoperator1')) {
-            $invalidProperties[] = "'performanceoperator1' can't be null";
-        }
-        if ($this->container['performanceoperator2'] === null && !$this->isNullableSetToNull('performanceoperator2')) {
-            $invalidProperties[] = "'performanceoperator2' can't be null";
-        }
-        if ($this->container['performanceoperator3'] === null && !$this->isNullableSetToNull('performanceoperator3')) {
-            $invalidProperties[] = "'performanceoperator3' can't be null";
-        }
-        if ($this->container['date_created'] === null) {
-            $invalidProperties[] = "'date_created' can't be null";
-        }
-        if ($this->container['url'] === null && !$this->isNullableSetToNull('url')) {
-            $invalidProperties[] = "'url' can't be null";
-        }
-        if ($this->container['statsensor'] === null) {
-            $invalidProperties[] = "'statsensor' can't be null";
-        }
-        if ($this->container['updatedata'] === null) {
-            $invalidProperties[] = "'updatedata' can't be null";
-        }
-        if ($this->container['timestampdata'] === null) {
-            $invalidProperties[] = "'timestampdata' can't be null";
-        }
-        if ($this->container['timestampupdate'] === null) {
-            $invalidProperties[] = "'timestampupdate' can't be null";
-        }
-        if ($this->container['transmittype'] === null) {
-            $invalidProperties[] = "'transmittype' can't be null";
-        }
-        if ($this->container['countryname'] === null) {
-            $invalidProperties[] = "'countryname' can't be null";
-        }
-        if ($this->container['example_message'] === null && !$this->isNullableSetToNull('example_message')) {
-            $invalidProperties[] = "'example_message' can't be null";
-        }
-        if ($this->container['totmess'] === null) {
-            $invalidProperties[] = "'totmess' can't be null";
-        }
-        if ($this->container['expectedmess'] === null) {
-            $invalidProperties[] = "'expectedmess' can't be null";
-        }
-        if ($this->container['sensor'] === null) {
-            $invalidProperties[] = "'sensor' can't be null";
         }
         return $invalidProperties;
     }
@@ -724,7 +669,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dcp_id
      *
-     * @return string
+     * @return string|null
      */
     public function getDcpId()
     {
@@ -734,14 +679,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dcp_id
      *
-     * @param string $dcp_id DCP ID of the station
+     * @param string|null $dcp_id DCP ID of the station
      *
      * @return self
      */
     public function setDcpId($dcp_id)
     {
         if (is_null($dcp_id)) {
-            throw new \InvalidArgumentException('non-nullable dcp_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'dcp_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dcp_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['dcp_id'] = $dcp_id;
 
@@ -751,7 +703,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wmo
      *
-     * @return string
+     * @return string|null
      */
     public function getWmo()
     {
@@ -761,14 +713,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wmo
      *
-     * @param string $wmo WMO code of the station
+     * @param string|null $wmo WMO code of the station
      *
      * @return self
      */
     public function setWmo($wmo)
     {
         if (is_null($wmo)) {
-            throw new \InvalidArgumentException('non-nullable wmo cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'wmo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('wmo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['wmo'] = $wmo;
 
@@ -859,7 +818,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets har
      *
-     * @return int
+     * @return int|null
      */
     public function getHar()
     {
@@ -869,14 +828,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets har
      *
-     * @param int $har Har value, can be null
+     * @param int|null $har Har value, can be null
      *
      * @return self
      */
     public function setHar($har)
     {
         if (is_null($har)) {
-            throw new \InvalidArgumentException('non-nullable har cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'har');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('har', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['har'] = $har;
 
@@ -886,7 +852,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gloss_id
      *
-     * @return string
+     * @return string|null
      */
     public function getGlossId()
     {
@@ -896,14 +862,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gloss_id
      *
-     * @param string $gloss_id GlossID value, can be null
+     * @param string|null $gloss_id GlossID value, can be null
      *
      * @return self
      */
     public function setGlossId($gloss_id)
     {
         if (is_null($gloss_id)) {
-            throw new \InvalidArgumentException('non-nullable gloss_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gloss_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gloss_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gloss_id'] = $gloss_id;
 
@@ -1103,7 +1076,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets localoperator
      *
-     * @return string
+     * @return string|null
      */
     public function getLocaloperator()
     {
@@ -1113,7 +1086,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets localoperator
      *
-     * @param string $localoperator Local operator of the station
+     * @param string|null $localoperator Local operator of the station
      *
      * @return self
      */
@@ -1232,7 +1205,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date_created
      *
-     * @return string
+     * @return string|null
      */
     public function getDateCreated()
     {
@@ -1242,14 +1215,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date_created
      *
-     * @param string $date_created Creation date of the station data
+     * @param string|null $date_created Creation date of the station data
      *
      * @return self
      */
     public function setDateCreated($date_created)
     {
         if (is_null($date_created)) {
-            throw new \InvalidArgumentException('non-nullable date_created cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_created');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_created', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_created'] = $date_created;
 
@@ -1293,7 +1273,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets statsensor
      *
-     * @return int
+     * @return int|null
      */
     public function getStatsensor()
     {
@@ -1303,14 +1283,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets statsensor
      *
-     * @param int $statsensor StatSensor ID
+     * @param int|null $statsensor StatSensor ID
      *
      * @return self
      */
     public function setStatsensor($statsensor)
     {
         if (is_null($statsensor)) {
-            throw new \InvalidArgumentException('non-nullable statsensor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'statsensor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('statsensor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['statsensor'] = $statsensor;
 
@@ -1320,7 +1307,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updatedata
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedata()
     {
@@ -1330,14 +1317,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updatedata
      *
-     * @param string $updatedata Update data frequency
+     * @param string|null $updatedata Update data frequency
      *
      * @return self
      */
     public function setUpdatedata($updatedata)
     {
         if (is_null($updatedata)) {
-            throw new \InvalidArgumentException('non-nullable updatedata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updatedata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updatedata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updatedata'] = $updatedata;
 
@@ -1347,7 +1341,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets timestampdata
      *
-     * @return string
+     * @return string|null
      */
     public function getTimestampdata()
     {
@@ -1357,14 +1351,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timestampdata
      *
-     * @param string $timestampdata Timestamp data
+     * @param string|null $timestampdata Timestamp data
      *
      * @return self
      */
     public function setTimestampdata($timestampdata)
     {
         if (is_null($timestampdata)) {
-            throw new \InvalidArgumentException('non-nullable timestampdata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timestampdata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timestampdata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timestampdata'] = $timestampdata;
 
@@ -1374,7 +1375,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets timestampupdate
      *
-     * @return string
+     * @return string|null
      */
     public function getTimestampupdate()
     {
@@ -1384,14 +1385,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timestampupdate
      *
-     * @param string $timestampupdate Timestamp update
+     * @param string|null $timestampupdate Timestamp update
      *
      * @return self
      */
     public function setTimestampupdate($timestampupdate)
     {
         if (is_null($timestampupdate)) {
-            throw new \InvalidArgumentException('non-nullable timestampupdate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timestampupdate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timestampupdate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timestampupdate'] = $timestampupdate;
 
@@ -1401,7 +1409,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transmittype
      *
-     * @return string
+     * @return string|null
      */
     public function getTransmittype()
     {
@@ -1411,14 +1419,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transmittype
      *
-     * @param string $transmittype Type of transmission
+     * @param string|null $transmittype Type of transmission
      *
      * @return self
      */
     public function setTransmittype($transmittype)
     {
         if (is_null($transmittype)) {
-            throw new \InvalidArgumentException('non-nullable transmittype cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'transmittype');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('transmittype', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['transmittype'] = $transmittype;
 
@@ -1428,7 +1443,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets countryname
      *
-     * @return string
+     * @return string|null
      */
     public function getCountryname()
     {
@@ -1438,14 +1453,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets countryname
      *
-     * @param string $countryname Country name
+     * @param string|null $countryname Country name
      *
      * @return self
      */
     public function setCountryname($countryname)
     {
         if (is_null($countryname)) {
-            throw new \InvalidArgumentException('non-nullable countryname cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'countryname');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('countryname', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['countryname'] = $countryname;
 
@@ -1489,7 +1511,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets totmess
      *
-     * @return int
+     * @return int|null
      */
     public function getTotmess()
     {
@@ -1499,14 +1521,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets totmess
      *
-     * @param int $totmess Total messages
+     * @param int|null $totmess Total messages
      *
      * @return self
      */
     public function setTotmess($totmess)
     {
         if (is_null($totmess)) {
-            throw new \InvalidArgumentException('non-nullable totmess cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'totmess');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('totmess', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['totmess'] = $totmess;
 
@@ -1516,7 +1545,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets expectedmess
      *
-     * @return int
+     * @return int|null
      */
     public function getExpectedmess()
     {
@@ -1526,14 +1555,21 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expectedmess
      *
-     * @param int $expectedmess Expected messages
+     * @param int|null $expectedmess Expected messages
      *
      * @return self
      */
     public function setExpectedmess($expectedmess)
     {
         if (is_null($expectedmess)) {
-            throw new \InvalidArgumentException('non-nullable expectedmess cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'expectedmess');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expectedmess', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['expectedmess'] = $expectedmess;
 
@@ -1543,7 +1579,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sensor
      *
-     * @return \SLSMF\Client\Model\StationJsonInnerSensorInner[]
+     * @return \SLSMF\Client\Model\StationJsonInnerSensorInner[]|null
      */
     public function getSensor()
     {
@@ -1553,7 +1589,7 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sensor
      *
-     * @param \SLSMF\Client\Model\StationJsonInnerSensorInner[] $sensor Sensor information for the station
+     * @param \SLSMF\Client\Model\StationJsonInnerSensorInner[]|null $sensor Sensor information for the station
      *
      * @return self
      */
@@ -1563,6 +1599,67 @@ class StationJsonInner implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sensor cannot be null');
         }
         $this->container['sensor'] = $sensor;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_stations
+     *
+     * @return \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null
+     */
+    public function getAssociatedStations()
+    {
+        return $this->container['associated_stations'];
+    }
+
+    /**
+     * Sets associated_stations
+     *
+     * @param \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null $associated_stations associated station
+     *
+     * @return self
+     */
+    public function setAssociatedStations($associated_stations)
+    {
+        if (is_null($associated_stations)) {
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
+        }
+        $this->container['associated_stations'] = $associated_stations;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondary_of
+     *
+     * @return string|null
+     */
+    public function getSecondaryOf()
+    {
+        return $this->container['secondary_of'];
+    }
+
+    /**
+     * Sets secondary_of
+     *
+     * @param string|null $secondary_of Link to main station
+     *
+     * @return self
+     */
+    public function setSecondaryOf($secondary_of)
+    {
+        if (is_null($secondary_of)) {
+            array_push($this->openAPINullablesSetToNull, 'secondary_of');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('secondary_of', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['secondary_of'] = $secondary_of;
 
         return $this;
     }

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slevel** | **mixed** |  |
 **stime** | **string** |  |
 **sensor** | **string** |  |
 **missing** | **string** |  | [optional]

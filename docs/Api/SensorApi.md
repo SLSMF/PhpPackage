@@ -2,11 +2,11 @@
 
 
 
-All URIs are relative to https://api.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org/beta, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getSensors()**](SensorApi.md#getSensors) | **GET** /v2/sensors | Retrieve list of sensors. |
+| [**getSensors()**](SensorApi.md#getSensors) | **GET** /v3/sensors | Retrieve list of sensors. |
 
 
 ## `getSensors()`

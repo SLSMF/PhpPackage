@@ -6,46 +6,48 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** | Station code identifier |
 **location** | **string** | Location description |
-**country** | **string** | Country code |
+**country** | **string** | Country code | [optional]
 **type** | **string** | Type of station |
-**dcp_id** | **string** | DCP identifier |
-**wmo** | **string** | WMO identifier |
-**xmt_int** | **int** | XMT interval |
+**dcp_id** | **string** | DCP identifier | [optional]
+**wmo** | **string** | WMO identifier | [optional]
+**xmt_int** | **int** | XMT interval | [optional]
 **lat** | **float** | Latitude of the station |
 **lon** | **float** | Longitude of the station |
-**har** | **int** | Harmonic value |
-**gloss_id** | **string** | Glossary identifier |
+**har** | **int** | Harmonic value | [optional]
+**gloss_id** | **string** | Glossary identifier | [optional]
 **ot12_code** | **string** | OT12 code | [optional]
 **example** | **string** | Example field | [optional]
 **utc_offset** | **int** | UTC offset in hours |
-**operator_id** | **string** | Operator identifier |
+**operator_id** | **string** | Operator identifier | [optional]
 **status** | **int** | Status code |
-**status_description** | **string** | Description of the status |
-**localoperator** | **int** | Local operator ID |
-**performanceoperator1** | **string** | Performance operator 1 ID |
-**performanceoperator2** | **string** | Performance operator 2 ID |
-**performanceoperator3** | **string** | Performance operator 3 ID |
-**date_created** | **\DateTime** | Creation date of the record |
-**url** | **string** | Optional URL for more information |
-**sensorid** | **int** | Sensor ID |
-**statday** | **string** | Statistics day |
-**observations** | **string** | Observations data |
-**first** | **string** | First observation |
-**last** | **string** | Last observation |
-**updatedata** | **string** | Update data |
-**timestampdata** | **string** | Timestamp for data |
-**timestampupdate** | **string** | Timestamp for update |
-**sensor** | **string** | Sensor type |
-**rate** | **int** | Rate of data collection |
-**samples** | **int** | Number of samples collected |
-**units** | **string** | Units of measurement |
-**i** | **string** | Index or identifier |
-**offset** | **int** | Offset value |
-**timeorder** | **int** | Order of time data |
-**lasttime** | **\DateTime** | Last observation time |
-**lastupdate** | **\DateTime** | Last update time |
-**lastvalue** | **float** | Last recorded value |
+**status_description** | **string** | Description of the status | [optional]
+**localoperator** | **int** | Local operator ID | [optional]
+**performanceoperator1** | **string** | Performance operator 1 ID | [optional]
+**performanceoperator2** | **string** | Performance operator 2 ID | [optional]
+**performanceoperator3** | **string** | Performance operator 3 ID | [optional]
+**date_created** | **string** | Creation date of the record |
+**url** | **string** | Optional URL for more information | [optional]
+**sensorid** | **int** | Sensor ID | [optional]
+**statday** | **string** | Statistics day | [optional]
+**observations** | **string** | Observations data | [optional]
+**first** | **string** | First observation | [optional]
+**last** | **string** | Last observation | [optional]
+**updatedata** | **string** | Update data | [optional]
+**timestampdata** | **string** | Timestamp for data | [optional]
+**timestampupdate** | **string** | Timestamp for update | [optional]
+**sensor** | **string** | Sensor type | [optional]
+**rate** | **int** | Rate of data collection | [optional]
+**samples** | **int** | Number of samples collected | [optional]
+**units** | **string** | Units of measurement | [optional]
+**i** | **string** | Index or identifier | [optional]
+**offset** | **int** | Offset value | [optional]
+**timeorder** | **int** | Order of time data | [optional]
+**lasttime** | **string** | Last observation time | [optional]
+**lastupdate** | **string** | Last update time | [optional]
+**lastvalue** | **float** | Last recorded value | [optional]
 **connect** | **string** | Connection identifier |
-**countryname** | **string** | Name of the country |
+**countryname** | **string** | Name of the country | [optional]
+**associated_stations** | [**\SLSMF\Client\Model\StationsXmlStationInnerAssociatedStationsInner[]**](StationsXmlStationInnerAssociatedStationsInner.md) | associated station | [optional]
+**secondary_of** | **string** | Link to main station | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

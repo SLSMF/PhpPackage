@@ -100,7 +100,9 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastupdate' => 'string',
         'lastvalue' => 'float',
         'connect' => 'string',
-        'countryname' => 'string'
+        'countryname' => 'string',
+        'associated_stations' => '\SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]',
+        'secondary_of' => 'string'
     ];
 
     /**
@@ -153,7 +155,9 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastupdate' => null,
         'lastvalue' => 'float',
         'connect' => null,
-        'countryname' => null
+        'countryname' => null,
+        'associated_stations' => null,
+        'secondary_of' => null
     ];
 
     /**
@@ -179,13 +183,13 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'operator_id' => true,
         'status' => false,
         'status_description' => true,
-        'localoperator' => false,
+        'localoperator' => true,
         'performanceoperator1' => true,
         'performanceoperator2' => true,
         'performanceoperator3' => true,
         'date_created' => false,
         'url' => true,
-        'sensorid' => false,
+        'sensorid' => true,
         'statday' => true,
         'observations' => true,
         'first' => true,
@@ -193,18 +197,20 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'updatedata' => true,
         'timestampdata' => true,
         'timestampupdate' => true,
-        'sensor' => false,
-        'rate' => false,
-        'samples' => false,
-        'units' => false,
+        'sensor' => true,
+        'rate' => true,
+        'samples' => true,
+        'units' => true,
         'i' => true,
         'offset' => true,
-        'timeorder' => false,
-        'lasttime' => false,
-        'lastupdate' => false,
-        'lastvalue' => false,
-        'connect' => false,
-        'countryname' => false
+        'timeorder' => true,
+        'lasttime' => true,
+        'lastupdate' => true,
+        'lastvalue' => true,
+        'connect' => true,
+        'countryname' => true,
+        'associated_stations' => false,
+        'secondary_of' => true
     ];
 
     /**
@@ -335,7 +341,9 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastupdate' => 'lastupdate',
         'lastvalue' => 'lastvalue',
         'connect' => 'connect',
-        'countryname' => 'countryname'
+        'countryname' => 'countryname',
+        'associated_stations' => 'associated_stations',
+        'secondary_of' => 'secondary_of'
     ];
 
     /**
@@ -386,7 +394,9 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastupdate' => 'setLastupdate',
         'lastvalue' => 'setLastvalue',
         'connect' => 'setConnect',
-        'countryname' => 'setCountryname'
+        'countryname' => 'setCountryname',
+        'associated_stations' => 'setAssociatedStations',
+        'secondary_of' => 'setSecondaryOf'
     ];
 
     /**
@@ -437,7 +447,9 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         'lastupdate' => 'getLastupdate',
         'lastvalue' => 'getLastvalue',
         'connect' => 'getConnect',
-        'countryname' => 'getCountryname'
+        'countryname' => 'getCountryname',
+        'associated_stations' => 'getAssociatedStations',
+        'secondary_of' => 'getSecondaryOf'
     ];
 
     /**
@@ -540,6 +552,8 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('lastvalue', $data ?? [], null);
         $this->setIfExists('connect', $data ?? [], null);
         $this->setIfExists('countryname', $data ?? [], null);
+        $this->setIfExists('associated_stations', $data ?? [], null);
+        $this->setIfExists('secondary_of', $data ?? [], null);
     }
 
     /**
@@ -609,7 +623,7 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'lastupdate', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.";
         }
 
-        if ($this->container['connect'] === null) {
+        if ($this->container['connect'] === null && !$this->isNullableSetToNull('connect')) {
             $invalidProperties[] = "'connect' can't be null";
         }
         return $invalidProperties;
@@ -1162,7 +1176,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setLocaloperator($localoperator)
     {
         if (is_null($localoperator)) {
-            throw new \InvalidArgumentException('non-nullable localoperator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'localoperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('localoperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['localoperator'] = $localoperator;
 
@@ -1357,7 +1378,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSensorid($sensorid)
     {
         if (is_null($sensorid)) {
-            throw new \InvalidArgumentException('non-nullable sensorid cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sensorid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sensorid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sensorid'] = $sensorid;
 
@@ -1627,7 +1655,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSensor($sensor)
     {
         if (is_null($sensor)) {
-            throw new \InvalidArgumentException('non-nullable sensor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sensor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sensor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sensor'] = $sensor;
 
@@ -1654,7 +1689,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRate($rate)
     {
         if (is_null($rate)) {
-            throw new \InvalidArgumentException('non-nullable rate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rate'] = $rate;
 
@@ -1681,7 +1723,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSamples($samples)
     {
         if (is_null($samples)) {
-            throw new \InvalidArgumentException('non-nullable samples cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'samples');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('samples', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['samples'] = $samples;
 
@@ -1708,7 +1757,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setUnits($units)
     {
         if (is_null($units)) {
-            throw new \InvalidArgumentException('non-nullable units cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'units');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('units', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['units'] = $units;
 
@@ -1803,7 +1859,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setTimeorder($timeorder)
     {
         if (is_null($timeorder)) {
-            throw new \InvalidArgumentException('non-nullable timeorder cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timeorder');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timeorder', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timeorder'] = $timeorder;
 
@@ -1830,10 +1893,17 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setLasttime($lasttime)
     {
         if (is_null($lasttime)) {
-            throw new \InvalidArgumentException('non-nullable lasttime cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lasttime');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lasttime', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lasttime)))) {
+        if (!is_null($lasttime) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lasttime)))) {
             throw new \InvalidArgumentException("invalid value for \$lasttime when calling StationsJsonInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
@@ -1862,10 +1932,17 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setLastupdate($lastupdate)
     {
         if (is_null($lastupdate)) {
-            throw new \InvalidArgumentException('non-nullable lastupdate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastupdate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastupdate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        if ((!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lastupdate)))) {
+        if (!is_null($lastupdate) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/", ObjectSerializer::toString($lastupdate)))) {
             throw new \InvalidArgumentException("invalid value for \$lastupdate when calling StationsJsonInner., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}$/.");
         }
 
@@ -1894,7 +1971,14 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setLastvalue($lastvalue)
     {
         if (is_null($lastvalue)) {
-            throw new \InvalidArgumentException('non-nullable lastvalue cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lastvalue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lastvalue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lastvalue'] = $lastvalue;
 
@@ -1904,7 +1988,7 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets connect
      *
-     * @return string
+     * @return string|null
      */
     public function getConnect()
     {
@@ -1914,14 +1998,21 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets connect
      *
-     * @param string $connect Connection identifier
+     * @param string|null $connect Connection identifier
      *
      * @return self
      */
     public function setConnect($connect)
     {
         if (is_null($connect)) {
-            throw new \InvalidArgumentException('non-nullable connect cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'connect');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('connect', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['connect'] = $connect;
 
@@ -1948,9 +2039,77 @@ class StationsJsonInner implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCountryname($countryname)
     {
         if (is_null($countryname)) {
-            throw new \InvalidArgumentException('non-nullable countryname cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'countryname');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('countryname', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['countryname'] = $countryname;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_stations
+     *
+     * @return \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null
+     */
+    public function getAssociatedStations()
+    {
+        return $this->container['associated_stations'];
+    }
+
+    /**
+     * Sets associated_stations
+     *
+     * @param \SLSMF\Client\Model\StationsJsonInnerAssociatedStationsInner[]|null $associated_stations associated station
+     *
+     * @return self
+     */
+    public function setAssociatedStations($associated_stations)
+    {
+        if (is_null($associated_stations)) {
+            throw new \InvalidArgumentException('non-nullable associated_stations cannot be null');
+        }
+        $this->container['associated_stations'] = $associated_stations;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondary_of
+     *
+     * @return string|null
+     */
+    public function getSecondaryOf()
+    {
+        return $this->container['secondary_of'];
+    }
+
+    /**
+     * Sets secondary_of
+     *
+     * @param string|null $secondary_of Link to main station
+     *
+     * @return self
+     */
+    public function setSecondaryOf($secondary_of)
+    {
+        if (is_null($secondary_of)) {
+            array_push($this->openAPINullablesSetToNull, 'secondary_of');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('secondary_of', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['secondary_of'] = $secondary_of;
 
         return $this;
     }

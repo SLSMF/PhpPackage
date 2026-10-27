@@ -322,7 +322,7 @@ class SensorApi
 
 
 
-        $resourcePath = '/v2/sensors';
+        $resourcePath = '/v3/sensors';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **performanceoperator1** | **string** | Primary performance operator |
 **performanceoperator2** | **string** | Secondary performance operator, can be null |
 **performanceoperator3** | **string** | Tertiary performance operator, can be null |
-**date_created** | **\DateTime** | Creation date of the station data |
+**date_created** | **string** | Creation date of the station data |
 **url** | **string** | URL for more information about the station |
 **addedtosystem** | **string** | Timestamp when the station was added to the system |
 **connect** | **string** | Connection identifier |

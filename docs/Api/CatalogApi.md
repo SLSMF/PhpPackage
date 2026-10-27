@@ -2,13 +2,13 @@
 
 
 
-All URIs are relative to https://api.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org/beta, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCatalogEntries()**](CatalogApi.md#getCatalogEntries) | **GET** /v2/catalog | Retrieve list of all catalog entries. |
-| [**getCatalogEntryByCode()**](CatalogApi.md#getCatalogEntryByCode) | **GET** /v2/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier. |
-| [**getCatalogEntryByOrganisationAndCode()**](CatalogApi.md#getCatalogEntryByOrganisationAndCode) | **GET** /v2/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier. |
+| [**getCatalogEntries()**](CatalogApi.md#getCatalogEntries) | **GET** /v3/catalog | Retrieve list of all catalog entries. |
+| [**getCatalogEntryByCode()**](CatalogApi.md#getCatalogEntryByCode) | **GET** /v3/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier. |
+| [**getCatalogEntryByOrganisationAndCode()**](CatalogApi.md#getCatalogEntryByOrganisationAndCode) | **GET** /v3/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier. |
 
 
 ## `getCatalogEntries()`

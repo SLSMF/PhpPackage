@@ -2,18 +2,18 @@
 
 
 
-All URIs are relative to https://api.ioc-sealevelmonitoring.org, except if the operation defines another base path.
+All URIs are relative to http://devapi.ioc-sealevelmonitoring.org/beta, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getOperatorById()**](OperatorApi.md#getOperatorById) | **GET** /v2/operators/{operator_id} | Get fullname of operator by ID. |
-| [**getOperators()**](OperatorApi.md#getOperators) | **GET** /v2/operators | List of operators |
+| [**getOperatorById()**](OperatorApi.md#getOperatorById) | **GET** /v3/operators/{operator_id} | Get fullname of operator by ID. |
+| [**getOperators()**](OperatorApi.md#getOperators) | **GET** /v3/operators | List of operators |
 
 
 ## `getOperatorById()`
 
 ```php
-getOperatorById($operator_id): \SLSMF\Client\Model\OperatorJsonInner[]
+getOperatorById($operator_id): \SLSMF\Client\Model\OperatorsJsonInner[]
 ```
 
 Get fullname of operator by ID.
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\OperatorJsonInner[]**](../Model/OperatorJsonInner.md)
+[**\SLSMF\Client\Model\OperatorsJsonInner[]**](../Model/OperatorsJsonInner.md)
 
 ### Authorization
 
