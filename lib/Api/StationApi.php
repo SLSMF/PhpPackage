@@ -839,8 +839,8 @@ class StationApi
      * Retrieve data of a station with max 30 day limit or 150 000 records.
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T13:49')
-     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T13:49')
+     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T14:03')
+     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T14:03')
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
      * @param  bool|null $no_filter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $show_all_sensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
@@ -852,7 +852,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationDataInner[]
      */
-    public function getStationData($station_code, $start_time = '2026-11-05T13:49', $stop_time = '2026-11-12T13:49', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationData($station_code, $start_time = '2026-11-05T14:03', $stop_time = '2026-11-12T14:03', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         list($response) = $this->getStationDataWithHttpInfo($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit, $contentType);
         return $response;
@@ -864,8 +864,8 @@ class StationApi
      * Retrieve data of a station with max 30 day limit or 150 000 records.
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T13:49')
-     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T13:49')
+     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T14:03')
+     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T14:03')
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
      * @param  bool|null $no_filter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $show_all_sensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
@@ -877,7 +877,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationDataInner[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationDataWithHttpInfo($station_code, $start_time = '2026-11-05T13:49', $stop_time = '2026-11-12T13:49', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataWithHttpInfo($station_code, $start_time = '2026-11-05T14:03', $stop_time = '2026-11-12T14:03', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $request = $this->getStationDataRequest($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit, $contentType);
 
@@ -957,8 +957,8 @@ class StationApi
      * Retrieve data of a station with max 30 day limit or 150 000 records.
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T13:49')
-     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T13:49')
+     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T14:03')
+     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T14:03')
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
      * @param  bool|null $no_filter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $show_all_sensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
@@ -969,7 +969,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsync($station_code, $start_time = '2026-11-05T13:49', $stop_time = '2026-11-12T13:49', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsync($station_code, $start_time = '2026-11-05T14:03', $stop_time = '2026-11-12T14:03', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         return $this->getStationDataAsyncWithHttpInfo($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit, $contentType)
             ->then(
@@ -985,8 +985,8 @@ class StationApi
      * Retrieve data of a station with max 30 day limit or 150 000 records.
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T13:49')
-     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T13:49')
+     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T14:03')
+     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T14:03')
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
      * @param  bool|null $no_filter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $show_all_sensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
@@ -997,7 +997,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationDataAsyncWithHttpInfo($station_code, $start_time = '2026-11-05T13:49', $stop_time = '2026-11-12T13:49', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataAsyncWithHttpInfo($station_code, $start_time = '2026-11-05T14:03', $stop_time = '2026-11-12T14:03', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationDataInner[]';
         $request = $this->getStationDataRequest($station_code, $start_time, $stop_time, $include_sensors, $no_filter, $show_all_sensors, $skip_gaps_until, $limit, $contentType);
@@ -1050,8 +1050,8 @@ class StationApi
      * Create request for operation 'getStationData'
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
-     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T13:49')
-     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T13:49')
+     * @param  string|null $start_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05T14:03')
+     * @param  string|null $stop_time default is date and time of request minus 12 hours. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12T14:03')
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
      * @param  bool|null $no_filter Include all values when true; when false excludes value -999 (missing value), default &#x3D; false (optional, default to false)
      * @param  bool|null $show_all_sensors Show sensors that were set as hidden in the database, default&#x3D;false. (optional, default to false)
@@ -1062,7 +1062,7 @@ class StationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationDataRequest($station_code, $start_time = '2026-11-05T13:49', $stop_time = '2026-11-12T13:49', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
+    public function getStationDataRequest($station_code, $start_time = '2026-11-05T14:03', $stop_time = '2026-11-12T14:03', $include_sensors = null, $no_filter = false, $show_all_sensors = false, $skip_gaps_until = '2026-04-16T15:46', $limit = 10, string $contentType = self::contentTypes['getStationData'][0])
     {
 
         // verify the required parameter 'station_code' is set
