@@ -1,11 +1,12 @@
-# # StationResearchDataJsonDataInner
+# StationResearchDataJsonDataInner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**stime** | **string** |  |
-**sensor** | **string** |  |
+**observation** | [**\SLSMF\Client\Model\StationResearchDataJsonDataInnerObservation**](StationResearchDataJsonDataInnerObservation.md) |  |
+**observation_time** | **string** |  |
+**sensor_type** | **string** | Type of sensor used |
 **missing** | **string** |  | [optional]
 **out_of_range** | **string** |  | [optional]
 **spikes_via_median** | **string** |  | [optional]

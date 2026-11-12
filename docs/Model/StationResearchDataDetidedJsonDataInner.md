@@ -1,14 +1,14 @@
-# # StationResearchDataDetidedJsonDataInner
+# StationResearchDataDetidedJsonDataInner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slevel** | **float** |  |
-**prediction** | **float** |  |
-**residual** | **float** |  |
-**stime** | **string** |  |
-**sensor** | **string** |  |
+**observation** | [**\SLSMF\Client\Model\StationResearchDataDetidedJsonDataInnerObservation**](StationResearchDataDetidedJsonDataInnerObservation.md) |  |
+**prediction** | **float** |  | [optional]
+**residual** | [**\SLSMF\Client\Model\StationResearchDataDetidedJsonDataInnerResidual**](StationResearchDataDetidedJsonDataInnerResidual.md) |  | [optional]
+**observation_time** | **string** |  |
+**sensor_type** | **string** | Type of sensor used |
 **missing** | **string** |  | [optional]
 **out_of_range** | **string** |  | [optional]
 **spikes_via_median** | **string** |  | [optional]

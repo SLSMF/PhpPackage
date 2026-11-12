@@ -54,20 +54,21 @@ $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKey('X-AP
 // $config = SLSMF\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 
-$apiInstance = new SLSMF\Client\Api\CatalogApi(
+$apiInstance = new SLSMF\Client\Api\AdminApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$country = 'country_example'; // string | country iso2
-$limit = 10; // int | Maximum number of records returned per request
+$sensor_id = 308; // int | Sensor ID
+$start_date = '2026-11-04'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-12'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
-    $result = $apiInstance->getCatalogEntries($country, $limit);
+    $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CatalogApi->getCatalogEntries: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->getResearchMetadata: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -78,73 +79,74 @@ All URIs are relative to *http://devapi.ioc-sealevelmonitoring.org/beta*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AdminApi* | [**getResearchMetadata**](docs/Api/AdminApi.md#getresearchmetadata) | **GET** /v3/research/metadata/{sensor_id} | Retrieve daily metadata records from the research collection.
+*AdminApi* | [**getStationHistory**](docs/Api/AdminApi.md#getstationhistory) | **GET** /v3/stations/{station_code}/history | Retrieve metadata for a station.
+*AdminApi* | [**getStationSensorConstituents**](docs/Api/AdminApi.md#getstationsensorconstituents) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_type}/tidal-harmonics | **Experimental** Retrieve tide model data of sensor.
+*AdminApi* | [**getStationSensorPredictions**](docs/Api/AdminApi.md#getstationsensorpredictions) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_type}/tidal-harmonics/predictions/data | **Experimental** Retrieve sea level predictions based on latest tide model of the sensor. Maximum 365 days in one request. By default next day is retrieved.
+*AdminApi* | [**getStationSensorResearchDataDetidedTD**](docs/Api/AdminApi.md#getstationsensorresearchdatadetidedtd) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_filter}/tidal-harmonics/data | **Experimental** Retrieve detided data for a station with a maximum of 365 days in one request. By default 7 days are retrieved.
 *CatalogApi* | [**getCatalogEntries**](docs/Api/CatalogApi.md#getcatalogentries) | **GET** /v3/catalog | Retrieve list of all catalog entries.
-*CatalogApi* | [**getCatalogEntryByCode**](docs/Api/CatalogApi.md#getcatalogentrybycode) | **GET** /v3/catalog/{code} | Retrieve specific catalog entry by it&#39;s catalog identifier.
-*CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v3/catalog/{organisation}/{code} | Retrieve a specific catalog entry by it&#39;s external identifier.
+*CatalogApi* | [**getCatalogEntryByCode**](docs/Api/CatalogApi.md#getcatalogentrybycode) | **GET** /v3/catalog/{ssc_code} | Retrieve specific catalog entry by it&#39;s catalog identifier.
+*CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v3/catalog/{organisation}/{external_code} | Retrieve a specific catalog entry by it&#39;s external identifier.
 *OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v3/operators/{operator_id} | Get fullname of operator by ID.
 *OperatorApi* | [**getOperators**](docs/Api/OperatorApi.md#getoperators) | **GET** /v3/operators | List of operators
-*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v3/research/stations/{code}/sensors/{sensor}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
-*SensorApi* | [**getSensors**](docs/Api/SensorApi.md#getsensors) | **GET** /v3/sensors | Retrieve list of sensors.
-*StationApi* | [**getLatestStationMessage**](docs/Api/StationApi.md#getlateststationmessage) | **GET** /v3/stations/{code}/message | Retrieve latest message for a station.
-*StationApi* | [**getStationByCode**](docs/Api/StationApi.md#getstationbycode) | **GET** /v3/stations/{code} | Retrieve metadata for a station.
-*StationApi* | [**getStationData**](docs/Api/StationApi.md#getstationdata) | **GET** /v3/stations/{code}/data | Retrieve data for a station with max 30 day limit or 150 000 records.
-*StationApi* | [**getStationPerformance**](docs/Api/StationApi.md#getstationperformance) | **GET** /v3/stations/performance | Retrieve performance info for stations.
-*StationApi* | [**getStations**](docs/Api/StationApi.md#getstations) | **GET** /v3/stations | Retrieve all stations.
+*ResearchApi* | [**getResearchMetadata**](docs/Api/ResearchApi.md#getresearchmetadata) | **GET** /v3/research/metadata/{sensor_id} | Retrieve daily metadata records from the research collection.
+*ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_filter}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
+*ResearchApi* | [**getStationSensorConstituents**](docs/Api/ResearchApi.md#getstationsensorconstituents) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_type}/tidal-harmonics | **Experimental** Retrieve tide model data of sensor.
+*ResearchApi* | [**getStationSensorPredictions**](docs/Api/ResearchApi.md#getstationsensorpredictions) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_type}/tidal-harmonics/predictions/data | **Experimental** Retrieve sea level predictions based on latest tide model of the sensor. Maximum 365 days in one request. By default next day is retrieved.
+*ResearchApi* | [**getStationSensorResearchDataDetidedTD**](docs/Api/ResearchApi.md#getstationsensorresearchdatadetidedtd) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_filter}/tidal-harmonics/data | **Experimental** Retrieve detided data for a station with a maximum of 365 days in one request. By default 7 days are retrieved.
+*StationApi* | [**getLatestStationMessage**](docs/Api/StationApi.md#getlateststationmessage) | **GET** /v3/stations/{station_code}/message | Retrieve last messages for a station.
+*StationApi* | [**getStationByCode**](docs/Api/StationApi.md#getstationbycode) | **GET** /v3/stations/{station_code} | Retrieve metadata for a station.
+*StationApi* | [**getStationData**](docs/Api/StationApi.md#getstationdata) | **GET** /v3/stations/{station_code}/data | Retrieve data of a station with max 30 day limit or 150 000 records.
+*StationApi* | [**getStationPerformance**](docs/Api/StationApi.md#getstationperformance) | **GET** /v3/stations/{station_code}/performance | Retrieve performance info of a station.
+*StationApi* | [**getStations**](docs/Api/StationApi.md#getstations) | **GET** /v3/stations | Retrieve metadata of all stations.
 *StationApi* | [**getStationsMap**](docs/Api/StationApi.md#getstationsmap) | **GET** /v3/stations/map | Retrieve stations map.
-*StationApi* | [**getStationsShortlist**](docs/Api/StationApi.md#getstationsshortlist) | **GET** /v3/stations/shortlist | Retrieve stations with limited info.
+*StationApi* | [**getStationsPerformance**](docs/Api/StationApi.md#getstationsperformance) | **GET** /v3/stations/performance | Retrieve performance info of all stations.
+*StationApi* | [**getStationsShortlist**](docs/Api/StationApi.md#getstationsshortlist) | **GET** /v3/stations/shortlist | Retrieve limited metadata of all stations.
 
 ## Models
 
-- [CatalogJsonInner](docs/Model/CatalogJsonInner.md)
-- [CatalogXml](docs/Model/CatalogXml.md)
-- [CatalogXmlStationInner](docs/Model/CatalogXmlStationInner.md)
-- [MapGmlXml](docs/Model/MapGmlXml.md)
-- [MapGmlXmlGmlFeatureMemberInner](docs/Model/MapGmlXmlGmlFeatureMemberInner.md)
-- [MapGmlXmlGmlFeatureMemberInnerGmlPoint](docs/Model/MapGmlXmlGmlFeatureMemberInnerGmlPoint.md)
-- [MapKmlXml](docs/Model/MapKmlXml.md)
-- [MapKmlXmlDocument](docs/Model/MapKmlXmlDocument.md)
-- [MapKmlXmlDocumentPlacemarkInner](docs/Model/MapKmlXmlDocumentPlacemarkInner.md)
-- [MapKmlXmlDocumentPlacemarkInnerPoint](docs/Model/MapKmlXmlDocumentPlacemarkInnerPoint.md)
-- [MapKmlXmlDocumentStyleInner](docs/Model/MapKmlXmlDocumentStyleInner.md)
-- [MapKmlXmlDocumentStyleInnerIconStyle](docs/Model/MapKmlXmlDocumentStyleInnerIconStyle.md)
-- [MapKmlXmlDocumentStyleInnerIconStyleIcon](docs/Model/MapKmlXmlDocumentStyleInnerIconStyleIcon.md)
-- [OperatorJsonInner](docs/Model/OperatorJsonInner.md)
-- [OperatorXml](docs/Model/OperatorXml.md)
-- [OperatorXmlOperatorInner](docs/Model/OperatorXmlOperatorInner.md)
-- [OperatorsJsonInner](docs/Model/OperatorsJsonInner.md)
-- [OperatorsXml](docs/Model/OperatorsXml.md)
-- [OperatorsXmlOperatorInner](docs/Model/OperatorsXmlOperatorInner.md)
-- [SensorsJsonInner](docs/Model/SensorsJsonInner.md)
-- [SensorsXml](docs/Model/SensorsXml.md)
-- [SensorsXmlSensorInner](docs/Model/SensorsXmlSensorInner.md)
-- [StationDataJsonInner](docs/Model/StationDataJsonInner.md)
-- [StationDataXml](docs/Model/StationDataXml.md)
-- [StationDataXmlSample](docs/Model/StationDataXmlSample.md)
-- [StationJsonInner](docs/Model/StationJsonInner.md)
-- [StationJsonInnerSensorInner](docs/Model/StationJsonInnerSensorInner.md)
-- [StationMessageJsonInner](docs/Model/StationMessageJsonInner.md)
-- [StationMessageXml](docs/Model/StationMessageXml.md)
-- [StationMessageXmlResponseInner](docs/Model/StationMessageXmlResponseInner.md)
-- [StationPerformanceJsonInner](docs/Model/StationPerformanceJsonInner.md)
-- [StationPerformanceXml](docs/Model/StationPerformanceXml.md)
-- [StationPerformanceXmlStationInner](docs/Model/StationPerformanceXmlStationInner.md)
+- [CatalogEntry](docs/Model/CatalogEntry.md)
+- [CatalogEntryGlossIdInner](docs/Model/CatalogEntryGlossIdInner.md)
+- [CatalogEntryPsmslIdInner](docs/Model/CatalogEntryPsmslIdInner.md)
+- [CatalogEntryPtwcIdInner](docs/Model/CatalogEntryPtwcIdInner.md)
+- [CatalogEntrySonelGpsIdInner](docs/Model/CatalogEntrySonelGpsIdInner.md)
+- [CatalogEntrySonelTgIdInner](docs/Model/CatalogEntrySonelTgIdInner.md)
+- [CatalogEntryUhslcIdInner](docs/Model/CatalogEntryUhslcIdInner.md)
+- [MapGmlGmlFeatureMemberInner](docs/Model/MapGmlGmlFeatureMemberInner.md)
+- [MapGmlGmlFeatureMemberInnerGmlPoint](docs/Model/MapGmlGmlFeatureMemberInnerGmlPoint.md)
+- [MapKmlDocument](docs/Model/MapKmlDocument.md)
+- [MapKmlDocumentPlacemarkInner](docs/Model/MapKmlDocumentPlacemarkInner.md)
+- [MapKmlDocumentPlacemarkInnerPoint](docs/Model/MapKmlDocumentPlacemarkInnerPoint.md)
+- [MapKmlDocumentStyleInner](docs/Model/MapKmlDocumentStyleInner.md)
+- [MapKmlDocumentStyleInnerIconStyle](docs/Model/MapKmlDocumentStyleInnerIconStyle.md)
+- [MapKmlDocumentStyleInnerIconStyleIcon](docs/Model/MapKmlDocumentStyleInnerIconStyleIcon.md)
+- [Operator](docs/Model/Operator.md)
+- [OperatorsInner](docs/Model/OperatorsInner.md)
+- [PaginationJson](docs/Model/PaginationJson.md)
+- [Station](docs/Model/Station.md)
+- [StationAssociatedStationsInner](docs/Model/StationAssociatedStationsInner.md)
+- [StationDataInner](docs/Model/StationDataInner.md)
+- [StationDataInnerObservation](docs/Model/StationDataInnerObservation.md)
+- [StationMessageInner](docs/Model/StationMessageInner.md)
+- [StationMessageInnerStationsInner](docs/Model/StationMessageInnerStationsInner.md)
+- [StationPerformance](docs/Model/StationPerformance.md)
+- [StationPerformanceSensorsInner](docs/Model/StationPerformanceSensorsInner.md)
 - [StationResearchDataDetidedJson](docs/Model/StationResearchDataDetidedJson.md)
 - [StationResearchDataDetidedJsonDataInner](docs/Model/StationResearchDataDetidedJsonDataInner.md)
+- [StationResearchDataDetidedJsonDataInnerObservation](docs/Model/StationResearchDataDetidedJsonDataInnerObservation.md)
+- [StationResearchDataDetidedJsonDataInnerResidual](docs/Model/StationResearchDataDetidedJsonDataInnerResidual.md)
 - [StationResearchDataJson](docs/Model/StationResearchDataJson.md)
 - [StationResearchDataJsonDataInner](docs/Model/StationResearchDataJsonDataInner.md)
-- [StationResearchDataJsonPagination](docs/Model/StationResearchDataJsonPagination.md)
+- [StationResearchDataJsonDataInnerObservation](docs/Model/StationResearchDataJsonDataInnerObservation.md)
 - [StationResearchDataPredictedJson](docs/Model/StationResearchDataPredictedJson.md)
 - [StationResearchDataPredictedJsonDataInner](docs/Model/StationResearchDataPredictedJsonDataInner.md)
-- [StationXml](docs/Model/StationXml.md)
-- [StationXmlSensor](docs/Model/StationXmlSensor.md)
-- [StationsJsonInner](docs/Model/StationsJsonInner.md)
-- [StationsJsonInnerAssociatedStationsInner](docs/Model/StationsJsonInnerAssociatedStationsInner.md)
-- [StationsShortlistJsonInner](docs/Model/StationsShortlistJsonInner.md)
-- [StationsShortlistXml](docs/Model/StationsShortlistXml.md)
-- [StationsShortlistXmlStationInner](docs/Model/StationsShortlistXmlStationInner.md)
-- [StationsXml](docs/Model/StationsXml.md)
-- [StationsXmlStationInner](docs/Model/StationsXmlStationInner.md)
-- [StationsXmlStationInnerAssociatedStationsInner](docs/Model/StationsXmlStationInnerAssociatedStationsInner.md)
+- [StationResearchMetaData](docs/Model/StationResearchMetaData.md)
+- [StationResearchMetaDataDataInner](docs/Model/StationResearchMetaDataDataInner.md)
+- [StationSensorsInner](docs/Model/StationSensorsInner.md)
+- [StationsInner](docs/Model/StationsInner.md)
+- [StationsInnerAssociatedStationsInner](docs/Model/StationsInnerAssociatedStationsInner.md)
+- [StationsInnerSensorsInner](docs/Model/StationsInnerSensorsInner.md)
+- [StationsShortlistInner](docs/Model/StationsShortlistInner.md)
 - [TideModelJson](docs/Model/TideModelJson.md)
 - [TideModelJsonDataInner](docs/Model/TideModelJsonDataInner.md)
 
@@ -175,6 +177,6 @@ info@ioc-sealevelmonitoring.org
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.0`
-    - Generator version: `7.20.0`
+- API version: `2.1.0`
+    - Generator version: `7.27.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

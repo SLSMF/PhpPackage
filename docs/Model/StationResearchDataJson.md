@@ -1,10 +1,10 @@
-# # StationResearchDataJson
+# StationResearchDataJson
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**\SLSMF\Client\Model\StationResearchDataJsonDataInner[]**](StationResearchDataJsonDataInner.md) |  | [optional]
-**pagination** | [**\SLSMF\Client\Model\StationResearchDataJsonPagination**](StationResearchDataJsonPagination.md) |  | [optional]
+**pagination** | [**\SLSMF\Client\Model\PaginationJson**](PaginationJson.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
