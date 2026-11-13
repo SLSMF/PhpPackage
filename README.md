@@ -61,8 +61,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
     $config
 );
 $sensor_id = 308; // int | Sensor ID
-$start_date = '2026-11-04'; // string | From date, included in result, format 'YYYY-MM-DD'
-$stop_date = '2026-11-12'; // string | Until date, not included in result, format 'YYYY-MM-DD'
+$start_date = '2026-11-05'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-13'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
     $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);

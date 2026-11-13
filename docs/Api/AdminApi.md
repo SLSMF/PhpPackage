@@ -41,8 +41,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
     $config
 );
 $sensor_id = 308; // int | Sensor ID
-$start_date = '2026-11-04'; // string | From date, included in result, format 'YYYY-MM-DD'
-$stop_date = '2026-11-12'; // string | Until date, not included in result, format 'YYYY-MM-DD'
+$start_date = '2026-11-05'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-13'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
     $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);
@@ -57,8 +57,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sensor_id** | **int**| Sensor ID | [default to 308] |
-| **start_date** | **string**| From date, included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-04&#39;] |
-| **stop_date** | **string**| Until date, not included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-12&#39;] |
+| **start_date** | **string**| From date, included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-05&#39;] |
+| **stop_date** | **string**| Until date, not included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-13&#39;] |
 
 ### Return type
 
@@ -166,7 +166,7 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
 );
 $station_code = 'acaj'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
 $sensor_type = 'rad'; // string | Sensor type
-$stop_date = '2026-11-12'; // string | Retrieve the latest tidal prediction model up to specified date
+$stop_date = '2026-11-13'; // string | Retrieve the latest tidal prediction model up to specified date
 $lateral_correction = true; // bool | Apply lateral correction to amplitude and phase
 
 try {
@@ -183,7 +183,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **station_code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;acaj&#39;] |
 | **sensor_type** | **string**| Sensor type | [default to &#39;rad&#39;] |
-| **stop_date** | **string**| Retrieve the latest tidal prediction model up to specified date | [optional] [default to &#39;2026-11-12&#39;] |
+| **stop_date** | **string**| Retrieve the latest tidal prediction model up to specified date | [optional] [default to &#39;2026-11-13&#39;] |
 | **lateral_correction** | **bool**| Apply lateral correction to amplitude and phase | [optional] [default to true] |
 
 ### Return type
@@ -233,8 +233,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
 $station_code = 'acaj'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
 $sensor_type = 'rad'; // string | Sensor type
 $time_interval = 60; // int | Time interval of predictions in seconds.
-$start_date = '2026-11-12'; // string | 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
-$stop_date = '2026-11-13'; // string | until date, not included in result. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$start_date = '2026-11-13'; // string | 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
+$stop_date = '2026-11-14'; // string | until date, not included in result. 'YYYY-MM-DDTHH:MM' or 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' or 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DD'
 $days_per_page = 365; // int | Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days.
 $page = 1; // int | Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block's length is set by days_per_page. For example page = 1 returns the first calendar‑day interval, page = 2 the next, and so on, independent of how many data points actually exist for those days.
 $subtract_30d_average = false; // bool | Subtract 30-day average
@@ -254,8 +254,8 @@ try {
 | **station_code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;acaj&#39;] |
 | **sensor_type** | **string**| Sensor type | [default to &#39;rad&#39;] |
 | **time_interval** | **int**| Time interval of predictions in seconds. | [optional] [default to 60] |
-| **start_date** | **string**| &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-12&#39;] |
-| **stop_date** | **string**| until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-13&#39;] |
+| **start_date** | **string**| &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-13&#39;] |
+| **stop_date** | **string**| until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-14&#39;] |
 | **days_per_page** | **int**| Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. | [optional] [default to 365] |
 | **page** | **int**| Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. | [optional] [default to 1] |
 | **subtract_30d_average** | **bool**| Subtract 30-day average | [optional] [default to false] |
@@ -306,8 +306,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
 );
 $station_code = 'acaj'; // string | Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/
 $sensor_filter = 'one-sensor'; // string | This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period.
-$start_date = '2026-11-04'; // string | From date, included in result, format 'YYYY-MM-DD'
-$stop_date = '2026-11-12'; // string | Until date, not included in result, format 'YYYY-MM-DD'
+$start_date = '2026-11-05'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-13'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 $days_per_page = 365; // int | Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days.
 $page = 1; // int | Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block's length is set by days_per_page. For example page = 1 returns the first calendar‑day interval, page = 2 the next, and so on, independent of how many data points actually exist for those days.
 $include_sensors = array('include_sensors_example'); // string[] | sensors to include, default is all sensors
@@ -335,8 +335,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **station_code** | **string**| Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ | [default to &#39;acaj&#39;] |
 | **sensor_filter** | **string**| This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. | [default to &#39;one-sensor&#39;] |
-| **start_date** | **string**| From date, included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-04&#39;] |
-| **stop_date** | **string**| Until date, not included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-12&#39;] |
+| **start_date** | **string**| From date, included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-05&#39;] |
+| **stop_date** | **string**| Until date, not included in result, format &#39;YYYY-MM-DD&#39; | [optional] [default to &#39;2026-11-13&#39;] |
 | **days_per_page** | **int**| Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. | [optional] [default to 365] |
 | **page** | **int**| Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. | [optional] [default to 1] |
 | **include_sensors** | [**string[]**](../Model/string.md)| sensors to include, default is all sensors | [optional] |

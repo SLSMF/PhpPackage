@@ -144,15 +144,15 @@ class AdminApi
      * Retrieve daily metadata records from the research collection.
      *
      * @param  int $sensor_id Sensor ID (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SLSMF\Client\Model\StationResearchMetaData
      */
-    public function getResearchMetadata($sensor_id, $start_date = '2026-11-04', $stop_date = '2026-11-12', string $contentType = self::contentTypes['getResearchMetadata'][0])
+    public function getResearchMetadata($sensor_id, $start_date = '2026-11-05', $stop_date = '2026-11-13', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
         list($response) = $this->getResearchMetadataWithHttpInfo($sensor_id, $start_date, $stop_date, $contentType);
         return $response;
@@ -164,15 +164,15 @@ class AdminApi
      * Retrieve daily metadata records from the research collection.
      *
      * @param  int $sensor_id Sensor ID (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SLSMF\Client\Model\StationResearchMetaData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getResearchMetadataWithHttpInfo($sensor_id, $start_date = '2026-11-04', $stop_date = '2026-11-12', string $contentType = self::contentTypes['getResearchMetadata'][0])
+    public function getResearchMetadataWithHttpInfo($sensor_id, $start_date = '2026-11-05', $stop_date = '2026-11-13', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
         $request = $this->getResearchMetadataRequest($sensor_id, $start_date, $stop_date, $contentType);
 
@@ -252,14 +252,14 @@ class AdminApi
      * Retrieve daily metadata records from the research collection.
      *
      * @param  int $sensor_id Sensor ID (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getResearchMetadataAsync($sensor_id, $start_date = '2026-11-04', $stop_date = '2026-11-12', string $contentType = self::contentTypes['getResearchMetadata'][0])
+    public function getResearchMetadataAsync($sensor_id, $start_date = '2026-11-05', $stop_date = '2026-11-13', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
         return $this->getResearchMetadataAsyncWithHttpInfo($sensor_id, $start_date, $stop_date, $contentType)
             ->then(
@@ -275,14 +275,14 @@ class AdminApi
      * Retrieve daily metadata records from the research collection.
      *
      * @param  int $sensor_id Sensor ID (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getResearchMetadataAsyncWithHttpInfo($sensor_id, $start_date = '2026-11-04', $stop_date = '2026-11-12', string $contentType = self::contentTypes['getResearchMetadata'][0])
+    public function getResearchMetadataAsyncWithHttpInfo($sensor_id, $start_date = '2026-11-05', $stop_date = '2026-11-13', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
         $returnType = '\SLSMF\Client\Model\StationResearchMetaData';
         $request = $this->getResearchMetadataRequest($sensor_id, $start_date, $stop_date, $contentType);
@@ -335,14 +335,14 @@ class AdminApi
      * Create request for operation 'getResearchMetadata'
      *
      * @param  int $sensor_id Sensor ID (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResearchMetadata'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getResearchMetadataRequest($sensor_id, $start_date = '2026-11-04', $stop_date = '2026-11-12', string $contentType = self::contentTypes['getResearchMetadata'][0])
+    public function getResearchMetadataRequest($sensor_id, $start_date = '2026-11-05', $stop_date = '2026-11-13', string $contentType = self::contentTypes['getResearchMetadata'][0])
     {
 
         // verify the required parameter 'sensor_id' is set
@@ -762,7 +762,7 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
-     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-12')
+     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-13')
      * @param  bool|null $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
@@ -770,7 +770,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function getStationSensorConstituents($station_code, $sensor_type, $stop_date = '2026-11-12', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
+    public function getStationSensorConstituents($station_code, $sensor_type, $stop_date = '2026-11-13', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
     {
         list($response) = $this->getStationSensorConstituentsWithHttpInfo($station_code, $sensor_type, $stop_date, $lateral_correction, $contentType);
         return $response;
@@ -783,7 +783,7 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
-     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-12')
+     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-13')
      * @param  bool|null $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
@@ -791,7 +791,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationSensorConstituentsWithHttpInfo($station_code, $sensor_type, $stop_date = '2026-11-12', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
+    public function getStationSensorConstituentsWithHttpInfo($station_code, $sensor_type, $stop_date = '2026-11-13', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
     {
         $request = $this->getStationSensorConstituentsRequest($station_code, $sensor_type, $stop_date, $lateral_correction, $contentType);
 
@@ -872,14 +872,14 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
-     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-12')
+     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-13')
      * @param  bool|null $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorConstituentsAsync($station_code, $sensor_type, $stop_date = '2026-11-12', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
+    public function getStationSensorConstituentsAsync($station_code, $sensor_type, $stop_date = '2026-11-13', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
     {
         return $this->getStationSensorConstituentsAsyncWithHttpInfo($station_code, $sensor_type, $stop_date, $lateral_correction, $contentType)
             ->then(
@@ -896,14 +896,14 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
-     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-12')
+     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-13')
      * @param  bool|null $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorConstituentsAsyncWithHttpInfo($station_code, $sensor_type, $stop_date = '2026-11-12', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
+    public function getStationSensorConstituentsAsyncWithHttpInfo($station_code, $sensor_type, $stop_date = '2026-11-13', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
     {
         $returnType = 'string';
         $request = $this->getStationSensorConstituentsRequest($station_code, $sensor_type, $stop_date, $lateral_correction, $contentType);
@@ -957,14 +957,14 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
-     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-12')
+     * @param  string|null $stop_date Retrieve the latest tidal prediction model up to specified date (optional, default to '2026-11-13')
      * @param  bool|null $lateral_correction Apply lateral correction to amplitude and phase (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStationSensorConstituents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationSensorConstituentsRequest($station_code, $sensor_type, $stop_date = '2026-11-12', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
+    public function getStationSensorConstituentsRequest($station_code, $sensor_type, $stop_date = '2026-11-13', $lateral_correction = true, string $contentType = self::contentTypes['getStationSensorConstituents'][0])
     {
 
         // verify the required parameter 'station_code' is set
@@ -1108,8 +1108,8 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
      * @param  int|null $time_interval Time interval of predictions in seconds. (optional, default to 60)
-     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
-     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-14')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  bool|null $subtract_30d_average Subtract 30-day average (optional, default to false)
@@ -1119,7 +1119,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function getStationSensorPredictions($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-12', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
+    public function getStationSensorPredictions($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-13', $stop_date = '2026-11-14', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
     {
         list($response) = $this->getStationSensorPredictionsWithHttpInfo($station_code, $sensor_type, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average, $contentType);
         return $response;
@@ -1133,8 +1133,8 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
      * @param  int|null $time_interval Time interval of predictions in seconds. (optional, default to 60)
-     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
-     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-14')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  bool|null $subtract_30d_average Subtract 30-day average (optional, default to false)
@@ -1144,7 +1144,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationSensorPredictionsWithHttpInfo($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-12', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
+    public function getStationSensorPredictionsWithHttpInfo($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-13', $stop_date = '2026-11-14', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
     {
         $request = $this->getStationSensorPredictionsRequest($station_code, $sensor_type, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average, $contentType);
 
@@ -1226,8 +1226,8 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
      * @param  int|null $time_interval Time interval of predictions in seconds. (optional, default to 60)
-     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
-     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-14')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  bool|null $subtract_30d_average Subtract 30-day average (optional, default to false)
@@ -1236,7 +1236,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorPredictionsAsync($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-12', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
+    public function getStationSensorPredictionsAsync($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-13', $stop_date = '2026-11-14', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
     {
         return $this->getStationSensorPredictionsAsyncWithHttpInfo($station_code, $sensor_type, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average, $contentType)
             ->then(
@@ -1254,8 +1254,8 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
      * @param  int|null $time_interval Time interval of predictions in seconds. (optional, default to 60)
-     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
-     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-14')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  bool|null $subtract_30d_average Subtract 30-day average (optional, default to false)
@@ -1264,7 +1264,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorPredictionsAsyncWithHttpInfo($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-12', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
+    public function getStationSensorPredictionsAsyncWithHttpInfo($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-13', $stop_date = '2026-11-14', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
     {
         $returnType = 'string';
         $request = $this->getStationSensorPredictionsRequest($station_code, $sensor_type, $time_interval, $start_date, $stop_date, $days_per_page, $page, $subtract_30d_average, $contentType);
@@ -1319,8 +1319,8 @@ class AdminApi
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_type Sensor type (required)
      * @param  int|null $time_interval Time interval of predictions in seconds. (optional, default to 60)
-     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
-     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $start_date &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
+     * @param  string|null $stop_date until date, not included in result. &#39;YYYY-MM-DDTHH:MM&#39; or &#39;YYYY-MM-DDTHH:MM:SS&#39; or &#39;YYYY-MM-DDTHH:MM:SSZ&#39; or &#39;YYYY-MM-DD HH:MM:SS&#39; or &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-14')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  bool|null $subtract_30d_average Subtract 30-day average (optional, default to false)
@@ -1329,7 +1329,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationSensorPredictionsRequest($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-12', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
+    public function getStationSensorPredictionsRequest($station_code, $sensor_type, $time_interval = 60, $start_date = '2026-11-13', $stop_date = '2026-11-14', $days_per_page = 365, $page = 1, $subtract_30d_average = false, string $contentType = self::contentTypes['getStationSensorPredictions'][0])
     {
 
         // verify the required parameter 'station_code' is set
@@ -1515,8 +1515,8 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_filter This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
@@ -1535,7 +1535,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function getStationSensorResearchDataDetidedTD($station_code, $sensor_filter, $start_date = '2026-11-04', $stop_date = '2026-11-12', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
+    public function getStationSensorResearchDataDetidedTD($station_code, $sensor_filter, $start_date = '2026-11-05', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
     {
         list($response) = $this->getStationSensorResearchDataDetidedTDWithHttpInfo($station_code, $sensor_filter, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
         return $response;
@@ -1548,8 +1548,8 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_filter This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
@@ -1568,7 +1568,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStationSensorResearchDataDetidedTDWithHttpInfo($station_code, $sensor_filter, $start_date = '2026-11-04', $stop_date = '2026-11-12', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
+    public function getStationSensorResearchDataDetidedTDWithHttpInfo($station_code, $sensor_filter, $start_date = '2026-11-05', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
     {
         $request = $this->getStationSensorResearchDataDetidedTDRequest($station_code, $sensor_filter, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
 
@@ -1649,8 +1649,8 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_filter This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
@@ -1668,7 +1668,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorResearchDataDetidedTDAsync($station_code, $sensor_filter, $start_date = '2026-11-04', $stop_date = '2026-11-12', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
+    public function getStationSensorResearchDataDetidedTDAsync($station_code, $sensor_filter, $start_date = '2026-11-05', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
     {
         return $this->getStationSensorResearchDataDetidedTDAsyncWithHttpInfo($station_code, $sensor_filter, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType)
             ->then(
@@ -1685,8 +1685,8 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_filter This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
@@ -1704,7 +1704,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStationSensorResearchDataDetidedTDAsyncWithHttpInfo($station_code, $sensor_filter, $start_date = '2026-11-04', $stop_date = '2026-11-12', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
+    public function getStationSensorResearchDataDetidedTDAsyncWithHttpInfo($station_code, $sensor_filter, $start_date = '2026-11-05', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
     {
         $returnType = 'string';
         $request = $this->getStationSensorResearchDataDetidedTDRequest($station_code, $sensor_filter, $start_date, $stop_date, $days_per_page, $page, $include_sensors, $subtract_30d_average, $flag_qc, $filter_completeness, $filter_distinctness, $filter_shift, $filter_out_of_range, $filter_exceeded_neighbours, $filter_spikes_via_median, $filter_flat_line, $contentType);
@@ -1758,8 +1758,8 @@ class AdminApi
      *
      * @param  string $station_code Station code used in query. See IOC codes in https://www.ioc-sealevelmonitoring.org/ssc/ (required)
      * @param  string $sensor_filter This option returns data from only one sensor type for the entire period. The selected sensor will be the one that was preferred on the most days during the requested period. (required)
-     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-04')
-     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-12')
+     * @param  string|null $start_date From date, included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-05')
+     * @param  string|null $stop_date Until date, not included in result, format &#39;YYYY-MM-DD&#39; (optional, default to '2026-11-13')
      * @param  int|null $days_per_page Number of days per page. Specifies number of calendar days that each page of results should cover, independent of how many data points actually exist for those days. The maximum span is 365 days. (optional, default to 365)
      * @param  int|null $page Page number for paginated results. Selects the n‑th consecutive block of calendar days, where each block&#39;s length is set by days_per_page. For example page &#x3D; 1 returns the first calendar‑day interval, page &#x3D; 2 the next, and so on, independent of how many data points actually exist for those days. (optional, default to 1)
      * @param  string[]|null $include_sensors sensors to include, default is all sensors (optional)
@@ -1777,7 +1777,7 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStationSensorResearchDataDetidedTDRequest($station_code, $sensor_filter, $start_date = '2026-11-04', $stop_date = '2026-11-12', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
+    public function getStationSensorResearchDataDetidedTDRequest($station_code, $sensor_filter, $start_date = '2026-11-05', $stop_date = '2026-11-13', $days_per_page = 365, $page = 1, $include_sensors = null, $subtract_30d_average = false, $flag_qc = false, $filter_completeness = true, $filter_distinctness = true, $filter_shift = true, $filter_out_of_range = true, $filter_exceeded_neighbours = true, $filter_spikes_via_median = true, $filter_flat_line = true, string $contentType = self::contentTypes['getStationSensorResearchDataDetidedTD'][0])
     {
 
         // verify the required parameter 'station_code' is set
