@@ -29,7 +29,6 @@ docs/Model/PaginationJson.md
 docs/Model/Station.md
 docs/Model/StationAssociatedStationsInner.md
 docs/Model/StationDataInner.md
-docs/Model/StationDataInnerObservation.md
 docs/Model/StationMessageInner.md
 docs/Model/StationMessageInnerStationsInner.md
 docs/Model/StationPerformance.md
@@ -84,7 +83,6 @@ lib/Model/PaginationJson.php
 lib/Model/Station.php
 lib/Model/StationAssociatedStationsInner.php
 lib/Model/StationDataInner.php
-lib/Model/StationDataInnerObservation.php
 lib/Model/StationMessageInner.php
 lib/Model/StationMessageInnerStationsInner.php
 lib/Model/StationPerformance.php

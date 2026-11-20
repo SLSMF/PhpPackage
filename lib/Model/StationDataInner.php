@@ -58,7 +58,7 @@ class StationDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'observation' => '\SLSMF\Client\Model\StationDataInnerObservation',
+        'observation' => 'float',
         'observation_time' => 'mixed',
         'sensor_type' => 'string'
     ];
@@ -71,7 +71,7 @@ class StationDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'observation' => null,
+        'observation' => 'float',
         'observation_time' => null,
         'sensor_type' => null
     ];
@@ -316,7 +316,7 @@ class StationDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets observation
      *
-     * @return \SLSMF\Client\Model\StationDataInnerObservation
+     * @return float
      */
     public function getObservation()
     {
@@ -326,7 +326,7 @@ class StationDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets observation
      *
-     * @param \SLSMF\Client\Model\StationDataInnerObservation $observation observation
+     * @param float $observation Sea level in meters
      *
      * @return self
      */

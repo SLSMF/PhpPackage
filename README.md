@@ -61,8 +61,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
     $config
 );
 $sensor_id = 308; // int | Sensor ID
-$start_date = '2026-11-05'; // string | From date, included in result, format 'YYYY-MM-DD'
-$stop_date = '2026-11-13'; // string | Until date, not included in result, format 'YYYY-MM-DD'
+$start_date = '2026-11-12'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-20'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
     $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);
@@ -87,7 +87,7 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**getCatalogEntries**](docs/Api/CatalogApi.md#getcatalogentries) | **GET** /v3/catalog | Retrieve list of all catalog entries.
 *CatalogApi* | [**getCatalogEntryByCode**](docs/Api/CatalogApi.md#getcatalogentrybycode) | **GET** /v3/catalog/{ssc_code} | Retrieve specific catalog entry by it&#39;s catalog identifier.
 *CatalogApi* | [**getCatalogEntryByOrganisationAndCode**](docs/Api/CatalogApi.md#getcatalogentrybyorganisationandcode) | **GET** /v3/catalog/{organisation}/{external_code} | Retrieve a specific catalog entry by it&#39;s external identifier.
-*OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v3/operators/{operator_id} | Get fullname of operator by ID.
+*OperatorApi* | [**getOperatorById**](docs/Api/OperatorApi.md#getoperatorbyid) | **GET** /v3/operators/{operator_id} | Get operator details by ID.
 *OperatorApi* | [**getOperators**](docs/Api/OperatorApi.md#getoperators) | **GET** /v3/operators | List of operators
 *ResearchApi* | [**getResearchMetadata**](docs/Api/ResearchApi.md#getresearchmetadata) | **GET** /v3/research/metadata/{sensor_id} | Retrieve daily metadata records from the research collection.
 *ResearchApi* | [**getStationResearchData**](docs/Api/ResearchApi.md#getstationresearchdata) | **GET** /v3/research/stations/{station_code}/sensors/{sensor_filter}/data | Retrieve quality controlled data for a station with a maximum of 365 days in one request. By default 7 days are retrieved. More documentation on this API can be found on https://github.com/SLSMF/API-Documentation
@@ -126,7 +126,6 @@ Class | Method | HTTP request | Description
 - [Station](docs/Model/Station.md)
 - [StationAssociatedStationsInner](docs/Model/StationAssociatedStationsInner.md)
 - [StationDataInner](docs/Model/StationDataInner.md)
-- [StationDataInnerObservation](docs/Model/StationDataInnerObservation.md)
 - [StationMessageInner](docs/Model/StationMessageInner.md)
 - [StationMessageInnerStationsInner](docs/Model/StationMessageInnerStationsInner.md)
 - [StationPerformance](docs/Model/StationPerformance.md)

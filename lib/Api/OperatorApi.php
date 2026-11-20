@@ -132,14 +132,14 @@ class OperatorApi
     /**
      * Operation getOperatorById
      *
-     * Get fullname of operator by ID.
+     * Get operator details by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\Client\Model\Operator
+     * @return \SLSMF\Client\Model\OperatorsInner[]
      */
     public function getOperatorById($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -150,14 +150,14 @@ class OperatorApi
     /**
      * Operation getOperatorByIdWithHttpInfo
      *
-     * Get fullname of operator by ID.
+     * Get operator details by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\Client\Model\Operator, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\OperatorsInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperatorByIdWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -190,7 +190,7 @@ class OperatorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMF\Client\Model\Operator',
+                        '\SLSMF\Client\Model\OperatorsInner[]',
                         $request,
                         $response,
                     );
@@ -212,7 +212,7 @@ class OperatorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMF\Client\Model\Operator',
+                '\SLSMF\Client\Model\OperatorsInner[]',
                 $request,
                 $response,
             );
@@ -221,7 +221,7 @@ class OperatorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\Client\Model\Operator',
+                        '\SLSMF\Client\Model\OperatorsInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -236,7 +236,7 @@ class OperatorApi
     /**
      * Operation getOperatorByIdAsync
      *
-     * Get fullname of operator by ID.
+     * Get operator details by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
@@ -257,7 +257,7 @@ class OperatorApi
     /**
      * Operation getOperatorByIdAsyncWithHttpInfo
      *
-     * Get fullname of operator by ID.
+     * Get operator details by ID.
      *
      * @param  int $operator_id Limit selection to operator. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorById'] to see the possible values for this operation
@@ -267,7 +267,7 @@ class OperatorApi
      */
     public function getOperatorByIdAsyncWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        $returnType = '\SLSMF\Client\Model\Operator';
+        $returnType = '\SLSMF\Client\Model\OperatorsInner[]';
         $request = $this->getOperatorByIdRequest($operator_id, $contentType);
 
         return $this->client
