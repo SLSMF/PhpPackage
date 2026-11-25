@@ -61,8 +61,8 @@ $apiInstance = new SLSMF\Client\Api\AdminApi(
     $config
 );
 $sensor_id = 308; // int | Sensor ID
-$start_date = '2026-11-12'; // string | From date, included in result, format 'YYYY-MM-DD'
-$stop_date = '2026-11-20'; // string | Until date, not included in result, format 'YYYY-MM-DD'
+$start_date = '2026-11-17'; // string | From date, included in result, format 'YYYY-MM-DD'
+$stop_date = '2026-11-25'; // string | Until date, not included in result, format 'YYYY-MM-DD'
 
 try {
     $result = $apiInstance->getResearchMetadata($sensor_id, $start_date, $stop_date);
@@ -121,6 +121,7 @@ Class | Method | HTTP request | Description
 - [MapKmlDocumentStyleInnerIconStyle](docs/Model/MapKmlDocumentStyleInnerIconStyle.md)
 - [MapKmlDocumentStyleInnerIconStyleIcon](docs/Model/MapKmlDocumentStyleInnerIconStyleIcon.md)
 - [Operator](docs/Model/Operator.md)
+- [OperatorDetails](docs/Model/OperatorDetails.md)
 - [OperatorsInner](docs/Model/OperatorsInner.md)
 - [PaginationJson](docs/Model/PaginationJson.md)
 - [Station](docs/Model/Station.md)

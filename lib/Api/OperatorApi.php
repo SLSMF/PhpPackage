@@ -139,7 +139,7 @@ class OperatorApi
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SLSMF\Client\Model\OperatorsInner[]
+     * @return \SLSMF\Client\Model\OperatorDetails
      */
     public function getOperatorById($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -157,7 +157,7 @@ class OperatorApi
      *
      * @throws \SLSMF\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SLSMF\Client\Model\OperatorsInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SLSMF\Client\Model\OperatorDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperatorByIdWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
@@ -190,7 +190,7 @@ class OperatorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\SLSMF\Client\Model\OperatorsInner[]',
+                        '\SLSMF\Client\Model\OperatorDetails',
                         $request,
                         $response,
                     );
@@ -212,7 +212,7 @@ class OperatorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\SLSMF\Client\Model\OperatorsInner[]',
+                '\SLSMF\Client\Model\OperatorDetails',
                 $request,
                 $response,
             );
@@ -221,7 +221,7 @@ class OperatorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SLSMF\Client\Model\OperatorsInner[]',
+                        '\SLSMF\Client\Model\OperatorDetails',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -267,7 +267,7 @@ class OperatorApi
      */
     public function getOperatorByIdAsyncWithHttpInfo($operator_id, string $contentType = self::contentTypes['getOperatorById'][0])
     {
-        $returnType = '\SLSMF\Client\Model\OperatorsInner[]';
+        $returnType = '\SLSMF\Client\Model\OperatorDetails';
         $request = $this->getOperatorByIdRequest($operator_id, $contentType);
 
         return $this->client

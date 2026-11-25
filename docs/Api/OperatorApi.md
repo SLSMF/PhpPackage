@@ -13,7 +13,7 @@ All URIs are relative to http://devapi.ioc-sealevelmonitoring.org/beta, except i
 ## `getOperatorById()`
 
 ```php
-getOperatorById($operator_id): \SLSMF\Client\Model\OperatorsInner[]
+getOperatorById($operator_id): \SLSMF\Client\Model\OperatorDetails
 ```
 
 Get operator details by ID.
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\SLSMF\Client\Model\OperatorsInner[]**](../Model/OperatorsInner.md)
+[**\SLSMF\Client\Model\OperatorDetails**](../Model/OperatorDetails.md)
 
 ### Authorization
 

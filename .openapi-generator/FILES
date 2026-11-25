@@ -24,6 +24,7 @@ docs/Model/MapKmlDocumentStyleInner.md
 docs/Model/MapKmlDocumentStyleInnerIconStyle.md
 docs/Model/MapKmlDocumentStyleInnerIconStyleIcon.md
 docs/Model/Operator.md
+docs/Model/OperatorDetails.md
 docs/Model/OperatorsInner.md
 docs/Model/PaginationJson.md
 docs/Model/Station.md
@@ -78,6 +79,7 @@ lib/Model/MapKmlDocumentStyleInnerIconStyle.php
 lib/Model/MapKmlDocumentStyleInnerIconStyleIcon.php
 lib/Model/ModelInterface.php
 lib/Model/Operator.php
+lib/Model/OperatorDetails.php
 lib/Model/OperatorsInner.php
 lib/Model/PaginationJson.php
 lib/Model/Station.php
@@ -107,3 +109,4 @@ lib/Model/TideModelJson.php
 lib/Model/TideModelJsonDataInner.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/OperatorDetailsTest.php
